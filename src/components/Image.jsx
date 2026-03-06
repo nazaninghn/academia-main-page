@@ -1,6 +1,6 @@
 import NextImage from 'next/image';
 
-export const Image = ({ className, children, variant, contentKey, ... props }) => {
+export const Image = ({ className, children, variant, contentKey, ...props }) => {
   return (
     <NextImage
           src={props.src || ''}
@@ -8,7 +8,7 @@ export const Image = ({ className, children, variant, contentKey, ... props }) =
           width={props.width || 100}
           height={props.height || 100}
           className={className}
-          {... props}
+          {...props}
         />
   );
 };

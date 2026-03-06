@@ -1,26 +1,12 @@
 'use client';
 
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/Button';
-import { ChevronDown } from 'lucide-react';
-import { Heart } from 'lucide-react';
+import { ChevronDown, Heart, Menu, Moon, Search, ShoppingBag, Sun, X } from 'lucide-react';
 import { Icon } from '@/components/Icon';
 import { Image } from '@/components/Image';
 import { Link } from '@/components/Link';
-import { Menu } from 'lucide-react';
-import { Moon } from 'lucide-react';
-import { Search } from 'lucide-react';
-import { ShoppingBag } from 'lucide-react';
-import { Sun } from 'lucide-react';
 import { Text } from '@/components/Text';
-import { X } from 'lucide-react';
-import { useEffect } from 'react';
-
-export const metadata = {
-  title: 'Timeless Connoisseur - Free Tailwind Template',
-  description:  'Download this free Tailwind CSS Fashion website template for Timeless Connoisseur. Features a luxury design, fully responsive layout, and includes 11 pre-built pages like index.html, about.html, contact.html.',
-};
 
 export default function Page() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
