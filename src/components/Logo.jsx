@@ -28,7 +28,7 @@ export function Logo({ className = '', showText = true, size = 'default' }) {
       />
       {showText && (
         <div className="flex flex-col leading-tight">
-          <span className="text-[8px] sm:text-[9px] lg:text-[10px] xl:text-xs text-[#B8860B] uppercase tracking-wider font-medium whitespace-nowrap">
+          <span className="text-xs sm:text-sm lg:text-base xl:text-lg text-[#B8860B] uppercase tracking-wider font-medium whitespace-nowrap">
             {subtitle}
           </span>
         </div>

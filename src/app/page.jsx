@@ -33,9 +33,9 @@ export default function Page() {
               aria-expanded={mobileMenuOpen} 
               onClick={() => setMobileMenuOpen(true)} 
               type="button" 
-              className="lg:hidden p-2 text-primary dark:text-accent hover:text-[#B8860B] transition-colors -ml-2"
+              className="lg:hidden p-3 text-primary dark:text-accent hover:text-[#B8860B] transition-colors -ml-2"
             >
-              <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
+              <Menu className="w-6 h-6" />
             </button>
             
             {/* Logo - Responsive sizing */}
@@ -72,9 +72,9 @@ export default function Page() {
             <Logo size="small" />
             <button 
               onClick={() => setMobileMenuOpen(false)}
-              className="p-2 text-primary dark:text-accent hover:text-[#B8860B] transition-colors -mr-2"
+              className="p-3 text-primary dark:text-accent hover:text-[#B8860B] transition-colors -mr-2"
             >
-              <X className="w-5 h-5 sm:w-6 sm:h-6" />
+              <X className="w-6 h-6" />
             </button>
           </div>
           <nav className="p-4 sm:p-6 space-y-1">
@@ -120,7 +120,7 @@ export default function Page() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 items-center">
               <div className="text-center lg:text-left space-y-3 sm:space-y-4 lg:space-y-6">
                 <div>
-                  <span className="inline-block text-[#B8860B] text-[10px] sm:text-xs uppercase tracking-[0.3em] mb-2 font-semibold">
+                  <span className="inline-block text-[#B8860B] text-xs sm:text-sm uppercase tracking-[0.3em] mb-2 font-semibold">
                     {t.home.subtitle}
                   </span>
                   <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold leading-tight text-primary dark:text-accent">
@@ -131,19 +131,19 @@ export default function Page() {
                     {t.home.title3}
                   </h1>
                 </div>
-                <p className="text-primary/70 dark:text-accent/70 text-xs sm:text-sm lg:text-base max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                <p className="text-primary/70 dark:text-accent/70 text-sm sm:text-base lg:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
                   {t.home.description}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center lg:justify-start pt-1 sm:pt-2">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start pt-2 sm:pt-3">
                   <Link 
-                    className="inline-flex items-center justify-center px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 bg-[#B8860B] text-white text-xs sm:text-sm uppercase tracking-wider font-medium hover:bg-[#9a7209] transition-all duration-300 rounded-lg shadow-lg hover:shadow-xl" 
+                    className="inline-flex items-center justify-center px-6 sm:px-7 lg:px-8 py-3 sm:py-3.5 lg:py-4 bg-[#B8860B] text-white text-sm sm:text-base uppercase tracking-wider font-medium hover:bg-[#9a7209] transition-all duration-300 rounded-lg shadow-lg hover:shadow-xl" 
                     href="/products"
                   >
                     {t.home.contactBtn}
-                    <ArrowRight className="ml-2 w-4 h-4" />
+                    <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                   </Link>
                   <Link 
-                    className="inline-flex items-center justify-center px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 border-2 border-[#B8860B] text-[#B8860B] text-xs sm:text-sm uppercase tracking-wider font-medium hover:bg-[#B8860B] hover:text-white transition-all duration-300 rounded-lg" 
+                    className="inline-flex items-center justify-center px-6 sm:px-7 lg:px-8 py-3 sm:py-3.5 lg:py-4 border-2 border-[#B8860B] text-[#B8860B] text-sm sm:text-base uppercase tracking-wider font-medium hover:bg-[#B8860B] hover:text-white transition-all duration-300 rounded-lg" 
                     href="/contact"
                   >
                     {t.home.aboutBtn}
