@@ -77,31 +77,31 @@ export default function Page() {
               <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
           </div>
-          <nav className="p-4 sm:p-6 space-y-4 sm:space-y-6">
+          <nav className="p-4 sm:p-6 space-y-1">
             <Link 
               href="/" 
-              className="block text-base sm:text-lg font-medium text-primary dark:text-accent hover:text-[#B8860B] transition-colors py-2"
+              className="block text-base sm:text-lg font-medium text-primary dark:text-accent hover:text-[#B8860B] transition-colors py-3 px-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t.nav.home}
             </Link>
             <Link 
               href="/about" 
-              className="block text-base sm:text-lg font-medium text-primary dark:text-accent hover:text-[#B8860B] transition-colors py-2"
+              className="block text-base sm:text-lg font-medium text-primary dark:text-accent hover:text-[#B8860B] transition-colors py-3 px-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t.nav.about}
             </Link>
             <Link 
               href="/products" 
-              className="block text-base sm:text-lg font-medium text-primary dark:text-accent hover:text-[#B8860B] transition-colors py-2"
+              className="block text-base sm:text-lg font-medium text-primary dark:text-accent hover:text-[#B8860B] transition-colors py-3 px-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t.nav.services}
             </Link>
             <Link 
               href="/contact" 
-              className="block text-base sm:text-lg font-medium text-primary dark:text-accent hover:text-[#B8860B] transition-colors py-2"
+              className="block text-base sm:text-lg font-medium text-primary dark:text-accent hover:text-[#B8860B] transition-colors py-3 px-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t.nav.contact}
