@@ -25,14 +25,11 @@ export function Logo({ className = '', showText = true, size = 'default' }) {
         height={currentSize.height}
         className="object-contain flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 lg:w-24 lg:h-24 xl:w-28 xl:h-28"
         priority
+        loading="eager"
+        quality={100}
+        placeholder="blur"
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
       />
-      {showText && (
-        <div className="flex flex-col leading-tight">
-          <span className="text-xs sm:text-sm lg:text-base xl:text-lg text-[#B8860B] uppercase tracking-wider font-medium whitespace-nowrap">
-            {subtitle}
-          </span>
-        </div>
-      )}
     </div>
   );
 }

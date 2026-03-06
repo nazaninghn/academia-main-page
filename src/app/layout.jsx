@@ -9,6 +9,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="tr">
+      <head>
+        <link rel="preload" href="/logo.png" as="image" />
+      </head>
       <body>
         <Providers>
           {children}
