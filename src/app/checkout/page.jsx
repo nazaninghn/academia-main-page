@@ -22,10 +22,18 @@ export default function Page() {
     }
   }, [darkMode]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.pageYOffset > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="font-body bg-accent dark:bg-primary text-primary dark:text-accent font-sans antialiased overflow-x-hidden selection:bg-[#B8860B] selection:text-white">
       <>
-        <header onScroll={() => { scrolled = (window.pageYOffset > 20) }} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent bg-accent dark:bg-primary ${`${scrolled ? 'border-primary/5 dark:border-[#F5E6D3]/10' : ''}`}`}>
+        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent bg-accent dark:bg-primary ${scrolled ? 'border-primary/5 dark:border-[#F5E6D3]/10' : ''}`}>
           <nav aria-label="Top" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="w-full flex items-center justify-between h-20">
               {/* Mobile Menu Button */}
