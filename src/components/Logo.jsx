@@ -27,8 +27,6 @@ export function Logo({ className = '', showText = true, size = 'default' }) {
         priority
         loading="eager"
         quality={100}
-        placeholder="blur"
-        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
       />
     </div>
   );
