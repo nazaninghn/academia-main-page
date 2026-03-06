@@ -27,7 +27,7 @@ export default function Page() {
     <div className="font-body bg-accent dark:bg-primary text-primary dark:text-accent font-sans antialiased overflow-x-hidden selection:bg-[#B8860B] selection:text-white">
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-accent dark:bg-primary shadow-sm ${scrolled ? 'shadow-md' : ''}`}>
         <nav aria-label="Top" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="w-full flex items-center justify-between h-16 sm:h-20 lg:h-24">
+          <div className="w-full flex items-center h-16 sm:h-20 lg:h-24">
             {/* Mobile Menu Button */}
             <button 
               aria-expanded={mobileMenuOpen} 
@@ -38,15 +38,15 @@ export default function Page() {
               <Menu className="w-6 h-6" />
             </button>
             
-            {/* Logo - Responsive sizing */}
-            <div className="flex items-center flex-1 lg:flex-initial justify-center lg:justify-start">
+            {/* Logo - Left Side */}
+            <div className="flex items-center lg:w-64">
               <Link className="inline-flex items-center" href="/">
                 <Logo />
               </Link>
             </div>
             
             {/* Desktop Navigation - Center */}
-            <div className="hidden lg:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
+            <div className="hidden lg:flex items-center justify-center space-x-6 xl:space-x-8 flex-1">
               <Link className="inline-block text-sm font-medium uppercase tracking-wider text-primary dark:text-accent hover:text-[#B8860B] transition-colors whitespace-nowrap" href="/">{t.nav.home}</Link>
               <Link className="inline-block text-sm font-medium uppercase tracking-wider text-primary dark:text-accent hover:text-[#B8860B] transition-colors whitespace-nowrap" href="/about">{t.nav.about}</Link>
               <Link className="inline-block text-sm font-medium uppercase tracking-wider text-primary dark:text-accent hover:text-[#B8860B] transition-colors whitespace-nowrap" href="/products">{t.nav.services}</Link>
@@ -54,7 +54,7 @@ export default function Page() {
             </div>
             
             {/* Language Switcher - Right Side */}
-            <div className="flex items-center -mr-2 lg:mr-0">
+            <div className="flex items-center justify-end lg:w-64 -mr-2 lg:mr-0">
               <LanguageSwitcher />
             </div>
           </div>
