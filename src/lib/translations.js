@@ -126,7 +126,7 @@ export const translations = {
       description: 'Kurumsal gelişim süreçlerinizde güvenilir iş ortağınız',
       quickLinks: 'Hızlı Linkler',
       contactInfo: 'İletişim',
-      copyright: '© 2024 Academia Danışmanlık. Tüm hakları saklıdır.',
+      copyright: '© 2026 Academia Danışmanlık. Tüm hakları saklıdır.',
     },
   },
   en: {
@@ -256,7 +256,7 @@ export const translations = {
       description: 'Your trusted business partner in corporate development processes',
       quickLinks: 'Quick Links',
       contactInfo: 'Contact',
-      copyright: '© 2024 Academia Consulting. All rights reserved.',
+      copyright: '© 2026 Academia Consulting. All rights reserved.',
     },
   },
 };
