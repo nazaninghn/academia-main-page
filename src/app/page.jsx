@@ -67,41 +67,41 @@ export default function Page() {
           className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-100' : 'opacity-0'}`}
           onClick={() => setMobileMenuOpen(false)}
         />
-        <div className={`absolute top-0 right-0 bottom-0 w-full max-w-sm bg-white dark:bg-gray-900 shadow-2xl transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-800">
-            <Logo />
+        <div className={`absolute top-0 right-0 bottom-0 w-full max-w-[280px] sm:max-w-sm bg-white dark:bg-gray-900 shadow-2xl transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200 dark:border-gray-800">
+            <Logo size="small" />
             <button 
               onClick={() => setMobileMenuOpen(false)}
-              className="p-2 text-primary dark:text-accent hover:text-[#B8860B] transition-colors"
+              className="p-2 text-primary dark:text-accent hover:text-[#B8860B] transition-colors -mr-2"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
           </div>
-          <nav className="p-6 space-y-6">
+          <nav className="p-4 sm:p-6 space-y-4 sm:space-y-6">
             <Link 
               href="/" 
-              className="block text-lg font-medium text-primary dark:text-accent hover:text-[#B8860B] transition-colors"
+              className="block text-base sm:text-lg font-medium text-primary dark:text-accent hover:text-[#B8860B] transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t.nav.home}
             </Link>
             <Link 
               href="/about" 
-              className="block text-lg font-medium text-primary dark:text-accent hover:text-[#B8860B] transition-colors"
+              className="block text-base sm:text-lg font-medium text-primary dark:text-accent hover:text-[#B8860B] transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t.nav.about}
             </Link>
             <Link 
               href="/products" 
-              className="block text-lg font-medium text-primary dark:text-accent hover:text-[#B8860B] transition-colors"
+              className="block text-base sm:text-lg font-medium text-primary dark:text-accent hover:text-[#B8860B] transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t.nav.services}
             </Link>
             <Link 
               href="/contact" 
-              className="block text-lg font-medium text-primary dark:text-accent hover:text-[#B8860B] transition-colors"
+              className="block text-base sm:text-lg font-medium text-primary dark:text-accent hover:text-[#B8860B] transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t.nav.contact}
