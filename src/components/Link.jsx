@@ -13,11 +13,11 @@ export const Link = ({ className, children, variant, contentKey, ...props }) => 
   return (
     <>
       {props.href && (props.href.startsWith('http') || props.href.startsWith('mailto:') || props.href.startsWith('#')) ? (
-        <a className={`inline-block ${className}`} {...props}>{children}</a>
+        <a className={className} {...props}>{children}</a>
       ) : (
         (() => {
           const { href, ...rest } = props;
-          return <NextLink className={`inline-block ${className}`} href={getHref(href)} {...rest}>{children}</NextLink>;
+          return <NextLink className={className} href={getHref(href)} {...rest}>{children}</NextLink>;
         })()
       )}
     </>
