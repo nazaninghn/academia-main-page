@@ -27,7 +27,7 @@ export default function Page() {
     <div className="font-body bg-accent dark:bg-primary text-primary dark:text-accent font-sans antialiased overflow-x-hidden selection:bg-[#B8860B] selection:text-white">
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 ${scrolled ? 'shadow-md' : ''}`}>
         <nav aria-label="Top" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="w-full flex items-center h-16 sm:h-20 lg:h-24">
+          <div className="w-full flex items-center justify-between h-16 sm:h-20 lg:h-24">
             {/* Mobile Menu Button */}
             <button 
               aria-expanded={mobileMenuOpen} 
@@ -38,8 +38,8 @@ export default function Page() {
               <Menu className="w-6 h-6" />
             </button>
             
-            {/* Logo - Left Side */}
-            <div className="flex items-center lg:w-64">
+            {/* Logo - Center on mobile, Left on desktop */}
+            <div className="flex items-center flex-1 justify-center lg:justify-start lg:flex-initial lg:w-64">
               <Link className="inline-flex items-center" href="/">
                 <Logo />
               </Link>
@@ -54,7 +54,7 @@ export default function Page() {
             </div>
             
             {/* Language Switcher - Right Side */}
-            <div className="flex items-center justify-end lg:w-64 -mr-2 lg:mr-0">
+            <div className="flex items-center justify-end lg:w-64">
               <LanguageSwitcher />
             </div>
           </div>
