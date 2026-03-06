@@ -33,7 +33,7 @@ export default function Page() {
       <>
         <main className="pt-20 lg:pt-32 pb-24">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-accent dark:bg-primary shadow-sm ${scrolled ? 'shadow-md' : ''}`}>
+            <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 ${scrolled ? 'shadow-md' : ''}`}>
               <nav aria-label="Top" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="w-full flex items-center justify-between h-20">
                   {/* Mobile Menu Button */}
