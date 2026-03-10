@@ -2,26 +2,26 @@
 
 import { useState } from 'react';
 import { MapPin, Phone, Mail, Send } from 'lucide-react';
-import { Button } from '@/components/Button';
-import { Input } from '@/components/Input';
-import { Text } from '@/components/Text';
+import { Link } from '@/components/Link';
+import { Logo } from '@/components/Logo';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useTranslation } from '@/lib/translations';
 
 export default function ContactPage() {
   const { language } = useLanguage();
-  const t = useTranslation(language);
+  const currentLanguage = language === 'tr' ? 'tr' : 'en';
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
+    company: '',
     message: ''
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    alert(t.contact.successMessage);
+    alert(currentLanguage === 'tr' ? 'Mesajınız gönderildi!' : 'Your message has been sent!');
   };
 
   const handleChange = (e) => {
@@ -32,185 +32,208 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-accent dark:bg-primary pt-16 sm:pt-20 lg:pt-24 pb-10 sm:pb-12 lg:pb-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header with Background */}
-        <div className="text-center mb-8 sm:mb-10 lg:mb-12 relative">
-          <div className="absolute inset-0 -z-10 opacity-10">
-            <img 
-              src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1200&h=400&fit=crop&q=80" 
-              alt="Contact us"
-              className="w-full h-full object-cover rounded-xl sm:rounded-2xl"
-            />
-          </div>
-          <Text className="inline-block text-[#B8860B] text-[10px] sm:text-xs uppercase tracking-[0.2em] mb-2 sm:mb-3">{t.contact.subtitle}</Text>
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-serif font-medium text-primary dark:text-accent mb-3 sm:mb-4 px-4">
-            {t.contact.title}
-          </h1>
-          <p className="text-primary/70 dark:text-accent/70 text-xs sm:text-sm lg:text-base max-w-2xl mx-auto px-4">
-            {t.contact.description}
-          </p>
-        </div>
+    <div className="min-h-screen bg-[#F5F3EE] text-[#142033]">
+      {/* Header */}
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-[#D9D6CE] bg-[#F5F3EE]/92 backdrop-blur-md">
+        <nav className="mx-auto flex h-[78px] max-w-[1380px] items-center justify-between px-6 lg:px-8">
+          <Link href="/" className="shrink-0">
+            <Logo size="small" />
+          </Link>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-          {/* Contact Form */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
-            <h2 className="text-2xl font-serif font-medium text-primary dark:text-accent mb-6">
-              {t.contact.formTitle}
-            </h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-primary dark:text-accent mb-2">
-                  Adınız Soyadınız
-                </label>
-                <Input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-transparent bg-white dark:bg-gray-700 text-primary dark:text-accent"
-                  placeholder="Adınız Soyadınız"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-primary dark:text-accent mb-2">
-                  E-posta
-                </label>
-                <Input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-transparent bg-white dark:bg-gray-700 text-primary dark:text-accent"
-                  placeholder="ornek@email.com"
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-primary dark:text-accent mb-2">
-                  Telefon
-                </label>
-                <Input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-transparent bg-white dark:bg-gray-700 text-primary dark:text-accent"
-                  placeholder="0555 555 55 55"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-primary dark:text-accent mb-2">
-                  Mesajınız
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-transparent bg-white dark:bg-gray-700 text-primary dark:text-accent"
-                  placeholder="Mesajınızı buraya yazın..."
-                />
-              </div>
-              <Button
-                type="submit"
-                className="w-full inline-flex items-center justify-center px-8 py-4 bg-[#B8860B] text-white text-sm uppercase tracking-widest hover:bg-[#9a7209] transition-all duration-300"
-              >
-                <Send className="w-5 h-5 mr-2" />
-                Gönder
-              </Button>
-            </form>
+          <div className="hidden items-center gap-12 lg:flex">
+            <Link href="/#what-academia-is" className="text-[16px] text-[#142033] transition hover:text-[#D89A4A]">
+              {currentLanguage === 'tr' ? 'ACADEMIA Nedir' : 'What ACADEMIA Is'}
+            </Link>
+            <Link href="/#expertise" className="text-[16px] text-[#142033] transition hover:text-[#D89A4A]">
+              {currentLanguage === 'tr' ? 'Uzmanlık' : 'Expertise'}
+            </Link>
+            <Link href="/#how-it-works" className="text-[16px] text-[#142033] transition hover:text-[#D89A4A]">
+              {currentLanguage === 'tr' ? 'Nasıl Çalışır' : 'How It Works'}
+            </Link>
+            <Link href="/#references" className="text-[16px] text-[#142033] transition hover:text-[#D89A4A]">
+              {currentLanguage === 'tr' ? 'Referanslar' : 'References'}
+            </Link>
+            <Link href="/contact" className="text-[16px] text-[#D89A4A] font-medium">
+              {currentLanguage === 'tr' ? 'İletişim' : 'Contact'}
+            </Link>
           </div>
 
-          {/* Contact Information */}
-          <div className="space-y-8">
-            {/* Address */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-[#B8860B]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-[#B8860B]" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-serif font-medium text-primary dark:text-accent mb-2">
-                    Adresimiz
-                  </h3>
-                  <p className="text-primary/70 dark:text-accent/70">
-                    Bilişim Vadisi - İstinye Üniversitesi<br />
-                    Ayazağa Mah. Kemerburgaz Cad.<br />
-                    Vadi İstanbul Park 7A Blok No:7 B<br />
-                    İç Kapı No:4<br />
-                    Sarıyer / İstanbul
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="hidden lg:flex">
+            <LanguageSwitcher />
+          </div>
+        </nav>
+      </header>
 
-            {/* Phone */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-[#B8860B]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-6 h-6 text-[#B8860B]" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-serif font-medium text-primary dark:text-accent mb-2">
-                    Telefon
-                  </h3>
-                  <p className="text-primary/70 dark:text-accent/70">
-                    Tel: <a href="tel:+902126135880" className="hover:text-[#B8860B] transition-colors">212-613 58 80</a><br />
-                    Fax: 212-322 04 11
-                  </p>
-                </div>
+      {/* Main Content */}
+      <main className="pt-[78px]">
+        <section className="bg-[#F5F3EE] py-20 lg:py-24">
+          <div className="mx-auto max-w-[1380px] px-6 lg:px-8">
+            <div className="grid grid-cols-1 gap-16 lg:grid-cols-[220px_1fr]">
+              {/* Left label */}
+              <div>
+                <p className="text-[12px] uppercase tracking-[0.28em] text-[#72819A]">
+                  {currentLanguage === 'tr' ? 'İletişim' : 'Contact'}
+                </p>
               </div>
-            </div>
 
-            {/* Email */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-[#B8860B]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-6 h-6 text-[#B8860B]" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-serif font-medium text-primary dark:text-accent mb-2">
-                    E-posta
-                  </h3>
-                  <p className="text-primary/70 dark:text-accent/70">
-                    <a href="mailto:info@academiadanismanlik.com" className="hover:text-[#B8860B] transition-colors">
-                      info@academiadanismanlik.com
-                    </a>
-                  </p>
-                </div>
-              </div>
-            </div>
+              {/* Content */}
+              <div>
+                <h1 className="text-[34px] font-light leading-[1.1] tracking-[-0.03em] text-[#142033] lg:text-[46px]">
+                  {currentLanguage === 'tr'
+                    ? 'Kurumsal dönüşüm yolculuğunuza başlayalım.'
+                    : 'Let\'s begin your institutional transformation journey.'}
+                </h1>
 
-            {/* Working Hours */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
-              <h3 className="text-xl font-serif font-medium text-primary dark:text-accent mb-4">
-                Çalışma Saatleri
-              </h3>
-              <div className="space-y-2 text-primary/70 dark:text-accent/70">
-                <div className="flex justify-between">
-                  <span>Pazartesi - Cuma:</span>
-                  <span className="font-medium">09:00 - 18:00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Cumartesi:</span>
-                  <span className="font-medium">10:00 - 16:00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Pazar:</span>
-                  <span className="font-medium">Kapalı</span>
+                <p className="mt-6 max-w-[760px] text-[18px] leading-[1.9] text-[#5E7088]">
+                  {currentLanguage === 'tr'
+                    ? 'ACADEMIA ekibi, kurumunuzun ihtiyaçlarını anlamak ve size en uygun çözümleri sunmak için hazır.'
+                    : 'The ACADEMIA team is ready to understand your organization\'s needs and provide the most suitable solutions.'}
+                </p>
+
+                <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-2">
+                  {/* Contact Form */}
+                  <div>
+                    <h2 className="text-[24px] font-medium text-[#142033] mb-8">
+                      {currentLanguage === 'tr' ? 'Mesaj Gönderin' : 'Send a Message'}
+                    </h2>
+                    
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div>
+                        <label htmlFor="name" className="block text-[14px] font-medium text-[#142033] mb-2">
+                          {currentLanguage === 'tr' ? 'Ad Soyad' : 'Full Name'}
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 border border-[#D9D6CE] rounded-lg focus:ring-2 focus:ring-[#D89A4A] focus:border-transparent bg-white text-[#142033]"
+                          placeholder={currentLanguage === 'tr' ? 'Adınız Soyadınız' : 'Your Name'}
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="email" className="block text-[14px] font-medium text-[#142033] mb-2">
+                          {currentLanguage === 'tr' ? 'E-posta' : 'Email'}
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 border border-[#D9D6CE] rounded-lg focus:ring-2 focus:ring-[#D89A4A] focus:border-transparent bg-white text-[#142033]"
+                          placeholder="email@example.com"
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="company" className="block text-[14px] font-medium text-[#142033] mb-2">
+                          {currentLanguage === 'tr' ? 'Kurum' : 'Organization'}
+                        </label>
+                        <input
+                          type="text"
+                          id="company"
+                          name="company"
+                          value={formData.company}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border border-[#D9D6CE] rounded-lg focus:ring-2 focus:ring-[#D89A4A] focus:border-transparent bg-white text-[#142033]"
+                          placeholder={currentLanguage === 'tr' ? 'Kurum Adı' : 'Organization Name'}
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="message" className="block text-[14px] font-medium text-[#142033] mb-2">
+                          {currentLanguage === 'tr' ? 'Mesaj' : 'Message'}
+                        </label>
+                        <textarea
+                          id="message"
+                          name="message"
+                          value={formData.message}
+                          onChange={handleChange}
+                          required
+                          rows={5}
+                          className="w-full px-4 py-3 border border-[#D9D6CE] rounded-lg focus:ring-2 focus:ring-[#D89A4A] focus:border-transparent bg-white text-[#142033]"
+                          placeholder={currentLanguage === 'tr' ? 'Mesajınızı buraya yazın...' : 'Write your message here...'}
+                        />
+                      </div>
+
+                      <button
+                        type="submit"
+                        className="inline-flex items-center gap-3 rounded-full bg-[#0F1A32] px-8 py-4 text-[16px] font-medium text-white transition hover:bg-[#D89A4A]"
+                      >
+                        <Send className="h-4 w-4" />
+                        {currentLanguage === 'tr' ? 'Gönder' : 'Send Message'}
+                      </button>
+                    </form>
+                  </div>
+
+                  {/* Contact Information */}
+                  <div className="space-y-8">
+                    <div className="border-t border-[#D9D6CE] pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D9D6CE] bg-[#F8F6F1]">
+                          <MapPin className="h-5 w-5 text-[#D89A4A]" />
+                        </div>
+                        <div>
+                          <h3 className="text-[18px] font-medium text-[#142033] mb-2">
+                            {currentLanguage === 'tr' ? 'Adres' : 'Address'}
+                          </h3>
+                          <p className="text-[15px] leading-[1.7] text-[#5E7088]">
+                            Bilişim Vadisi - İstinye Üniversitesi<br />
+                            Ayazağa Mah. Kemerburgaz Cad.<br />
+                            Vadi İstanbul Park 7A Blok No:7 B<br />
+                            İç Kapı No:4<br />
+                            Sarıyer / İstanbul
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="border-t border-[#D9D6CE] pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D9D6CE] bg-[#F8F6F1]">
+                          <Phone className="h-5 w-5 text-[#D89A4A]" />
+                        </div>
+                        <div>
+                          <h3 className="text-[18px] font-medium text-[#142033] mb-2">
+                            {currentLanguage === 'tr' ? 'Telefon' : 'Phone'}
+                          </h3>
+                          <p className="text-[15px] leading-[1.7] text-[#5E7088]">
+                            Tel: <a href="tel:+902126135880" className="hover:text-[#D89A4A] transition-colors">212-613 58 80</a><br />
+                            Fax: 212-322 04 11
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="border-t border-[#D9D6CE] pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D9D6CE] bg-[#F8F6F1]">
+                          <Mail className="h-5 w-5 text-[#D89A4A]" />
+                        </div>
+                        <div>
+                          <h3 className="text-[18px] font-medium text-[#142033] mb-2">
+                            {currentLanguage === 'tr' ? 'E-posta' : 'Email'}
+                          </h3>
+                          <p className="text-[15px] leading-[1.7] text-[#5E7088]">
+                            <a href="mailto:info@academiadanismanlik.com" className="hover:text-[#D89A4A] transition-colors">
+                              info@academiadanismanlik.com
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
     </div>
   );
 }
