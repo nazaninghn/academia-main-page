@@ -135,7 +135,7 @@ function HeroSection({ language }) {
       <div className="mx-auto max-w-[1380px] px-5 pb-14 pt-10 sm:px-6 sm:pb-16 sm:pt-12 lg:px-8 lg:pb-20 lg:pt-16">
         <div className="grid grid-cols-1 items-center gap-8 xl:grid-cols-[1.1fr_0.9fr] xl:gap-12">
           <div className="flex flex-col justify-center">
-            <h1 className="max-w-[620px] text-[36px] font-light leading-[1.08] tracking-[-0.03em] text-[#142033] sm:text-[46px] md:text-[52px] lg:text-[64px]">
+            <h1 className="max-w-[620px] text-[36px] font-light leading-[1.08] tracking-[-0.03em] text-[#142033] sm:text-[46px] md:text-[52px] xl:text-[72px]">
               {language === 'tr' ? (
                 <>
                   Kurumsal dönüşüm için
@@ -155,7 +155,7 @@ function HeroSection({ language }) {
               )}
             </h1>
 
-            <p className="mt-6 max-w-[520px] text-[15px] leading-[1.75] text-[#667085] sm:mt-8 sm:text-[17px] md:text-[18px] lg:text-[19px] lg:leading-[1.8]">
+            <p className="mt-6 max-w-[520px] text-[15px] leading-[1.75] text-[#667085] sm:mt-8 sm:text-[17px] md:text-[18px] xl:text-[21px] xl:leading-[1.8]">
               {language === 'tr'
                 ? 'ACADEMIA, kurumların kurumsal, düzenleyici, kalite ve sürdürülebilirlik çerçevelerini uzun vadeli yapısal netlikle tasarlamasına ve uygulamasına yardımcı olur.'
                 : 'ACADEMIA helps organizations design and implement institutional, regulatory, quality, and sustainability frameworks with long-term structural clarity.'}
@@ -276,7 +276,7 @@ function ExpertiseArchitectureSection({ language }) {
               </p>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-10 sm:mt-12 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-14 xl:grid-cols-3">
+            <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-10 sm:mt-12 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-14 2xl:grid-cols-3">
               {items.map((item) => (
                 <div key={item.number} className="border-t border-[#D9D6CE] pt-5 sm:pt-6">
                   <div className="mb-3 flex items-center gap-3 sm:mb-4">
@@ -335,7 +335,7 @@ function HowAcademiaWorksSection({ language }) {
             </div>
 
             {/* Desktop layout */}
-            <div className="mt-14 hidden xl:block">
+            <div className="mt-14 hidden 2xl:block">
               <div className="relative">
                 <div className="absolute left-0 right-0 top-[34px] h-px bg-[#D9D6CE]" />
                 <div className="grid grid-cols-4 gap-8">
@@ -355,7 +355,7 @@ function HowAcademiaWorksSection({ language }) {
             </div>
 
             {/* Tablet layout — 2 columns */}
-            <div className="mt-10 hidden sm:grid sm:grid-cols-2 sm:gap-6 xl:hidden">
+            <div className="mt-10 hidden sm:grid sm:grid-cols-2 sm:gap-6 2xl:hidden">
               {items.map((item) => (
                 <div key={item.number} className="border-t border-[#D9D6CE] pt-5">
                   <div className="mb-4 flex h-[52px] w-[52px] items-center justify-center rounded-full border border-[#142033]">

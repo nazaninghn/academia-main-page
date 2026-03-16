@@ -2,21 +2,23 @@ import Image from 'next/image';
 
 export function Logo({ size = 'default' }) {
   const sizes = {
-    small: { width: 65, height: 22, maxH: 'max-h-[22px]' },
-    default: { width: 200, height: 54, maxH: 'max-h-[48px]' },
-    large: { width: 240, height: 64, maxH: 'max-h-[56px]' },
+    small: { width: 68, height: 24, wrap: 'h-6' },
+    default: { width: 82, height: 28, wrap: 'h-7' },
+    large: { width: 110, height: 36, wrap: 'h-9' },
   };
 
   const s = sizes[size] || sizes.default;
 
   return (
-    <Image
-      src="/logo.png"
-      alt="ACADEMIA"
-      width={s.width}
-      height={s.height}
-      className={`h-auto w-auto object-contain ${s.maxH}`}
-      priority
-    />
+    <div className={`flex items-center overflow-hidden ${s.wrap}`}>
+      <Image
+        src="/logo.png"
+        alt="ACADEMIA"
+        width={s.width}
+        height={s.height}
+        className="h-full w-auto origin-left scale-[0.9] object-contain"
+        priority
+      />
+    </div>
   );
 }

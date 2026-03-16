@@ -17,7 +17,7 @@ export function Header() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-[#D9D6CE] bg-[#F5F3EE]/92 backdrop-blur-md">
         <nav className="mx-auto flex h-[56px] max-w-[1380px] items-center justify-between px-4 sm:h-[64px] sm:px-6 lg:px-8">
           <div className="flex items-center gap-3">
-            <button onClick={() => setMobileMenuOpen(true)} className="inline-flex p-2 md:hidden" aria-label="Open menu">
+            <button onClick={() => setMobileMenuOpen(true)} className="inline-flex p-2 lg:hidden" aria-label="Open menu">
               <Menu className="h-5 w-5" />
             </button>
             <Link href="/" className="shrink-0">
@@ -25,7 +25,7 @@ export function Header() {
             </Link>
           </div>
 
-          <div className="hidden items-center gap-4 md:flex lg:gap-8">
+          <div className="hidden items-center gap-4 lg:flex xl:gap-8">
             <a href="/#what-academia-is" className="whitespace-nowrap text-[13px] font-medium text-[#142033] transition hover:text-[#D89A4A] lg:text-[15px]">
               {currentLanguage === 'tr' ? 'ACADEMIA Nedir' : 'What ACADEMIA Is'}
             </a>
@@ -43,14 +43,14 @@ export function Header() {
             </Link>
           </div>
 
-          <div className="hidden md:flex">
+          <div className="hidden lg:flex">
             <LanguageSwitcher />
           </div>
         </nav>
       </header>
 
       {/* Mobile menu */}
-      <div className={`fixed inset-0 z-[60] md:hidden ${mobileMenuOpen ? '' : 'pointer-events-none'}`}>
+      <div className={`fixed inset-0 z-[60] lg:hidden ${mobileMenuOpen ? '' : 'pointer-events-none'}`}>
         <div
           className={`absolute inset-0 bg-black/30 transition-opacity ${mobileMenuOpen ? 'opacity-100' : 'opacity-0'}`}
           onClick={() => setMobileMenuOpen(false)}
