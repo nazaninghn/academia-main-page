@@ -221,15 +221,15 @@ function HeroSection({ language }) {
                 : 'ACADEMIA helps organizations design and implement institutional, regulatory, quality, and sustainability frameworks with long-term structural clarity.'}
             </p>
 
-            <div className="mt-8 grid max-w-[460px] grid-cols-3 gap-3 sm:gap-4">
+            <div className="mt-8 grid max-w-[460px] grid-cols-3 gap-2 sm:gap-4">
               {[
                 { val: '150+', label: language === 'tr' ? 'Proje' : 'Projects' },
-                { val: '80+', label: language === 'tr' ? 'Kurum' : 'Organizations' },
+                { val: '80+', label: language === 'tr' ? 'Kurum' : 'Clients' },
                 { val: '6', label: language === 'tr' ? 'Uzmanlık Alanı' : 'Expertise Areas' },
               ].map((s) => (
-                <div key={s.label} className="rounded-2xl border border-[#D9D6CE] bg-[#FAF8F3] px-4 py-4">
+                <div key={s.label} className="rounded-2xl border border-[#D9D6CE] bg-[#FAF8F3] px-3 py-4 sm:px-4">
                   <p className="text-[24px] font-semibold text-[#142033]">{s.val}</p>
-                  <p className="mt-1 text-[12px] uppercase tracking-[0.14em] text-[#72819A]">{s.label}</p>
+                  <p className="mt-1 text-[10px] uppercase tracking-[0.1em] text-[#72819A] sm:text-[12px] sm:tracking-[0.14em]">{s.label}</p>
                 </div>
               ))}
             </div>
