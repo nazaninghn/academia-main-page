@@ -1,10 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { ArrowRight, Menu, X } from 'lucide-react';
-import { Link } from '@/components/Link';
-import { Logo } from '@/components/Logo';
-import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { ArrowRight } from 'lucide-react';
+import { Header } from '@/components/Header';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const referenceLogos = [
@@ -74,49 +71,49 @@ function FrameworkDiagram({ language }) {
   };
   const t = labels[language] || labels.en;
   return (
-    <div className="relative w-full rounded-[18px] border border-[#E0DDD6] bg-[#F0EDE6] p-3 sm:rounded-[22px] sm:p-4 lg:rounded-[26px] lg:p-6">
-      <div className="relative grid grid-cols-2 gap-3 sm:gap-4 lg:gap-5">
+    <div className="relative w-full rounded-[18px] border border-[#E0DDD6] bg-[#F0EDE6] p-3 sm:rounded-[22px] sm:p-3.5 md:p-4 lg:rounded-[26px] lg:p-6">
+      <div className="relative grid grid-cols-2 gap-3 sm:gap-3.5 md:gap-4 lg:gap-5">
         {/* Top-left: IT Standards */}
-        <div className="rounded-xl bg-[#F7F5F0] p-3 shadow-sm sm:rounded-2xl sm:p-5 lg:p-7">
+        <div className="rounded-xl bg-[#F7F5F0] p-3 shadow-sm sm:rounded-2xl sm:p-4 lg:p-7">
           <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#58C3E8]/15 sm:mb-3 sm:h-10 sm:w-10 lg:mb-4 lg:h-12 lg:w-12 lg:rounded-xl">
             <svg className="h-3.5 w-3.5 text-[#58C3E8] sm:h-4 sm:w-4 lg:h-5 lg:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="3" /><path d="M9 3v18M3 9h18" /></svg>
           </div>
           <p className="text-[8px] uppercase tracking-[0.2em] text-[#58C3E8] sm:text-[9px] lg:text-[11px] lg:tracking-[0.24em]">{t.info}</p>
-          <p className="mt-0.5 text-[12px] font-medium text-[#142033] sm:mt-1 sm:text-[14px] lg:mt-1.5 lg:text-[17px]">{t.itStandards}</p>
+          <p className="mt-0.5 text-[12px] font-medium text-[#142033] sm:mt-1 sm:text-[13px] lg:mt-1.5 lg:text-[17px]">{t.itStandards}</p>
         </div>
 
         {/* Top-right: Sustainability & ESG */}
-        <div className="rounded-xl bg-[#F7F5F0] p-3 shadow-sm sm:rounded-2xl sm:p-5 lg:p-7">
+        <div className="rounded-xl bg-[#F7F5F0] p-3 shadow-sm sm:rounded-2xl sm:p-4 lg:p-7">
           <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#D89A4A]/15 sm:mb-3 sm:h-10 sm:w-10 lg:mb-4 lg:h-12 lg:w-12 lg:rounded-xl">
             <svg className="h-3.5 w-3.5 text-[#D89A4A] sm:h-4 sm:w-4 lg:h-5 lg:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9" /><path d="M12 3a9 9 0 010 18" /></svg>
           </div>
           <p className="text-[8px] uppercase tracking-[0.2em] text-[#D89A4A] sm:text-[9px] lg:text-[11px] lg:tracking-[0.24em]">{t.sustainability}</p>
-          <p className="mt-0.5 text-[12px] font-medium text-[#142033] sm:mt-1 sm:text-[14px] lg:mt-1.5 lg:text-[17px]">{t.esg}</p>
+          <p className="mt-0.5 text-[12px] font-medium text-[#142033] sm:mt-1 sm:text-[13px] lg:mt-1.5 lg:text-[17px]">{t.esg}</p>
         </div>
 
         {/* Center ACADEMIA circle */}
         <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-          <div className="flex h-[88px] w-[88px] items-center justify-center rounded-full border border-[#142033]/20 bg-[#F0EDE6] shadow-md sm:h-[116px] sm:w-[116px] lg:h-[148px] lg:w-[148px]">
-            <img src="/logo.png" alt="ACADEMIA" className="h-[46px] w-auto object-contain sm:h-[60px] lg:h-[76px]" />
+          <div className="flex h-[64px] w-[64px] items-center justify-center rounded-full border border-[#142033]/20 bg-[#F0EDE6] shadow-md sm:h-[72px] sm:w-[72px] md:h-[76px] md:w-[76px] lg:h-[110px] lg:w-[110px]">
+            <img src="/logo.png" alt="ACADEMIA" className="h-[32px] w-auto object-contain sm:h-[36px] md:h-[38px] lg:h-[56px]" />
           </div>
         </div>
 
         {/* Bottom-left: Governance */}
-        <div className="rounded-xl bg-[#F7F5F0] p-3 shadow-sm sm:rounded-2xl sm:p-5 lg:p-7">
+        <div className="rounded-xl bg-[#F7F5F0] p-3 shadow-sm sm:rounded-2xl sm:p-4 lg:p-7">
           <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#142033]/10 sm:mb-3 sm:h-10 sm:w-10 lg:mb-4 lg:h-12 lg:w-12 lg:rounded-xl">
             <svg className="h-3.5 w-3.5 text-[#142033] sm:h-4 sm:w-4 lg:h-5 lg:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path d="M9 12l2 2 4-4" /><circle cx="12" cy="12" r="9" /></svg>
           </div>
           <p className="text-[8px] uppercase tracking-[0.2em] text-[#72819A] sm:text-[9px] lg:text-[11px] lg:tracking-[0.24em]">{t.quality}</p>
-          <p className="mt-0.5 text-[12px] font-medium text-[#142033] sm:mt-1 sm:text-[14px] lg:mt-1.5 lg:text-[17px]">{t.governance}</p>
+          <p className="mt-0.5 text-[12px] font-medium text-[#142033] sm:mt-1 sm:text-[13px] lg:mt-1.5 lg:text-[17px]">{t.governance}</p>
         </div>
 
         {/* Bottom-right: Training & Development */}
-        <div className="rounded-xl bg-[#F7F5F0] p-3 shadow-sm sm:rounded-2xl sm:p-5 lg:p-7">
+        <div className="rounded-xl bg-[#F7F5F0] p-3 shadow-sm sm:rounded-2xl sm:p-4 lg:p-7">
           <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#58C3E8]/15 sm:mb-3 sm:h-10 sm:w-10 lg:mb-4 lg:h-12 lg:w-12 lg:rounded-xl">
             <svg className="h-3.5 w-3.5 text-[#58C3E8] sm:h-4 sm:w-4 lg:h-5 lg:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" /></svg>
           </div>
           <p className="text-[8px] uppercase tracking-[0.2em] text-[#D89A4A] sm:text-[9px] lg:text-[11px] lg:tracking-[0.24em]">{t.capability}</p>
-          <p className="mt-0.5 text-[12px] font-medium text-[#142033] sm:mt-1 sm:text-[14px] lg:mt-1.5 lg:text-[17px]">{t.training}</p>
+          <p className="mt-0.5 text-[12px] font-medium text-[#142033] sm:mt-1 sm:text-[13px] lg:mt-1.5 lg:text-[17px]">{t.training}</p>
         </div>
       </div>
     </div>
@@ -136,9 +133,9 @@ function HeroSection({ language }) {
       />
 
       <div className="mx-auto max-w-[1380px] px-5 pb-14 pt-10 sm:px-6 sm:pb-16 sm:pt-12 lg:px-8 lg:pb-20 lg:pt-16">
-        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+        <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-[1.1fr_0.9fr] md:gap-10 lg:gap-12">
           <div className="flex flex-col justify-center">
-            <h1 className="max-w-[620px] text-[36px] font-light leading-[1.08] tracking-[-0.03em] text-[#142033] sm:text-[46px] md:text-[56px] lg:text-[64px]">
+            <h1 className="max-w-[620px] text-[36px] font-light leading-[1.08] tracking-[-0.03em] text-[#142033] sm:text-[42px] md:text-[44px] lg:text-[64px]">
               {language === 'tr' ? (
                 <>
                   Kurumsal dönüşüm için
@@ -158,21 +155,21 @@ function HeroSection({ language }) {
               )}
             </h1>
 
-            <p className="mt-6 max-w-[520px] text-[15px] leading-[1.75] text-[#667085] sm:mt-8 sm:text-[17px] md:text-[18px] lg:text-[19px] lg:leading-[1.8]">
+            <p className="mt-6 max-w-[520px] text-[15px] leading-[1.75] text-[#667085] sm:mt-8 sm:text-[16px] md:text-[16px] lg:text-[19px] lg:leading-[1.8]">
               {language === 'tr'
                 ? 'ACADEMIA, kurumların kurumsal, düzenleyici, kalite ve sürdürülebilirlik çerçevelerini uzun vadeli yapısal netlikle tasarlamasına ve uygulamasına yardımcı olur.'
                 : 'ACADEMIA helps organizations design and implement institutional, regulatory, quality, and sustainability frameworks with long-term structural clarity.'}
             </p>
 
             {/* Stats row */}
-            <div className="mt-8 flex gap-6 sm:mt-10 sm:gap-8 lg:gap-10">
+            <div className="mt-8 flex gap-5 sm:mt-10 sm:gap-6 md:gap-5 lg:gap-10">
               {[
                 { val: '150+', label: language === 'tr' ? 'Proje' : 'Projects', border: 'border-[#D89A4A]' },
                 { val: '80+', label: language === 'tr' ? 'Kurum' : 'Organizations', border: 'border-[#58C3E8]' },
                 { val: '6', label: language === 'tr' ? 'Uzmanlık Alanı' : 'Expertise Areas', border: 'border-[#D9D6CE]' },
               ].map((s) => (
                 <div key={s.val} className={`border-l-2 ${s.border} pl-3 sm:pl-4 lg:pl-5`}>
-                  <div className="text-[26px] font-semibold leading-none text-[#142033] sm:text-[32px] lg:text-[36px]">{s.val}</div>
+                  <div className="text-[26px] font-semibold leading-none text-[#142033] sm:text-[30px] md:text-[28px] lg:text-[36px]">{s.val}</div>
                   <div className="mt-1 text-[11px] text-[#667085] sm:text-[13px] lg:text-[14px]">{s.label}</div>
                 </div>
               ))}
@@ -181,14 +178,14 @@ function HeroSection({ language }) {
             <div className="mt-8 flex flex-wrap gap-3 sm:mt-10">
               <a
                 href="#expertise"
-                className="inline-flex items-center gap-2 rounded-full bg-[#0F1A32] px-6 py-3 text-[14px] font-medium text-white transition hover:bg-[#D89A4A] sm:px-8 sm:py-4 sm:text-[16px]"
+                className="inline-flex items-center gap-2 rounded-full bg-[#0F1A32] px-6 py-3 text-[14px] font-medium text-white transition hover:bg-[#D89A4A] sm:px-7 sm:py-3.5 sm:text-[15px] lg:px-8 lg:py-4 lg:text-[16px]"
               >
                 {language === 'tr' ? 'Ekosistemi Keşfet' : 'Explore the Ecosystem'}
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
                 href="#how-it-works"
-                className="inline-flex items-center gap-2 rounded-full border border-[#142033] px-6 py-3 text-[14px] font-medium text-[#142033] transition hover:bg-[#142033] hover:text-white sm:px-8 sm:py-4 sm:text-[16px]"
+                className="inline-flex items-center gap-2 rounded-full border border-[#142033] px-6 py-3 text-[14px] font-medium text-[#142033] transition hover:bg-[#142033] hover:text-white sm:px-7 sm:py-3.5 sm:text-[15px] lg:px-8 lg:py-4 lg:text-[16px]"
               >
                 {language === 'tr' ? 'Nasıl Çalışır' : 'How It Works'}
               </a>
@@ -196,7 +193,7 @@ function HeroSection({ language }) {
           </div>
 
           {/* Diagram — visible on all sizes, smaller on mobile */}
-          <div className="mt-2 lg:mt-0 lg:pl-4">
+          <div className="mt-2 md:mt-0 md:pl-4">
             <FrameworkDiagram language={language} />
           </div>
         </div>
@@ -210,8 +207,8 @@ function WhatAcademiaIsSection({ language }) {
   return (
     <section id="what-academia-is" className="border-t border-[#D9D6CE] bg-[#F8F6F1]">
       <div className="mx-auto max-w-[1380px] px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
-        <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-[180px_1fr_360px] lg:gap-16 xl:grid-cols-[220px_1fr_420px]">
-          <div>
+        <div className="grid grid-cols-1 gap-8 sm:gap-12 md:grid-cols-[1fr_280px] md:gap-10 lg:grid-cols-[180px_1fr_360px] lg:gap-16 xl:grid-cols-[220px_1fr_420px]">
+          <div className="md:col-span-2 lg:col-span-1">
             <p className="text-[11px] uppercase tracking-[0.28em] text-[#72819A] sm:text-[12px]">
               {language === 'tr' ? 'ACADEMIA Nedir' : 'What ACADEMIA Is'}
             </p>
@@ -419,6 +416,64 @@ function LogoMarquee({ items, reverse = false }) {
   );
 }
 
+/* ─── Insights ─── */
+function InsightsSection({ language }) {
+  const insights = {
+    en: [
+      { tag: 'Governance', title: 'Why institutional governance is more than compliance', desc: 'Governance frameworks should be designed to support strategic clarity, not just regulatory obligation.' },
+      { tag: 'Sustainability', title: 'ESG as a structural framework, not a reporting exercise', desc: 'Organizations that treat ESG as architecture rather than disclosure build more resilient systems.' },
+      { tag: 'Quality Systems', title: 'From certification to capability: rethinking ISO implementation', desc: 'Standards like ISO 9001 deliver the most value when embedded into institutional learning systems.' },
+    ],
+    tr: [
+      { tag: 'Yönetişim', title: 'Kurumsal yönetişim neden uyumdan fazlasıdır', desc: 'Yönetişim çerçeveleri yalnızca düzenleyici yükümlülükleri değil, stratejik netliği destekleyecek şekilde tasarlanmalıdır.' },
+      { tag: 'Sürdürülebilirlik', title: 'ESG: bir raporlama egzersizi değil, yapısal bir çerçeve', desc: 'ESG\'yi bir raporlama aracı değil, kurumsal mimari olarak ele alan organizasyonlar daha dayanıklı sistemler kurar.' },
+      { tag: 'Kalite Sistemleri', title: 'Belgelendirmeden kapasiteye: ISO uygulamasını yeniden düşünmek', desc: 'ISO 9001 gibi standartlar, kurumsal öğrenme sistemlerine entegre edildiğinde en yüksek değeri üretir.' },
+    ],
+  };
+
+  const items = insights[language] || insights.en;
+  const colors = ['border-[#D89A4A]', 'border-[#58C3E8]', 'border-[#142033]'];
+
+  return (
+    <section id="insights" className="border-t border-[#D9D6CE] bg-[#F8F6F1]">
+      <div className="mx-auto max-w-[1380px] px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+        <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-[180px_1fr] lg:gap-16 xl:grid-cols-[220px_1fr]">
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.28em] text-[#72819A] sm:text-[12px]">
+              {language === 'tr' ? 'İçgörüler' : 'Insights'}
+            </p>
+          </div>
+
+          <div>
+            <div className="max-w-[860px]">
+              <h2 className="text-[26px] font-light leading-[1.12] tracking-[-0.03em] text-[#142033] sm:text-[30px] md:text-[34px] lg:text-[46px]">
+                {language === 'tr'
+                  ? 'Kurumsal dönüşüme dair yapısal perspektifler.'
+                  : 'Structural perspectives on institutional transformation.'}
+              </h2>
+              <p className="mt-4 max-w-[760px] text-[15px] leading-[1.8] text-[#5E7088] sm:mt-6 sm:text-[16px] md:text-[18px] md:leading-[1.9]">
+                {language === 'tr'
+                  ? 'ACADEMIA ekibinin yönetişim, sürdürülebilirlik ve kurumsal kapasite üzerine düşünceleri.'
+                  : 'Reflections from the ACADEMIA team on governance, sustainability, and institutional capacity.'}
+              </p>
+            </div>
+
+            <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-12 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
+              {items.map((item, i) => (
+                <div key={i} className={`border-l-2 ${colors[i]} bg-[#F5F3EE] rounded-r-xl p-5 sm:p-6`}>
+                  <span className="text-[11px] uppercase tracking-[0.2em] text-[#72819A] sm:text-[12px]">{item.tag}</span>
+                  <h3 className="mt-3 text-[18px] font-medium leading-[1.3] text-[#142033] sm:text-[20px]">{item.title}</h3>
+                  <p className="mt-3 text-[14px] leading-[1.75] text-[#5E7088] sm:text-[15px] sm:leading-[1.8]">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── References ─── */
 function ReferencesSection({ language }) {
   return (
@@ -475,89 +530,19 @@ function ReferencesSection({ language }) {
 
 /* ─── Page ─── */
 export default function Page() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language } = useLanguage();
   const currentLanguage = language === 'tr' ? 'tr' : 'en';
 
   return (
     <div className="min-h-screen bg-[#F5F3EE] text-[#142033]">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-[#D9D6CE] bg-[#F5F3EE]/92 backdrop-blur-md">
-        <nav className="mx-auto flex h-[56px] max-w-[1380px] items-center justify-between px-4 sm:h-[64px] sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3">
-            <button onClick={() => setMobileMenuOpen(true)} className="inline-flex p-2 lg:hidden" aria-label="Open menu">
-              <Menu className="h-5 w-5" />
-            </button>
-            <Link href="/" className="shrink-0">
-              <Logo />
-            </Link>
-          </div>
-
-          <div className="hidden items-center gap-10 lg:flex">
-            <a href="#what-academia-is" className="text-[14px] text-[#142033] transition hover:text-[#D89A4A]">
-              {currentLanguage === 'tr' ? 'ACADEMIA Nedir' : 'What ACADEMIA Is'}
-            </a>
-            <a href="#expertise" className="text-[14px] text-[#142033] transition hover:text-[#D89A4A]">
-              {currentLanguage === 'tr' ? 'Uzmanlık' : 'Expertise'}
-            </a>
-            <a href="#platforms" className="text-[14px] text-[#142033] transition hover:text-[#D89A4A]">
-              {currentLanguage === 'tr' ? 'Platformlar' : 'Platforms'}
-            </a>
-            <a href="#insights" className="text-[14px] text-[#142033] transition hover:text-[#D89A4A]">
-              {currentLanguage === 'tr' ? 'İçgörüler' : 'Insights'}
-            </a>
-            <Link href="/contact" className="text-[14px] text-[#142033] transition hover:text-[#D89A4A]">
-              {currentLanguage === 'tr' ? 'İletişim' : 'Contact'}
-            </Link>
-          </div>
-
-          <div className="hidden lg:flex">
-            <LanguageSwitcher />
-          </div>
-        </nav>
-      </header>
-
-      {/* Mobile menu */}
-      <div className={`fixed inset-0 z-[60] lg:hidden ${mobileMenuOpen ? '' : 'pointer-events-none'}`}>
-        <div
-          className={`absolute inset-0 bg-black/30 transition-opacity ${mobileMenuOpen ? 'opacity-100' : 'opacity-0'}`}
-          onClick={() => setMobileMenuOpen(false)}
-        />
-        <div className={`absolute left-0 top-0 h-full w-[280px] max-w-[85vw] bg-[#FCFBF8] shadow-2xl transition-transform ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-          <div className="flex items-center justify-between border-b border-[#D9D6CE] p-4 sm:p-5">
-            <Logo size="small" />
-            <button onClick={() => setMobileMenuOpen(false)} aria-label="Close menu">
-              <X className="h-5 w-5" />
-            </button>
-          </div>
-
-          <nav className="space-y-5 p-5 sm:p-6">
-            <a href="#what-academia-is" className="block text-[15px]" onClick={() => setMobileMenuOpen(false)}>
-              {currentLanguage === 'tr' ? 'ACADEMIA Nedir' : 'What ACADEMIA Is'}
-            </a>
-            <a href="#expertise" className="block text-[15px]" onClick={() => setMobileMenuOpen(false)}>
-              {currentLanguage === 'tr' ? 'Uzmanlık' : 'Expertise'}
-            </a>
-            <a href="#platforms" className="block text-[15px]" onClick={() => setMobileMenuOpen(false)}>
-              {currentLanguage === 'tr' ? 'Platformlar' : 'Platforms'}
-            </a>
-            <a href="#insights" className="block text-[15px]" onClick={() => setMobileMenuOpen(false)}>
-              {currentLanguage === 'tr' ? 'İçgörüler' : 'Insights'}
-            </a>
-            <Link href="/contact" className="block text-[15px]" onClick={() => setMobileMenuOpen(false)}>
-              {currentLanguage === 'tr' ? 'İletişim' : 'Contact'}
-            </Link>
-            <div className="border-t border-[#D9D6CE] pt-4">
-              <LanguageSwitcher />
-            </div>
-          </nav>
-        </div>
-      </div>
+      <Header />
 
       <main className="pt-[56px] sm:pt-[64px]">
         <HeroSection language={currentLanguage} />
         <WhatAcademiaIsSection language={currentLanguage} />
         <ExpertiseArchitectureSection language={currentLanguage} />
         <HowAcademiaWorksSection language={currentLanguage} />
+        <InsightsSection language={currentLanguage} />
         <ReferencesSection language={currentLanguage} />
       </main>
     </div>

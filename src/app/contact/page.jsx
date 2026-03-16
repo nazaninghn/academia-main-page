@@ -2,9 +2,7 @@
 
 import { useState } from 'react';
 import { MapPin, Phone, Mail, Send } from 'lucide-react';
-import { Link } from '@/components/Link';
-import { Logo } from '@/components/Logo';
-import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { Header } from '@/components/Header';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ContactPage() {
@@ -33,36 +31,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-[#F5F3EE] text-[#142033]">
-      {/* Header */}
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-[#D9D6CE] bg-[#F5F3EE]/92 backdrop-blur-md">
-        <nav className="mx-auto flex h-[56px] max-w-[1380px] items-center justify-between px-4 sm:h-[64px] sm:px-6 lg:px-8">
-          <Link href="/" className="shrink-0">
-            <Logo size="small" />
-          </Link>
-
-          <div className="hidden items-center gap-10 lg:flex">
-            <Link href="/#what-academia-is" className="text-[14px] text-[#142033] transition hover:text-[#D89A4A]">
-              {currentLanguage === 'tr' ? 'ACADEMIA Nedir' : 'What ACADEMIA Is'}
-            </Link>
-            <Link href="/#expertise" className="text-[14px] text-[#142033] transition hover:text-[#D89A4A]">
-              {currentLanguage === 'tr' ? 'Uzmanlık' : 'Expertise'}
-            </Link>
-            <Link href="/#how-it-works" className="text-[14px] text-[#142033] transition hover:text-[#D89A4A]">
-              {currentLanguage === 'tr' ? 'Nasıl Çalışır' : 'How It Works'}
-            </Link>
-            <Link href="/#references" className="text-[14px] text-[#142033] transition hover:text-[#D89A4A]">
-              {currentLanguage === 'tr' ? 'Referanslar' : 'References'}
-            </Link>
-            <Link href="/contact" className="text-[14px] font-medium text-[#D89A4A]">
-              {currentLanguage === 'tr' ? 'İletişim' : 'Contact'}
-            </Link>
-          </div>
-
-          <div className="hidden lg:flex">
-            <LanguageSwitcher />
-          </div>
-        </nav>
-      </header>
+      <Header />
 
       {/* Main Content */}
       <main className="pt-[56px] sm:pt-[64px]">
