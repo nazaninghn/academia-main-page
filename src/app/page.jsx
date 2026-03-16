@@ -133,9 +133,9 @@ function HeroSection({ language }) {
       />
 
       <div className="mx-auto max-w-[1380px] px-5 pb-14 pt-10 sm:px-6 sm:pb-16 sm:pt-12 lg:px-8 lg:pb-20 lg:pt-16">
-        <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-[1.1fr_0.9fr] md:gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
           <div className="flex flex-col justify-center">
-            <h1 className="max-w-[620px] text-[36px] font-light leading-[1.08] tracking-[-0.03em] text-[#142033] sm:text-[42px] md:text-[44px] lg:text-[64px]">
+            <h1 className="max-w-[620px] text-[36px] font-light leading-[1.08] tracking-[-0.03em] text-[#142033] sm:text-[46px] md:text-[52px] lg:text-[64px]">
               {language === 'tr' ? (
                 <>
                   Kurumsal dönüşüm için
@@ -155,21 +155,21 @@ function HeroSection({ language }) {
               )}
             </h1>
 
-            <p className="mt-6 max-w-[520px] text-[15px] leading-[1.75] text-[#667085] sm:mt-8 sm:text-[16px] md:text-[16px] lg:text-[19px] lg:leading-[1.8]">
+            <p className="mt-6 max-w-[520px] text-[15px] leading-[1.75] text-[#667085] sm:mt-8 sm:text-[17px] md:text-[18px] lg:text-[19px] lg:leading-[1.8]">
               {language === 'tr'
                 ? 'ACADEMIA, kurumların kurumsal, düzenleyici, kalite ve sürdürülebilirlik çerçevelerini uzun vadeli yapısal netlikle tasarlamasına ve uygulamasına yardımcı olur.'
                 : 'ACADEMIA helps organizations design and implement institutional, regulatory, quality, and sustainability frameworks with long-term structural clarity.'}
             </p>
 
             {/* Stats row */}
-            <div className="mt-8 flex gap-5 sm:mt-10 sm:gap-6 md:gap-5 lg:gap-10">
+            <div className="mt-8 flex gap-6 sm:mt-10 sm:gap-8 lg:gap-10">
               {[
                 { val: '150+', label: language === 'tr' ? 'Proje' : 'Projects', border: 'border-[#D89A4A]' },
                 { val: '80+', label: language === 'tr' ? 'Kurum' : 'Organizations', border: 'border-[#58C3E8]' },
                 { val: '6', label: language === 'tr' ? 'Uzmanlık Alanı' : 'Expertise Areas', border: 'border-[#D9D6CE]' },
               ].map((s) => (
                 <div key={s.val} className={`border-l-2 ${s.border} pl-3 sm:pl-4 lg:pl-5`}>
-                  <div className="text-[26px] font-semibold leading-none text-[#142033] sm:text-[30px] md:text-[28px] lg:text-[36px]">{s.val}</div>
+                  <div className="text-[26px] font-semibold leading-none text-[#142033] sm:text-[32px] lg:text-[36px]">{s.val}</div>
                   <div className="mt-1 text-[11px] text-[#667085] sm:text-[13px] lg:text-[14px]">{s.label}</div>
                 </div>
               ))}
@@ -178,14 +178,14 @@ function HeroSection({ language }) {
             <div className="mt-8 flex flex-wrap gap-3 sm:mt-10">
               <a
                 href="#expertise"
-                className="inline-flex items-center gap-2 rounded-full bg-[#0F1A32] px-6 py-3 text-[14px] font-medium text-white transition hover:bg-[#D89A4A] sm:px-7 sm:py-3.5 sm:text-[15px] lg:px-8 lg:py-4 lg:text-[16px]"
+                className="inline-flex items-center gap-2 rounded-full bg-[#0F1A32] px-6 py-3 text-[14px] font-medium text-white transition hover:bg-[#D89A4A] sm:px-8 sm:py-4 sm:text-[16px]"
               >
                 {language === 'tr' ? 'Ekosistemi Keşfet' : 'Explore the Ecosystem'}
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
                 href="#how-it-works"
-                className="inline-flex items-center gap-2 rounded-full border border-[#142033] px-6 py-3 text-[14px] font-medium text-[#142033] transition hover:bg-[#142033] hover:text-white sm:px-7 sm:py-3.5 sm:text-[15px] lg:px-8 lg:py-4 lg:text-[16px]"
+                className="inline-flex items-center gap-2 rounded-full border border-[#142033] px-6 py-3 text-[14px] font-medium text-[#142033] transition hover:bg-[#142033] hover:text-white sm:px-8 sm:py-4 sm:text-[16px]"
               >
                 {language === 'tr' ? 'Nasıl Çalışır' : 'How It Works'}
               </a>
@@ -193,7 +193,7 @@ function HeroSection({ language }) {
           </div>
 
           {/* Diagram — visible on all sizes, smaller on mobile */}
-          <div className="mt-2 md:mt-0 md:pl-4">
+          <div className="mt-2 lg:mt-0 lg:pl-4">
             <FrameworkDiagram language={language} />
           </div>
         </div>
@@ -207,8 +207,8 @@ function WhatAcademiaIsSection({ language }) {
   return (
     <section id="what-academia-is" className="border-t border-[#D9D6CE] bg-[#F8F6F1]">
       <div className="mx-auto max-w-[1380px] px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
-        <div className="grid grid-cols-1 gap-8 sm:gap-12 md:grid-cols-[1fr_280px] md:gap-10 lg:grid-cols-[180px_1fr_360px] lg:gap-16 xl:grid-cols-[220px_1fr_420px]">
-          <div className="md:col-span-2 lg:col-span-1">
+        <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-[180px_1fr_360px] lg:gap-16 xl:grid-cols-[220px_1fr_420px]">
+          <div>
             <p className="text-[11px] uppercase tracking-[0.28em] text-[#72819A] sm:text-[12px]">
               {language === 'tr' ? 'ACADEMIA Nedir' : 'What ACADEMIA Is'}
             </p>
@@ -472,7 +472,7 @@ function EcosystemSection({ language }) {
               </p>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-12 sm:grid-cols-2 sm:gap-8 md:grid-cols-3">
+            <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-12 sm:gap-8 md:grid-cols-3">
               {ventures.map((v) => (
                 <a
                   key={v.name}
@@ -542,7 +542,7 @@ function InsightsSection({ language }) {
               </p>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-12 sm:grid-cols-2 sm:gap-8 md:grid-cols-3">
+            <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-12 sm:gap-8 md:grid-cols-3">
               {items.map((item, i) => (
                 <div key={i} className={`border-l-2 ${colors[i]} bg-[#F5F3EE] rounded-r-xl p-5 sm:p-6`}>
                   <span className="text-[11px] uppercase tracking-[0.2em] text-[#72819A] sm:text-[12px]">{item.tag}</span>

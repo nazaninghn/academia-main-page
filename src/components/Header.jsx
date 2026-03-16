@@ -26,19 +26,19 @@ export function Header() {
           </div>
 
           <div className="hidden items-center gap-4 md:flex lg:gap-8">
-            <a href="/#what-academia-is" className="whitespace-nowrap text-[12px] text-[#142033] transition hover:text-[#D89A4A] lg:text-[14px]">
+            <a href="/#what-academia-is" className="whitespace-nowrap text-[13px] font-medium text-[#142033] transition hover:text-[#D89A4A] lg:text-[15px]">
               {currentLanguage === 'tr' ? 'ACADEMIA Nedir' : 'What ACADEMIA Is'}
             </a>
-            <a href="/#expertise" className="whitespace-nowrap text-[12px] text-[#142033] transition hover:text-[#D89A4A] lg:text-[14px]">
+            <a href="/#expertise" className="whitespace-nowrap text-[13px] font-medium text-[#142033] transition hover:text-[#D89A4A] lg:text-[15px]">
               {currentLanguage === 'tr' ? 'Uzmanlık' : 'Expertise'}
             </a>
-            <a href="/#ecosystem" className="whitespace-nowrap text-[12px] text-[#142033] transition hover:text-[#D89A4A] lg:text-[14px]">
+            <a href="/#ecosystem" className="whitespace-nowrap text-[13px] font-medium text-[#142033] transition hover:text-[#D89A4A] lg:text-[15px]">
               {currentLanguage === 'tr' ? 'ACADEMIA Grup' : 'ACADEMIA Group'}
             </a>
-            <a href="/#insights" className="whitespace-nowrap text-[12px] text-[#142033] transition hover:text-[#D89A4A] lg:text-[14px]">
+            <a href="/#insights" className="whitespace-nowrap text-[13px] font-medium text-[#142033] transition hover:text-[#D89A4A] lg:text-[15px]">
               {currentLanguage === 'tr' ? 'İçgörüler' : 'Insights'}
             </a>
-            <Link href="/contact" className="whitespace-nowrap text-[12px] text-[#142033] transition hover:text-[#D89A4A] lg:text-[14px]">
+            <Link href="/contact" className="whitespace-nowrap text-[13px] font-medium text-[#142033] transition hover:text-[#D89A4A] lg:text-[15px]">
               {currentLanguage === 'tr' ? 'İletişim' : 'Contact'}
             </Link>
           </div>
