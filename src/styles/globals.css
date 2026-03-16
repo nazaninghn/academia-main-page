@@ -1,55 +1,72 @@
 @config "../../tailwind.config.js";
 @import "tailwindcss";
 
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: #f5f3ee;
+  color: #142033;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
 @layer base {
-  [x-cloak] { display: none !important; }
-  
+  [x-cloak] {
+    display: none !important;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 }
 
-@layer utilities {
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
+.marquee-track:hover {
+  animation-play-state: paused;
 }
 
 @keyframes marquee {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
 @keyframes marquee-reverse {
   0% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
   100% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 .animate-marquee {
   animation: marquee 32s linear infinite;
+  will-change: transform;
 }
 
 .animate-marquee-reverse {
   animation: marquee-reverse 32s linear infinite;
-}
-
-.marquee-track:hover {
-  animation-play-state: paused;
+  will-change: transform;
 }
