@@ -133,7 +133,7 @@ function HeroSection({ language }) {
       />
 
       <div className="mx-auto max-w-[1380px] px-5 pb-14 pt-10 sm:px-6 sm:pb-16 sm:pt-12 lg:px-8 lg:pb-20 lg:pt-16">
-        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+        <div className="grid grid-cols-1 items-center gap-8 xl:grid-cols-[1.1fr_0.9fr] xl:gap-12">
           <div className="flex flex-col justify-center">
             <h1 className="max-w-[620px] text-[36px] font-light leading-[1.08] tracking-[-0.03em] text-[#142033] sm:text-[46px] md:text-[52px] lg:text-[64px]">
               {language === 'tr' ? (
@@ -193,7 +193,7 @@ function HeroSection({ language }) {
           </div>
 
           {/* Diagram — visible on all sizes, smaller on mobile */}
-          <div className="mt-2 lg:mt-0 lg:pl-4">
+          <div className="mt-2 xl:mt-0 xl:pl-4">
             <FrameworkDiagram language={language} />
           </div>
         </div>
@@ -207,7 +207,7 @@ function WhatAcademiaIsSection({ language }) {
   return (
     <section id="what-academia-is" className="border-t border-[#D9D6CE] bg-[#F8F6F1]">
       <div className="mx-auto max-w-[1380px] px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
-        <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-[180px_1fr_360px] lg:gap-16 xl:grid-cols-[220px_1fr_420px]">
+        <div className="grid grid-cols-1 gap-8 sm:gap-12 xl:grid-cols-[220px_1fr_420px] xl:gap-16">
           <div>
             <p className="text-[11px] uppercase tracking-[0.28em] text-[#72819A] sm:text-[12px]">
               {language === 'tr' ? 'ACADEMIA Nedir' : 'What ACADEMIA Is'}
@@ -254,7 +254,7 @@ function ExpertiseArchitectureSection({ language }) {
   return (
     <section id="expertise" className="border-t border-[#D9D6CE] bg-[#F8F6F1]">
       <div className="mx-auto max-w-[1380px] px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
-        <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-[180px_1fr] lg:gap-16 xl:grid-cols-[220px_1fr]">
+        <div className="grid grid-cols-1 gap-8 sm:gap-12 xl:grid-cols-[220px_1fr] xl:gap-16">
           <div>
             <p className="text-[11px] uppercase tracking-[0.28em] text-[#72819A] sm:text-[12px]">
               {language === 'tr' ? 'Uzmanlık Mimarisi' : 'Expertise Architecture'}
@@ -312,7 +312,7 @@ function HowAcademiaWorksSection({ language }) {
   return (
     <section id="how-it-works" className="border-t border-[#D9D6CE] bg-[#F5F3EE]">
       <div className="mx-auto max-w-[1380px] px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
-        <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-[180px_1fr] lg:gap-16 xl:grid-cols-[220px_1fr]">
+        <div className="grid grid-cols-1 gap-8 sm:gap-12 xl:grid-cols-[220px_1fr] xl:gap-16">
           <div>
             <p className="text-[11px] uppercase tracking-[0.28em] text-[#72819A] sm:text-[12px]">
               {language === 'tr' ? 'ACADEMIA Nasıl Çalışır' : 'How ACADEMIA Works'}
@@ -451,7 +451,7 @@ function EcosystemSection({ language }) {
   return (
     <section id="ecosystem" className="border-t border-[#D9D6CE] bg-[#F5F3EE]">
       <div className="mx-auto max-w-[1380px] px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
-        <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-[180px_1fr] lg:gap-16 xl:grid-cols-[220px_1fr]">
+        <div className="grid grid-cols-1 gap-8 sm:gap-12 xl:grid-cols-[220px_1fr] xl:gap-16">
           <div>
             <p className="text-[11px] uppercase tracking-[0.28em] text-[#72819A] sm:text-[12px]">
               {language === 'tr' ? 'ACADEMIA Grup' : 'ACADEMIA Group'}
@@ -521,7 +521,7 @@ function InsightsSection({ language }) {
   return (
     <section id="insights" className="border-t border-[#D9D6CE] bg-[#F8F6F1]">
       <div className="mx-auto max-w-[1380px] px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
-        <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-[180px_1fr] lg:gap-16 xl:grid-cols-[220px_1fr]">
+        <div className="grid grid-cols-1 gap-8 sm:gap-12 xl:grid-cols-[220px_1fr] xl:gap-16">
           <div>
             <p className="text-[11px] uppercase tracking-[0.28em] text-[#72819A] sm:text-[12px]">
               {language === 'tr' ? 'İçgörüler' : 'Insights'}
@@ -563,7 +563,7 @@ function ReferencesSection({ language }) {
   return (
     <section className="border-t border-[#D9D6CE] bg-[#F5F3EE]">
       <div className="mx-auto max-w-[1380px] px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
-        <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-[180px_1fr] lg:gap-16 xl:grid-cols-[220px_1fr]">
+        <div className="grid grid-cols-1 gap-8 sm:gap-12 xl:grid-cols-[220px_1fr] xl:gap-16">
           <div>
             <p className="text-[11px] uppercase tracking-[0.28em] text-[#72819A] sm:text-[12px]">
               {language === 'tr' ? 'Referanslar' : 'Selected References'}
