@@ -113,11 +113,11 @@ canvas {
   background: linear-gradient(
     120deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.18) 30%,
-    transparent 60%
+    rgba(255, 255, 255, 0.14) 35%,
+    transparent 70%
   );
   transform: translateX(-120%);
-  animation: shineMove 3.8s ease-in-out infinite;
+  animation: shineMove 4s ease-in-out infinite;
 }
 
 @keyframes shineMove {

@@ -53,29 +53,98 @@ const processItems = {
   ],
 };
 
+/* ─── Abstract Patterns ─── */
+function AbstractPattern({ variant }) {
+  if (variant === 'it') {
+    return (
+      <svg viewBox="0 0 400 240" className="absolute inset-0 h-full w-full" fill="none">
+        <defs>
+          <linearGradient id="itGlow" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#58C3E8" stopOpacity="0.14" />
+            <stop offset="100%" stopColor="#58C3E8" stopOpacity="0.03" />
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="400" height="240" fill="url(#itGlow)" />
+        <path d="M30 180 H180 V90 H330" stroke="#58C3E8" strokeOpacity="0.18" strokeWidth="1.5" />
+        <path d="M30 150 H130 V60 H260 V110 H360" stroke="#58C3E8" strokeOpacity="0.12" strokeWidth="1.5" />
+        <circle cx="180" cy="180" r="4" fill="#58C3E8" fillOpacity="0.35" />
+        <circle cx="180" cy="90" r="4" fill="#58C3E8" fillOpacity="0.35" />
+        <circle cx="260" cy="60" r="4" fill="#58C3E8" fillOpacity="0.22" />
+        <circle cx="260" cy="110" r="4" fill="#58C3E8" fillOpacity="0.22" />
+      </svg>
+    );
+  }
+  if (variant === 'esg') {
+    return (
+      <svg viewBox="0 0 400 240" className="absolute inset-0 h-full w-full" fill="none">
+        <defs>
+          <linearGradient id="esgGlow" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#D89A4A" stopOpacity="0.14" />
+            <stop offset="100%" stopColor="#D89A4A" stopOpacity="0.03" />
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="400" height="240" fill="url(#esgGlow)" />
+        <path d="M40 170 C90 120, 150 120, 190 170 C235 220, 305 220, 360 160" stroke="#D89A4A" strokeOpacity="0.18" strokeWidth="2" strokeLinecap="round" />
+        <path d="M60 90 C120 50, 180 55, 225 100 C270 145, 320 145, 360 120" stroke="#D89A4A" strokeOpacity="0.12" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    );
+  }
+  if (variant === 'governance') {
+    return (
+      <svg viewBox="0 0 400 240" className="absolute inset-0 h-full w-full" fill="none">
+        <defs>
+          <linearGradient id="govGlow" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#142033" stopOpacity="0.10" />
+            <stop offset="100%" stopColor="#142033" stopOpacity="0.02" />
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="400" height="240" fill="url(#govGlow)" />
+        <rect x="55" y="70" width="42" height="120" stroke="#142033" strokeOpacity="0.14" />
+        <rect x="125" y="40" width="54" height="150" stroke="#142033" strokeOpacity="0.16" />
+        <rect x="210" y="85" width="34" height="105" stroke="#142033" strokeOpacity="0.12" />
+        <rect x="270" y="55" width="62" height="135" stroke="#142033" strokeOpacity="0.14" />
+      </svg>
+    );
+  }
+  return (
+    <svg viewBox="0 0 400 240" className="absolute inset-0 h-full w-full" fill="none">
+      <defs>
+        <linearGradient id="capGlow" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#58C3E8" stopOpacity="0.10" />
+          <stop offset="100%" stopColor="#58C3E8" stopOpacity="0.02" />
+        </linearGradient>
+      </defs>
+      <rect x="0" y="0" width="400" height="240" fill="url(#capGlow)" />
+      <circle cx="90" cy="100" r="6" fill="#58C3E8" fillOpacity="0.24" />
+      <circle cx="165" cy="140" r="6" fill="#58C3E8" fillOpacity="0.18" />
+      <circle cx="245" cy="90" r="6" fill="#58C3E8" fillOpacity="0.24" />
+      <circle cx="315" cy="140" r="6" fill="#58C3E8" fillOpacity="0.18" />
+      <path d="M96 100 L159 140 L239 90 L309 140" stroke="#58C3E8" strokeOpacity="0.18" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
 /* ─── Ecosystem Hero Panel ─── */
 function EcosystemHeroPanel({ language }) {
   const items = language === 'tr'
     ? [
-        { title: 'BT Standartları', eyebrow: 'INFORMATION', image: '/images/it-standards.jpg', icon: Server, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '01' },
-        { title: 'Sürdürülebilirlik & ESG', eyebrow: 'SUSTAINABILITY', image: '/images/sustainability.jpg', icon: Leaf, accent: 'bg-[#D89A4A]', accentText: 'text-[#D89A4A]', number: '02' },
-        { title: 'Kalite & Yönetişim', eyebrow: 'QUALITY', image: '/images/quality.jpg', icon: ShieldCheck, accent: 'bg-[#142033]', accentText: 'text-[#142033]', number: '03' },
-        { title: 'Eğitim & Gelişim', eyebrow: 'CAPABILITY', image: '/images/training.jpg', icon: GraduationCap, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '04' },
+        { title: 'BT Standartları', eyebrow: 'INFORMATION', icon: Server, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '01', variant: 'it' },
+        { title: 'Sürdürülebilirlik & ESG', eyebrow: 'SUSTAINABILITY', icon: Leaf, accent: 'bg-[#D89A4A]', accentText: 'text-[#D89A4A]', number: '02', variant: 'esg' },
+        { title: 'Kalite & Yönetişim', eyebrow: 'QUALITY', icon: ShieldCheck, accent: 'bg-[#142033]', accentText: 'text-[#142033]', number: '03', variant: 'governance' },
+        { title: 'Eğitim & Gelişim', eyebrow: 'CAPABILITY', icon: GraduationCap, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '04', variant: 'capability' },
       ]
     : [
-        { title: 'IT Standards', eyebrow: 'INFORMATION', image: '/images/it-standards.jpg', icon: Server, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '01' },
-        { title: 'Sustainability & ESG', eyebrow: 'SUSTAINABILITY', image: '/images/sustainability.jpg', icon: Leaf, accent: 'bg-[#D89A4A]', accentText: 'text-[#D89A4A]', number: '02' },
-        { title: 'Quality & Governance', eyebrow: 'QUALITY', image: '/images/quality.jpg', icon: ShieldCheck, accent: 'bg-[#142033]', accentText: 'text-[#142033]', number: '03' },
-        { title: 'Training & Development', eyebrow: 'CAPABILITY', image: '/images/training.jpg', icon: GraduationCap, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '04' },
+        { title: 'IT Standards', eyebrow: 'INFORMATION', icon: Server, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '01', variant: 'it' },
+        { title: 'Sustainability & ESG', eyebrow: 'SUSTAINABILITY', icon: Leaf, accent: 'bg-[#D89A4A]', accentText: 'text-[#D89A4A]', number: '02', variant: 'esg' },
+        { title: 'Quality & Governance', eyebrow: 'QUALITY', icon: ShieldCheck, accent: 'bg-[#142033]', accentText: 'text-[#142033]', number: '03', variant: 'governance' },
+        { title: 'Training & Development', eyebrow: 'CAPABILITY', icon: GraduationCap, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '04', variant: 'capability' },
       ];
 
   return (
     <div className="relative rounded-[28px] border border-[#D9D6CE] bg-[#FBF9F4] p-5 shadow-[0_12px_40px_rgba(20,32,51,0.035)] sm:p-6 lg:p-7">
-      {/* subtle background glow */}
-      <div className="pointer-events-none absolute left-10 top-10 h-24 w-24 rounded-full bg-[#58C3E8]/[0.05] blur-3xl" />
-      <div className="pointer-events-none absolute bottom-10 right-12 h-24 w-24 rounded-full bg-[#D89A4A]/[0.05] blur-3xl" />
+      <div className="pointer-events-none absolute left-10 top-10 h-24 w-24 rounded-full bg-[#58C3E8]/[0.035] blur-3xl" />
+      <div className="pointer-events-none absolute bottom-10 right-12 h-24 w-24 rounded-full bg-[#D89A4A]/[0.035] blur-3xl" />
 
-      {/* badge */}
       <div className="mb-6 flex justify-center">
         <div className="inline-flex items-center gap-3 rounded-full border border-[#D9D6CE] bg-white px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-[#72819A] shadow-[0_8px_24px_rgba(20,32,51,0.05)]">
           <span className="h-2.5 w-2.5 rounded-full bg-[#D89A4A]" />
@@ -83,54 +152,38 @@ function EcosystemHeroPanel({ language }) {
         </div>
       </div>
 
-      {/* cards */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {items.map((item) => {
           const Icon = item.icon;
           return (
             <div
               key={item.title}
-              className="group relative h-[185px] overflow-hidden rounded-[24px] border border-[#E2DDD3] bg-white transition duration-500 hover:-translate-y-[2px] hover:border-[#CDBFA8] hover:shadow-[0_18px_36px_rgba(20,32,51,0.08)] sm:h-[200px]"
+              className="group relative h-[190px] overflow-hidden rounded-[24px] border border-[#E2DDD3] bg-white transition duration-500 hover:-translate-y-[2px] hover:border-[#CDBFA8] hover:shadow-[0_18px_36px_rgba(20,32,51,0.08)] sm:h-[210px]"
             >
-              {/* image */}
-              <img
-                src={item.image}
-                alt={item.title}
-                className="absolute inset-0 h-full w-full object-cover grayscale transition duration-700 group-hover:scale-[1.05] group-hover:grayscale-0"
-              />
+              <AbstractPattern variant={item.variant} />
 
-              {/* layered overlays */}
-              <div className="absolute inset-0 bg-[#F8F6F1]/[0.72] backdrop-blur-[1.5px] transition duration-500 group-hover:bg-[#F8F6F1]/[0.58]" />
-              <div className="absolute inset-0 bg-white/[0.22]" />
+              <div className="absolute inset-0 bg-[#F8F6F1]/[0.78] backdrop-blur-[0.5px] transition duration-500 group-hover:bg-[#F8F6F1]/[0.62]" />
+              <div className="absolute inset-0 bg-gradient-to-b from-white/[0.18] via-transparent to-white/[0.12]" />
 
-              {/* accent glow */}
-              <div className="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full bg-white/20 blur-2xl" />
+              <div className="absolute right-5 top-5 z-10 flex items-center gap-2">
+                <span className={`h-2.5 w-2.5 rounded-full ${item.accent}`} />
+                <span className="text-[11px] uppercase tracking-[0.18em] text-[#C18A4A]">{item.number}</span>
+              </div>
 
-              {/* content */}
               <div className="relative z-10 flex h-full flex-col justify-between p-5 sm:p-6">
-                {/* top row */}
-                <div className="flex items-start justify-between gap-3">
-                  <p className="text-[10px] uppercase tracking-[0.28em] text-[#8A97AB]">{item.eyebrow}</p>
-                  <div className="flex items-center gap-2">
-                    <span className={`h-2.5 w-2.5 rounded-full ${item.accent}`} />
-                    <span className="text-[11px] uppercase tracking-[0.18em] text-[#C18A4A]">{item.number}</span>
-                  </div>
-                </div>
+                <p className="text-[10px] uppercase tracking-[0.28em] text-[#8A97AB]">{item.eyebrow}</p>
 
-                {/* center icon */}
                 <div className="flex items-center">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/50 bg-white/55 shadow-[0_6px_18px_rgba(20,32,51,0.05)] backdrop-blur-sm transition duration-500 group-hover:scale-[1.04]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/60 bg-white/60 shadow-[0_6px_18px_rgba(20,32,51,0.05)] backdrop-blur-sm transition duration-500 group-hover:scale-[1.04]">
                     <Icon className={`h-5 w-5 ${item.accentText}`} strokeWidth={1.8} />
                   </div>
                 </div>
 
-                {/* title */}
-                <h3 className="max-w-[260px] text-[22px] font-medium leading-[1.14] tracking-[-0.02em] text-[#142033] sm:text-[24px]">
+                <h3 className="max-w-[260px] text-[22px] font-medium leading-[1.15] tracking-[-0.02em] text-[#142033] sm:text-[24px]">
                   {item.title}
                 </h3>
               </div>
 
-              {/* animated border shine */}
               <div className="card-shine pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100" />
             </div>
           );
