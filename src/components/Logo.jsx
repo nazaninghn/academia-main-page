@@ -3,8 +3,8 @@ import Image from 'next/image';
 export function Logo({ size = 'default' }) {
   const sizes = {
     small: { width: 84, height: 28, wrap: 'h-7' },
-    default: { width: 180, height: 54, wrap: 'h-9 sm:h-10 lg:h-[48px]' },
-    large: { width: 200, height: 60, wrap: 'h-14' },
+    default: { width: 240, height: 72, wrap: 'h-12 sm:h-14 lg:h-[68px]' },
+    large: { width: 260, height: 78, wrap: 'h-18' },
   };
 
   const s = sizes[size] || sizes.default;
