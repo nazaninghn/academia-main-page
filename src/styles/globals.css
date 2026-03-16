@@ -70,3 +70,64 @@ canvas {
   animation: marquee-reverse 32s linear infinite;
   will-change: transform;
 }
+
+/* ─── Framework Card Animations ─── */
+@keyframes networkFlow {
+  0% { transform: translateX(-3px); }
+  100% { transform: translateX(3px); }
+}
+
+@keyframes floatLeaf {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
+}
+
+@keyframes buildingGlow {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+@keyframes pulseSoft {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+.animate-network {
+  animation: networkFlow 4s ease-in-out infinite alternate;
+}
+
+.animate-float {
+  animation: floatLeaf 5s ease-in-out infinite alternate;
+}
+
+.animate-glow {
+  animation: buildingGlow 3s ease-in-out infinite alternate;
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 4s ease-in-out infinite alternate;
+}
+
+/* ─── Card Shine Effect ─── */
+.card-shine {
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.18) 30%,
+    transparent 60%
+  );
+  transform: translateX(-120%);
+  animation: shineMove 3.8s ease-in-out infinite;
+}
+
+@keyframes shineMove {
+  0% {
+    transform: translateX(-120%);
+  }
+  55% {
+    transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}

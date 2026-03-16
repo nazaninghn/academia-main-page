@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Server, Leaf, ShieldCheck, GraduationCap } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -53,40 +53,88 @@ const processItems = {
   ],
 };
 
-/* ─── Framework Diagram ─── */
-function FrameworkDiagram({ language }) {
-  const labels = {
-    en: { info: 'Information', itStandards: 'IT Standards', sustainability: 'Sustainability', esg: '& ESG', quality: 'Quality', governance: 'Governance', capability: 'Capability', training: 'Training & Dev' },
-    tr: { info: 'Bilgi Teknolojileri', itStandards: 'BT Standartları', sustainability: 'Sürdürülebilirlik', esg: '& ESG', quality: 'Kalite', governance: 'Yönetişim', capability: 'Kapasite', training: 'Eğitim & Gelişim' },
-  };
-  const t = labels[language] || labels.en;
+/* ─── Ecosystem Hero Panel ─── */
+function EcosystemHeroPanel({ language }) {
+  const items = language === 'tr'
+    ? [
+        { title: 'BT Standartları', eyebrow: 'INFORMATION', image: '/images/it-standards.jpg', icon: Server, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '01' },
+        { title: 'Sürdürülebilirlik & ESG', eyebrow: 'SUSTAINABILITY', image: '/images/sustainability.jpg', icon: Leaf, accent: 'bg-[#D89A4A]', accentText: 'text-[#D89A4A]', number: '02' },
+        { title: 'Kalite & Yönetişim', eyebrow: 'QUALITY', image: '/images/quality.jpg', icon: ShieldCheck, accent: 'bg-[#142033]', accentText: 'text-[#142033]', number: '03' },
+        { title: 'Eğitim & Gelişim', eyebrow: 'CAPABILITY', image: '/images/training.jpg', icon: GraduationCap, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '04' },
+      ]
+    : [
+        { title: 'IT Standards', eyebrow: 'INFORMATION', image: '/images/it-standards.jpg', icon: Server, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '01' },
+        { title: 'Sustainability & ESG', eyebrow: 'SUSTAINABILITY', image: '/images/sustainability.jpg', icon: Leaf, accent: 'bg-[#D89A4A]', accentText: 'text-[#D89A4A]', number: '02' },
+        { title: 'Quality & Governance', eyebrow: 'QUALITY', image: '/images/quality.jpg', icon: ShieldCheck, accent: 'bg-[#142033]', accentText: 'text-[#142033]', number: '03' },
+        { title: 'Training & Development', eyebrow: 'CAPABILITY', image: '/images/training.jpg', icon: GraduationCap, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '04' },
+      ];
 
   return (
-    <div className="relative mx-auto w-full max-w-[520px] rounded-[24px] border border-[#D9D6CE] bg-[#F8F6F1] p-4 shadow-[0_8px_30px_rgba(20,32,51,0.04)] sm:p-5">
-      <div className="relative grid grid-cols-2 gap-3">
-        <div className="rounded-2xl border border-[#E7E2D8] bg-white p-4 text-center">
-          <p className="text-[9px] uppercase tracking-[0.24em] text-[#8A97AB]">{t.info}</p>
-          <p className="mt-2 text-[14px] font-medium text-[#142033]">{t.itStandards}</p>
-        </div>
-        <div className="rounded-2xl border border-[#E7E2D8] bg-white p-4 text-center">
-          <p className="text-[9px] uppercase tracking-[0.24em] text-[#C7934B]">{t.sustainability}</p>
-          <p className="mt-2 text-[14px] font-medium text-[#142033]">{t.esg}</p>
-        </div>
-        <div className="rounded-2xl border border-[#E7E2D8] bg-white p-4 text-center">
-          <p className="text-[9px] uppercase tracking-[0.24em] text-[#8A97AB]">{t.quality}</p>
-          <p className="mt-2 text-[14px] font-medium text-[#142033]">{t.governance}</p>
-        </div>
-        <div className="rounded-2xl border border-[#E7E2D8] bg-white p-4 text-center">
-          <p className="text-[9px] uppercase tracking-[0.24em] text-[#8A97AB]">{t.capability}</p>
-          <p className="mt-2 text-[14px] font-medium text-[#142033]">{t.training}</p>
-        </div>
+    <div className="relative rounded-[28px] border border-[#D9D6CE] bg-[#FBF9F4] p-5 shadow-[0_12px_40px_rgba(20,32,51,0.035)] sm:p-6 lg:p-7">
+      {/* subtle background glow */}
+      <div className="pointer-events-none absolute left-10 top-10 h-24 w-24 rounded-full bg-[#58C3E8]/[0.05] blur-3xl" />
+      <div className="pointer-events-none absolute bottom-10 right-12 h-24 w-24 rounded-full bg-[#D89A4A]/[0.05] blur-3xl" />
 
-        {/* Center logo */}
-        <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-          <div className="flex h-[72px] w-[72px] items-center justify-center rounded-full border border-[#142033]/20 bg-[#F8F6F1] shadow-md sm:h-[80px] sm:w-[80px]">
-            <img src="/logo.png" alt="ACADEMIA" className="h-[36px] w-auto object-contain sm:h-[40px]" />
-          </div>
+      {/* badge */}
+      <div className="mb-6 flex justify-center">
+        <div className="inline-flex items-center gap-3 rounded-full border border-[#D9D6CE] bg-white px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-[#72819A] shadow-[0_8px_24px_rgba(20,32,51,0.05)]">
+          <span className="h-2.5 w-2.5 rounded-full bg-[#D89A4A]" />
+          {language === 'tr' ? 'Ekosistem' : 'Ecosystem'}
         </div>
+      </div>
+
+      {/* cards */}
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {items.map((item) => {
+          const Icon = item.icon;
+          return (
+            <div
+              key={item.title}
+              className="group relative h-[185px] overflow-hidden rounded-[24px] border border-[#E2DDD3] bg-white transition duration-500 hover:-translate-y-[2px] hover:border-[#CDBFA8] hover:shadow-[0_18px_36px_rgba(20,32,51,0.08)] sm:h-[200px]"
+            >
+              {/* image */}
+              <img
+                src={item.image}
+                alt={item.title}
+                className="absolute inset-0 h-full w-full object-cover grayscale transition duration-700 group-hover:scale-[1.05] group-hover:grayscale-0"
+              />
+
+              {/* layered overlays */}
+              <div className="absolute inset-0 bg-[#F8F6F1]/[0.72] backdrop-blur-[1.5px] transition duration-500 group-hover:bg-[#F8F6F1]/[0.58]" />
+              <div className="absolute inset-0 bg-white/[0.22]" />
+
+              {/* accent glow */}
+              <div className="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full bg-white/20 blur-2xl" />
+
+              {/* content */}
+              <div className="relative z-10 flex h-full flex-col justify-between p-5 sm:p-6">
+                {/* top row */}
+                <div className="flex items-start justify-between gap-3">
+                  <p className="text-[10px] uppercase tracking-[0.28em] text-[#8A97AB]">{item.eyebrow}</p>
+                  <div className="flex items-center gap-2">
+                    <span className={`h-2.5 w-2.5 rounded-full ${item.accent}`} />
+                    <span className="text-[11px] uppercase tracking-[0.18em] text-[#C18A4A]">{item.number}</span>
+                  </div>
+                </div>
+
+                {/* center icon */}
+                <div className="flex items-center">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/50 bg-white/55 shadow-[0_6px_18px_rgba(20,32,51,0.05)] backdrop-blur-sm transition duration-500 group-hover:scale-[1.04]">
+                    <Icon className={`h-5 w-5 ${item.accentText}`} strokeWidth={1.8} />
+                  </div>
+                </div>
+
+                {/* title */}
+                <h3 className="max-w-[260px] text-[22px] font-medium leading-[1.14] tracking-[-0.02em] text-[#142033] sm:text-[24px]">
+                  {item.title}
+                </h3>
+              </div>
+
+              {/* animated border shine */}
+              <div className="card-shine pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100" />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -145,7 +193,7 @@ function HeroSection({ language }) {
           </div>
 
           <div className="xl:pl-2">
-            <FrameworkDiagram language={language} />
+            <EcosystemHeroPanel language={language} />
           </div>
         </div>
       </div>
@@ -180,7 +228,7 @@ function WhatAcademiaIsSection({ language }) {
             </p>
           </div>
           <div className="relative overflow-hidden rounded-[22px] border border-[#D9D6CE] xl:mt-0">
-            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80" alt="Strategic planning and systems" className="h-full w-full object-cover" />
+            <img src="/images/strategic-planning.jpg" alt="Strategic planning and systems" className="h-full w-full object-cover" />
           </div>
         </div>
       </div>
