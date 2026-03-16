@@ -34,7 +34,7 @@ export default function ContactPage() {
       <Header />
 
       {/* Main Content */}
-      <main className="pt-[56px] sm:pt-[64px]">
+      <main className="pt-[60px] sm:pt-[68px] lg:pt-[78px]">
         <section className="bg-[#F5F3EE] py-14 sm:py-16 lg:py-24">
           <div className="mx-auto max-w-[1380px] px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-[180px_1fr] lg:gap-16 xl:grid-cols-[220px_1fr]">

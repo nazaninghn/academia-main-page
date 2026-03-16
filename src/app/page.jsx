@@ -207,7 +207,7 @@ function WhatAcademiaIsSection({ language }) {
   return (
     <section id="what-academia-is" className="border-t border-[#D9D6CE] bg-[#F8F6F1]">
       <div className="mx-auto max-w-[1380px] px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
-        <div className="grid grid-cols-1 gap-8 sm:gap-12 xl:grid-cols-[220px_1fr_420px] xl:gap-16">
+        <div className="grid grid-cols-1 gap-10 xl:grid-cols-[180px_1fr_360px] xl:gap-14">
           <div>
             <p className="text-[11px] uppercase tracking-[0.28em] text-[#72819A] sm:text-[12px]">
               {language === 'tr' ? 'ACADEMIA Nedir' : 'What ACADEMIA Is'}
@@ -621,7 +621,7 @@ export default function Page() {
     <div className="min-h-screen bg-[#F5F3EE] text-[#142033]">
       <Header />
 
-      <main className="pt-[56px] sm:pt-[64px]">
+      <main className="pt-[60px] sm:pt-[68px] lg:pt-[78px]">
         <HeroSection language={currentLanguage} />
         <WhatAcademiaIsSection language={currentLanguage} />
         <ExpertiseArchitectureSection language={currentLanguage} />

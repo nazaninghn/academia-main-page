@@ -3,8 +3,8 @@ import Image from 'next/image';
 export function Logo({ size = 'default' }) {
   const sizes = {
     small: { width: 68, height: 24, wrap: 'h-6' },
-    default: { width: 82, height: 28, wrap: 'h-7' },
-    large: { width: 110, height: 36, wrap: 'h-9' },
+    default: { width: 120, height: 38, wrap: 'h-9' },
+    large: { width: 160, height: 48, wrap: 'h-11' },
   };
 
   const s = sizes[size] || sizes.default;
@@ -16,7 +16,7 @@ export function Logo({ size = 'default' }) {
         alt="ACADEMIA"
         width={s.width}
         height={s.height}
-        className="h-full w-auto origin-left scale-[0.9] object-contain"
+        className="h-full w-auto object-contain"
         priority
       />
     </div>
