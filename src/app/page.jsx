@@ -416,6 +416,90 @@ function LogoMarquee({ items, reverse = false }) {
   );
 }
 
+/* ─── Ecosystem ─── */
+function EcosystemSection({ language }) {
+  const ventures = [
+    {
+      name: 'KLEXAI',
+      url: 'https://www.klexai.com/',
+      logo: '/logos/klexai.png',
+      desc: {
+        en: 'AI-powered customer support assistant platform. Builds brand-safe, multilingual conversational AI systems that scale enterprise communication.',
+        tr: 'Yapay zeka destekli müşteri destek asistanı platformu. Kurumsal iletişimi ölçeklendiren, marka güvenli ve çok dilli konuşma AI sistemleri geliştirir.',
+      },
+    },
+    {
+      name: 'Carbonless Network',
+      url: 'https://www.carbonless.network/',
+      logo: '/logos/carbonless.png',
+      desc: {
+        en: 'Carbon and sustainability intelligence platform. Enables organizations to measure, track, and reduce emissions with standards-aligned digital infrastructure.',
+        tr: 'Karbon ve sürdürülebilirlik istihbarat platformu. Kurumlara standartlara uyumlu dijital altyapıyla emisyonlarını ölçme, izleme ve azaltma imkanı sunar.',
+      },
+    },
+    {
+      name: 'Sustindex',
+      url: 'https://www.sustindex.com/',
+      logo: '/logos/sustindex.png',
+      desc: {
+        en: 'Sustainability measurement and evaluation platform. Helps organizations assess performance, align with international standards, and drive data-driven decisions.',
+        tr: 'Sürdürülebilirlik ölçüm ve değerlendirme platformu. Kurumların performansını değerlendirmesine, uluslararası standartlara uyum sağlamasına ve veriye dayalı kararlar almasına yardımcı olur.',
+      },
+    },
+  ];
+
+  return (
+    <section id="ecosystem" className="border-t border-[#D9D6CE] bg-[#F5F3EE]">
+      <div className="mx-auto max-w-[1380px] px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+        <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-[180px_1fr] lg:gap-16 xl:grid-cols-[220px_1fr]">
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.28em] text-[#72819A] sm:text-[12px]">
+              {language === 'tr' ? 'ACADEMIA Grup' : 'ACADEMIA Group'}
+            </p>
+          </div>
+
+          <div>
+            <div className="max-w-[860px]">
+              <h2 className="text-[26px] font-light leading-[1.12] tracking-[-0.03em] text-[#142033] sm:text-[30px] md:text-[34px] lg:text-[46px]">
+                {language === 'tr'
+                  ? 'Bir şirketler grubu. Tek bir vizyon.'
+                  : 'A group of companies. One vision.'}
+              </h2>
+              <p className="mt-4 max-w-[760px] text-[15px] leading-[1.8] text-[#5E7088] sm:mt-6 sm:text-[16px] md:text-[18px] md:leading-[1.9]">
+                {language === 'tr'
+                  ? 'ACADEMIA, ana şirket olarak teknoloji ve sürdürülebilirlik alanlarında faaliyet gösteren uzmanlaşmış şirketleri bünyesinde barındırır.'
+                  : 'As the parent company, ACADEMIA houses specialized subsidiaries operating across technology and sustainability.'}
+              </p>
+            </div>
+
+            <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-12 sm:grid-cols-2 sm:gap-8 md:grid-cols-3">
+              {ventures.map((v) => (
+                <a
+                  key={v.name}
+                  href={v.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group rounded-2xl border border-[#D9D6CE] bg-[#F8F6F1] p-5 transition hover:border-[#D89A4A] hover:shadow-md sm:p-6"
+                >
+                  <div className="mb-4 flex items-center gap-3">
+                    <img src={v.logo} alt={v.name} className="h-10 w-auto object-contain sm:h-11" />
+                  </div>
+                  <p className="text-[14px] leading-[1.75] text-[#5E7088] sm:text-[15px] sm:leading-[1.8]">
+                    {v.desc[language] || v.desc.en}
+                  </p>
+                  <div className="mt-4 text-[13px] font-medium text-[#D89A4A] transition group-hover:underline sm:text-[14px]">
+                    {language === 'tr' ? 'Siteyi Ziyaret Et →' : 'Visit Website →'}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── Insights ─── */
 function InsightsSection({ language }) {
   const insights = {
@@ -458,7 +542,7 @@ function InsightsSection({ language }) {
               </p>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-12 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
+            <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-12 sm:grid-cols-2 sm:gap-8 md:grid-cols-3">
               {items.map((item, i) => (
                 <div key={i} className={`border-l-2 ${colors[i]} bg-[#F5F3EE] rounded-r-xl p-5 sm:p-6`}>
                   <span className="text-[11px] uppercase tracking-[0.2em] text-[#72819A] sm:text-[12px]">{item.tag}</span>
@@ -542,6 +626,7 @@ export default function Page() {
         <WhatAcademiaIsSection language={currentLanguage} />
         <ExpertiseArchitectureSection language={currentLanguage} />
         <HowAcademiaWorksSection language={currentLanguage} />
+        <EcosystemSection language={currentLanguage} />
         <InsightsSection language={currentLanguage} />
         <ReferencesSection language={currentLanguage} />
       </main>

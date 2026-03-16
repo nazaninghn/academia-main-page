@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { MapPin, Phone, Mail, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, Linkedin } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -191,6 +191,23 @@ export default function ContactPage() {
                           <p className="text-[14px] leading-[1.7] text-[#5E7088] sm:text-[15px]">
                             <a href="mailto:info@academiadanismanlik.com" className="transition-colors hover:text-[#D89A4A]">
                               info@academiadanismanlik.com
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="border-t border-[#D9D6CE] pt-5 sm:pt-6">
+                      <div className="flex items-start gap-3 sm:gap-4">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#D9D6CE] bg-[#F8F6F1] sm:h-12 sm:w-12">
+                          <Linkedin className="h-4 w-4 text-[#0A66C2] sm:h-5 sm:w-5" />
+                        </div>
+                        <div>
+                          <h3 className="mb-1.5 text-[16px] font-medium text-[#142033] sm:mb-2 sm:text-[18px]">
+                            LinkedIn
+                          </h3>
+                          <p className="text-[14px] leading-[1.7] text-[#5E7088] sm:text-[15px]">
+                            <a href="https://www.linkedin.com/company/academia-kurumsal/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#0A66C2]">
+                              academia-kurumsal
                             </a>
                           </p>
                         </div>
