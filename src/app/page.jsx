@@ -64,19 +64,19 @@ function FrameworkDiagram({ language }) {
   return (
     <div className="relative mx-auto w-full max-w-[520px] rounded-[24px] border border-[#D9D6CE] bg-[#F8F6F1] p-4 shadow-[0_8px_30px_rgba(20,32,51,0.04)] sm:p-5">
       <div className="relative grid grid-cols-2 gap-3">
-        <div className="rounded-2xl border border-[#E7E2D8] bg-white p-4">
+        <div className="rounded-2xl border border-[#E7E2D8] bg-white p-4 text-center">
           <p className="text-[9px] uppercase tracking-[0.24em] text-[#8A97AB]">{t.info}</p>
           <p className="mt-2 text-[14px] font-medium text-[#142033]">{t.itStandards}</p>
         </div>
-        <div className="rounded-2xl border border-[#E7E2D8] bg-white p-4">
+        <div className="rounded-2xl border border-[#E7E2D8] bg-white p-4 text-center">
           <p className="text-[9px] uppercase tracking-[0.24em] text-[#C7934B]">{t.sustainability}</p>
           <p className="mt-2 text-[14px] font-medium text-[#142033]">{t.esg}</p>
         </div>
-        <div className="rounded-2xl border border-[#E7E2D8] bg-white p-4">
+        <div className="rounded-2xl border border-[#E7E2D8] bg-white p-4 text-center">
           <p className="text-[9px] uppercase tracking-[0.24em] text-[#8A97AB]">{t.quality}</p>
           <p className="mt-2 text-[14px] font-medium text-[#142033]">{t.governance}</p>
         </div>
-        <div className="rounded-2xl border border-[#E7E2D8] bg-white p-4">
+        <div className="rounded-2xl border border-[#E7E2D8] bg-white p-4 text-center">
           <p className="text-[9px] uppercase tracking-[0.24em] text-[#8A97AB]">{t.capability}</p>
           <p className="mt-2 text-[14px] font-medium text-[#142033]">{t.training}</p>
         </div>
