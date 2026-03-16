@@ -96,8 +96,8 @@ function FrameworkDiagram({ language }) {
 
         {/* Center ACADEMIA circle */}
         <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-          <div className="flex h-[56px] w-[56px] items-center justify-center rounded-full border border-[#142033]/20 bg-[#F0EDE6] shadow-md sm:h-[72px] sm:w-[72px] lg:h-[88px] lg:w-[88px]">
-            <img src="/logo.png" alt="ACADEMIA" className="h-[28px] w-auto object-contain sm:h-[36px] lg:h-[44px]" />
+          <div className="flex h-[88px] w-[88px] items-center justify-center rounded-full border border-[#142033]/20 bg-[#F0EDE6] shadow-md sm:h-[116px] sm:w-[116px] lg:h-[148px] lg:w-[148px]">
+            <img src="/logo.png" alt="ACADEMIA" className="h-[46px] w-auto object-contain sm:h-[60px] lg:h-[76px]" />
           </div>
         </div>
 
