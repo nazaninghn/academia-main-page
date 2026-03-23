@@ -1,22 +1,32 @@
 'use client';
 
-import { ArrowRight, Server, Leaf, ShieldCheck, GraduationCap } from 'lucide-react';
+import { ArrowRight, Server, Leaf, ShieldCheck, GraduationCap, BrainCircuit } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const referenceLogos = [
-  { name: 'Soteks', src: '/references/soteks.png' },
-  { name: 'Varne', src: '/references/varne.png' },
-  { name: 'Vintex', src: '/references/vintex.png' },
-  { name: 'URSA', src: '/references/ursa.png' },
-  { name: 'Sparkle', src: '/references/sparkle.png' },
-  { name: 'Turkuaz', src: '/references/turkuaz.png' },
-  { name: 'Teknomak', src: '/references/teknomak.png' },
-  { name: 'Portland', src: '/references/portland.png' },
-  { name: 'Planet', src: '/references/planet.png' },
-  { name: 'Ondul', src: '/references/ondul.png' },
-  { name: 'Natural', src: '/references/natural.png' },
-  { name: 'Kota', src: '/references/kota.png' },
+  { name: 'Gorenje', href: 'https://www.gorenje.com/', logo: '/references/gorenje.png' },
+  { name: 'Odin', href: 'https://odine.com/tr/', logo: '/references/odin.png' },
+  { name: 'JForce', href: 'https://jforce.com.tr/tr/anasayfa/', logo: '/references/jforce.png' },
+  { name: 'TÜV Austria', href: 'https://tr.tuvaustria.com/', logo: '/references/tuv-austria.png' },
+  { name: 'LRQA', href: 'https://www.lrqa.com/tr-tr/', logo: '/references/lrqa.png' },
+  { name: 'Vega', href: 'https://www.vegalojistik.com.tr/', logo: '/references/vega.png' },
+  { name: 'CSI', href: 'https://www.csi-spa.com/en', logo: '/references/csi.png' },
+  { name: 'Evolog', href: 'https://www.evolog.com.tr/', logo: '/references/evolog.png' },
+  { name: 'TOBB', href: 'https://www.tobb.org.tr/', logo: '/references/tobb.png' },
+  { name: 'TI Sparkle', href: 'https://www.tisparkle.com/turkey', logo: '/references/ti-sparkle.png' },
+  { name: 'Bayegan', href: 'https://bayegan.net/', logo: '/references/bayegan.png' },
+  { name: 'Vinteks', href: 'https://vinteks.com/', logo: '/references/vinteks.png' },
+  { name: 'CFLEX Asaş', href: 'https://www.cflex.com/', logo: '/references/cflex.png' },
+  { name: 'GTech', href: 'https://www.gtech.com.tr/en/home/', logo: '/references/gtech.png' },
+  { name: 'Sicpa', href: 'https://www.sicpaturkey.com.tr/tr', logo: '/references/sicpa.png' },
+  { name: 'Erciyas', href: 'https://erciyas.com/', logo: '/references/erciyas.png' },
+  { name: 'TPAO', href: 'https://www.tpao.gov.tr/', logo: '/references/tpao.png' },
+  { name: 'TED', href: 'https://ted.org.tr/', logo: '/references/ted.png' },
+  { name: 'Dünya Varlık', href: 'https://www.dunyavarlik.com/', logo: '/references/dunya-varlik.png' },
+  { name: 'İsttelkom', href: 'https://isttelkom.istanbul/', logo: '/references/isttelkom.png' },
+  { name: 'PSA BDP', href: 'https://psabdp.com/', logo: '/references/psa-bdp.png' },
+  { name: 'ISS', href: 'https://www.issworld.com/tr-tr', logo: '/references/iss.png' },
 ];
 
 const expertiseItems = {
@@ -27,6 +37,7 @@ const expertiseItems = {
     { number: '04', title: 'Regulatory Alignment', desc: 'Helping organizations interpret and implement legal and regulatory requirements through structured frameworks.', icon: '⊞' },
     { number: '05', title: 'Capability Development', desc: 'Building institutional learning systems, training structures, and internal competency development programs.', icon: '◫' },
     { number: '06', title: 'Sustainability & ESG', desc: 'Developing sustainability, governance, and ESG-oriented frameworks for long-term organizational adaptation.', icon: '↘' },
+    { number: '07', title: 'AI Governance & Compliance', desc: 'Helping organizations build AI risk management frameworks, implement ISO/IEC 42001, and align with emerging AI regulations including the EU AI Act.', icon: '◎' },
   ],
   tr: [
     { number: '01', title: 'Yönetim Sistemleri', desc: 'Kurumsal kalite, yönetişim ve operasyonel tutarlılık ile uyumlu yönetim sistemlerinin tasarlanması ve geliştirilmesi.', icon: '⌘' },
@@ -35,6 +46,7 @@ const expertiseItems = {
     { number: '04', title: 'Düzenleyici Uyum', desc: 'Yasal ve düzenleyici gerekliliklerin yapılandırılmış çerçevelerle yorumlanması ve uygulanmasına destek verilmesi.', icon: '⊞' },
     { number: '05', title: 'Kapasite Geliştirme', desc: 'Kurumsal öğrenme sistemleri, eğitim yapıları ve iç yetkinlik geliştirme programlarının oluşturulması.', icon: '◫' },
     { number: '06', title: 'Sürdürülebilirlik ve ESG', desc: 'Uzun vadeli kurumsal adaptasyon için sürdürülebilirlik, yönetişim ve ESG odaklı yapıların geliştirilmesi.', icon: '↘' },
+    { number: '07', title: 'Yapay Zeka Yönetişimi ve Uyum', desc: 'Kurumlara yapay zeka risk yönetimi çerçeveleri oluşturma, ISO/IEC 42001 uygulama ve AB AI Yasası dahil yeni düzenlemelere uyum konusunda destek verilmesi.', icon: '◎' },
   ],
 };
 
@@ -106,6 +118,32 @@ function AbstractPattern({ variant }) {
       </svg>
     );
   }
+  if (variant === 'ai') {
+    return (
+      <svg viewBox="0 0 400 240" className="absolute inset-0 h-full w-full" fill="none">
+        <defs>
+          <linearGradient id="aiGlow" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.12" />
+            <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.02" />
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="400" height="240" fill="url(#aiGlow)" />
+        <circle cx="200" cy="120" r="40" stroke="#8B5CF6" strokeOpacity="0.16" strokeWidth="1.5" />
+        <circle cx="200" cy="120" r="18" stroke="#8B5CF6" strokeOpacity="0.22" strokeWidth="1.5" />
+        <circle cx="200" cy="120" r="4" fill="#8B5CF6" fillOpacity="0.3" />
+        <path d="M200 80 V50" stroke="#8B5CF6" strokeOpacity="0.14" strokeWidth="1.5" />
+        <path d="M200 160 V190" stroke="#8B5CF6" strokeOpacity="0.14" strokeWidth="1.5" />
+        <path d="M160 120 H130" stroke="#8B5CF6" strokeOpacity="0.14" strokeWidth="1.5" />
+        <path d="M240 120 H270" stroke="#8B5CF6" strokeOpacity="0.14" strokeWidth="1.5" />
+        <path d="M172 92 L152 72" stroke="#8B5CF6" strokeOpacity="0.10" strokeWidth="1.5" />
+        <path d="M228 148 L248 168" stroke="#8B5CF6" strokeOpacity="0.10" strokeWidth="1.5" />
+        <circle cx="200" cy="50" r="4" fill="#8B5CF6" fillOpacity="0.2" />
+        <circle cx="200" cy="190" r="4" fill="#8B5CF6" fillOpacity="0.2" />
+        <circle cx="130" cy="120" r="4" fill="#8B5CF6" fillOpacity="0.2" />
+        <circle cx="270" cy="120" r="4" fill="#8B5CF6" fillOpacity="0.2" />
+      </svg>
+    );
+  }
   return (
     <svg viewBox="0 0 400 240" className="absolute inset-0 h-full w-full" fill="none">
       <defs>
@@ -132,16 +170,18 @@ function EcosystemHeroPanel({ language }) {
         { title: 'Sürdürülebilirlik & ESG', eyebrow: 'SUSTAINABILITY', icon: Leaf, accent: 'bg-[#D89A4A]', accentText: 'text-[#D89A4A]', number: '02', variant: 'esg' },
         { title: 'Kalite & Yönetişim', eyebrow: 'QUALITY', icon: ShieldCheck, accent: 'bg-[#142033]', accentText: 'text-[#142033]', number: '03', variant: 'governance' },
         { title: 'Eğitim & Gelişim', eyebrow: 'CAPABILITY', icon: GraduationCap, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '04', variant: 'capability' },
+        { title: 'Yapay Zeka Yönetişimi', eyebrow: 'AI GOVERNANCE', icon: BrainCircuit, accent: 'bg-[#8B5CF6]', accentText: 'text-[#8B5CF6]', number: '05', variant: 'ai' },
       ]
     : [
         { title: 'IT Standards', eyebrow: 'INFORMATION', icon: Server, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '01', variant: 'it' },
         { title: 'Sustainability & ESG', eyebrow: 'SUSTAINABILITY', icon: Leaf, accent: 'bg-[#D89A4A]', accentText: 'text-[#D89A4A]', number: '02', variant: 'esg' },
         { title: 'Quality & Governance', eyebrow: 'QUALITY', icon: ShieldCheck, accent: 'bg-[#142033]', accentText: 'text-[#142033]', number: '03', variant: 'governance' },
         { title: 'Training & Development', eyebrow: 'CAPABILITY', icon: GraduationCap, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '04', variant: 'capability' },
+        { title: 'AI Governance', eyebrow: 'AI GOVERNANCE', icon: BrainCircuit, accent: 'bg-[#8B5CF6]', accentText: 'text-[#8B5CF6]', number: '05', variant: 'ai' },
       ];
 
   return (
-    <div className="relative rounded-[28px] border border-[#D9D6CE] bg-[#FBF9F4] p-5 shadow-[0_12px_40px_rgba(20,32,51,0.035)] sm:p-6 lg:p-7">
+    <div className="relative rounded-[20px] border border-[#D9D6CE] bg-[#FBF9F4] p-4 shadow-[0_12px_40px_rgba(20,32,51,0.035)] sm:rounded-[28px] sm:p-6 lg:p-7">
       <div className="pointer-events-none absolute left-10 top-10 h-24 w-24 rounded-full bg-[#58C3E8]/[0.035] blur-3xl" />
       <div className="pointer-events-none absolute bottom-10 right-12 h-24 w-24 rounded-full bg-[#D89A4A]/[0.035] blur-3xl" />
 
@@ -152,13 +192,14 @@ function EcosystemHeroPanel({ language }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {items.map((item) => {
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+        {items.map((item, index) => {
           const Icon = item.icon;
+          const isLast = index === items.length - 1 && items.length % 2 !== 0;
           return (
             <div
               key={item.title}
-              className="group relative h-[190px] overflow-hidden rounded-[24px] border border-[#E2DDD3] bg-white transition duration-500 hover:-translate-y-[2px] hover:border-[#CDBFA8] hover:shadow-[0_18px_36px_rgba(20,32,51,0.08)] sm:h-[210px]"
+              className={`group relative h-[160px] overflow-hidden rounded-[20px] border border-[#E2DDD3] bg-white transition duration-500 hover:-translate-y-[2px] hover:border-[#CDBFA8] hover:shadow-[0_18px_36px_rgba(20,32,51,0.08)] sm:h-[190px] lg:h-[210px] ${isLast ? 'sm:col-span-2 sm:mx-auto sm:w-1/2' : ''}`}
             >
               <AbstractPattern variant={item.variant} />
 
@@ -170,16 +211,16 @@ function EcosystemHeroPanel({ language }) {
                 <span className="text-[11px] uppercase tracking-[0.18em] text-[#C18A4A]">{item.number}</span>
               </div>
 
-              <div className="relative z-10 flex h-full flex-col justify-between p-5 sm:p-6">
+              <div className="relative z-10 flex h-full flex-col justify-between p-4 sm:p-5 lg:p-6">
                 <p className="text-[10px] uppercase tracking-[0.28em] text-[#8A97AB]">{item.eyebrow}</p>
 
                 <div className="flex items-center">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/60 bg-white/60 shadow-[0_6px_18px_rgba(20,32,51,0.05)] backdrop-blur-sm transition duration-500 group-hover:scale-[1.04]">
-                    <Icon className={`h-5 w-5 ${item.accentText}`} strokeWidth={1.8} />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/60 bg-white/60 shadow-[0_6px_18px_rgba(20,32,51,0.05)] backdrop-blur-sm transition duration-500 group-hover:scale-[1.04] sm:h-12 sm:w-12 sm:rounded-2xl">
+                    <Icon className={`h-4 w-4 sm:h-5 sm:w-5 ${item.accentText}`} strokeWidth={1.8} />
                   </div>
                 </div>
 
-                <h3 className="max-w-[260px] text-[22px] font-medium leading-[1.15] tracking-[-0.02em] text-[#142033] sm:text-[24px]">
+                <h3 className="max-w-[260px] text-[18px] font-medium leading-[1.15] tracking-[-0.02em] text-[#142033] sm:text-[22px] lg:text-[24px]">
                   {item.title}
                 </h3>
               </div>
@@ -225,7 +266,7 @@ function HeroSection({ language }) {
               {[
                 { val: '150+', label: language === 'tr' ? 'Proje' : 'Projects' },
                 { val: '80+', label: language === 'tr' ? 'Kurum' : 'Clients' },
-                { val: '6', label: language === 'tr' ? 'Uzmanlık Alanı' : 'Expertise Areas' },
+                { val: '7', label: language === 'tr' ? 'Uzmanlık Alanı' : 'Expertise Areas' },
               ].map((s) => (
                 <div key={s.label} className="rounded-2xl border border-[#D9D6CE] bg-[#FAF8F3] px-3 py-4 sm:px-4">
                   <p className="text-[24px] font-semibold text-[#142033]">{s.val}</p>
@@ -280,7 +321,7 @@ function WhatAcademiaIsSection({ language }) {
                 : 'Rather than delivering isolated consulting services, ACADEMIA works as a system architect—designing integrated frameworks that help organizations build structure and strengthen long-term institutional capacity.'}
             </p>
           </div>
-          <div className="relative overflow-hidden rounded-[22px] border border-[#D9D6CE] xl:mt-0">
+          <div className="relative h-[240px] overflow-hidden rounded-[22px] border border-[#D9D6CE] sm:h-[300px] xl:mt-0 xl:h-auto">
             <img src="/images/strategic-planning.jpg" alt="Strategic planning and systems" className="h-full w-full object-cover" />
           </div>
         </div>
@@ -296,10 +337,58 @@ function ExpertiseArchitectureSection({ language }) {
     <section id="expertise" className="border-t border-[#D9D6CE] bg-[#F8F6F1]">
       <div className="mx-auto max-w-[1380px] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="grid grid-cols-1 gap-12 xl:grid-cols-[220px_1fr] xl:gap-16">
-          <div>
+          <div className="relative">
             <p className="text-[12px] uppercase tracking-[0.28em] text-[#72819A]">
               {language === 'tr' ? 'Uzmanlık Mimarisi' : 'Expertise Architecture'}
             </p>
+            {/* Decorative SVG */}
+            <svg viewBox="0 0 200 520" className="mt-8 hidden w-full xl:block" fill="none">
+              {/* Main hub */}
+              <circle cx="100" cy="70" r="36" stroke="#D89A4A" strokeOpacity="0.4" strokeWidth="2" />
+              <circle cx="100" cy="70" r="10" fill="#D89A4A" fillOpacity="0.35" />
+              <text x="100" y="75" textAnchor="middle" fill="#D89A4A" fillOpacity="0.7" fontSize="9" fontWeight="600">CORE</text>
+
+              <path d="M100 106 V155" stroke="#D89A4A" strokeOpacity="0.3" strokeWidth="1.5" />
+
+              {/* Left node - Standards */}
+              <circle cx="50" cy="195" r="30" stroke="#58C3E8" strokeOpacity="0.35" strokeWidth="2" />
+              <circle cx="50" cy="195" r="8" fill="#58C3E8" fillOpacity="0.3" />
+              <text x="50" y="245" textAnchor="middle" fill="#58C3E8" fillOpacity="0.7" fontSize="9" fontWeight="500">Standards</text>
+
+              {/* Right node - Governance */}
+              <circle cx="150" cy="195" r="30" stroke="#142033" strokeOpacity="0.25" strokeWidth="2" />
+              <circle cx="150" cy="195" r="8" fill="#142033" fillOpacity="0.2" />
+              <text x="150" y="245" textAnchor="middle" fill="#142033" fillOpacity="0.5" fontSize="9" fontWeight="500">Governance</text>
+
+              <path d="M100 155 L50 165" stroke="#D9D6CE" strokeOpacity="0.5" strokeWidth="1.5" />
+              <path d="M100 155 L150 165" stroke="#D9D6CE" strokeOpacity="0.5" strokeWidth="1.5" />
+
+              <path d="M50 225 V280" stroke="#D9D6CE" strokeOpacity="0.4" strokeWidth="1.5" />
+              <path d="M150 225 V280" stroke="#D9D6CE" strokeOpacity="0.4" strokeWidth="1.5" />
+
+              {/* Bottom left - ESG */}
+              <circle cx="50" cy="310" r="24" stroke="#8B5CF6" strokeOpacity="0.3" strokeWidth="2" />
+              <circle cx="50" cy="310" r="7" fill="#8B5CF6" fillOpacity="0.25" />
+              <text x="50" y="352" textAnchor="middle" fill="#8B5CF6" fillOpacity="0.6" fontSize="9" fontWeight="500">ESG</text>
+
+              {/* Bottom right - Capacity */}
+              <circle cx="150" cy="310" r="24" stroke="#D89A4A" strokeOpacity="0.3" strokeWidth="2" />
+              <circle cx="150" cy="310" r="7" fill="#D89A4A" fillOpacity="0.25" />
+              <text x="150" y="352" textAnchor="middle" fill="#D89A4A" fillOpacity="0.6" fontSize="9" fontWeight="500">Capacity</text>
+
+              <path d="M50 334 L100 380" stroke="#D9D6CE" strokeOpacity="0.4" strokeWidth="1.5" />
+              <path d="M150 334 L100 380" stroke="#D9D6CE" strokeOpacity="0.4" strokeWidth="1.5" />
+
+              {/* Final node - AI */}
+              <circle cx="100" cy="405" r="32" stroke="#58C3E8" strokeOpacity="0.3" strokeWidth="2" />
+              <circle cx="100" cy="405" r="9" fill="#58C3E8" fillOpacity="0.3" />
+              <text x="100" y="410" textAnchor="middle" fill="#58C3E8" fillOpacity="0.7" fontSize="9" fontWeight="600">AI</text>
+              <circle cx="100" cy="405" r="46" stroke="#58C3E8" strokeOpacity="0.1" strokeWidth="1" />
+
+              {/* Side label */}
+              <text x="100" y="475" textAnchor="middle" fill="#72819A" fillOpacity="0.5" fontSize="8" fontWeight="500" letterSpacing="0.12em">INTERCONNECTED</text>
+              <text x="100" y="490" textAnchor="middle" fill="#72819A" fillOpacity="0.5" fontSize="8" fontWeight="500" letterSpacing="0.12em">EXPERTISE</text>
+            </svg>
           </div>
           <div>
             <div className="max-w-[860px]">
@@ -340,10 +429,39 @@ function HowAcademiaWorksSection({ language }) {
     <section id="how-it-works" className="border-t border-[#D9D6CE] bg-[#F5F3EE]">
       <div className="mx-auto max-w-[1380px] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="grid grid-cols-1 gap-12 xl:grid-cols-[220px_1fr] xl:gap-16">
-          <div>
+          <div className="relative">
             <p className="text-[12px] uppercase tracking-[0.28em] text-[#72819A]">
               {language === 'tr' ? 'ACADEMIA Nasıl Çalışır' : 'How ACADEMIA Works'}
             </p>
+            {/* Decorative SVG - process flow */}
+            <svg viewBox="0 0 200 480" className="mt-8 hidden w-full xl:block" fill="none">
+              <rect x="55" y="20" width="90" height="55" rx="12" stroke="#D89A4A" strokeOpacity="0.4" strokeWidth="2" />
+              <text x="100" y="45" textAnchor="middle" fill="#D89A4A" fillOpacity="0.7" fontSize="11" fontWeight="600">Assess</text>
+              <text x="100" y="60" textAnchor="middle" fill="#D89A4A" fillOpacity="0.45" fontSize="8">01</text>
+              <path d="M100 75 V110" stroke="#D89A4A" strokeOpacity="0.3" strokeWidth="1.5" strokeDasharray="5 4" />
+
+              <rect x="55" y="120" width="90" height="55" rx="12" stroke="#58C3E8" strokeOpacity="0.4" strokeWidth="2" />
+              <text x="100" y="145" textAnchor="middle" fill="#58C3E8" fillOpacity="0.7" fontSize="11" fontWeight="600">Design</text>
+              <text x="100" y="160" textAnchor="middle" fill="#58C3E8" fillOpacity="0.45" fontSize="8">02</text>
+              <path d="M100 175 V210" stroke="#58C3E8" strokeOpacity="0.3" strokeWidth="1.5" strokeDasharray="5 4" />
+
+              <rect x="55" y="220" width="90" height="55" rx="12" stroke="#142033" strokeOpacity="0.3" strokeWidth="2" />
+              <text x="100" y="245" textAnchor="middle" fill="#142033" fillOpacity="0.55" fontSize="11" fontWeight="600">Integrate</text>
+              <text x="100" y="260" textAnchor="middle" fill="#142033" fillOpacity="0.35" fontSize="8">03</text>
+              <path d="M100 275 V310" stroke="#142033" strokeOpacity="0.2" strokeWidth="1.5" strokeDasharray="5 4" />
+
+              <rect x="55" y="320" width="90" height="55" rx="12" stroke="#8B5CF6" strokeOpacity="0.35" strokeWidth="2" />
+              <text x="100" y="345" textAnchor="middle" fill="#8B5CF6" fillOpacity="0.65" fontSize="11" fontWeight="600">Sustain</text>
+              <text x="100" y="360" textAnchor="middle" fill="#8B5CF6" fillOpacity="0.4" fontSize="8">04</text>
+
+              {/* Completion */}
+              <path d="M100 375 V405" stroke="#D9D6CE" strokeOpacity="0.4" strokeWidth="1.5" strokeDasharray="5 4" />
+              <circle cx="100" cy="420" r="14" stroke="#D89A4A" strokeOpacity="0.35" strokeWidth="2" />
+              <text x="100" y="424" textAnchor="middle" fill="#D89A4A" fillOpacity="0.6" fontSize="9" fontWeight="600">✓</text>
+
+              <text x="100" y="460" textAnchor="middle" fill="#72819A" fillOpacity="0.5" fontSize="8" fontWeight="500" letterSpacing="0.12em">STRUCTURED</text>
+              <text x="100" y="475" textAnchor="middle" fill="#72819A" fillOpacity="0.5" fontSize="8" fontWeight="500" letterSpacing="0.12em">PROCESS</text>
+            </svg>
           </div>
           <div>
             <div className="max-w-[880px]">
@@ -474,20 +592,50 @@ function EcosystemSection({ language }) {
 
 /* ─── Insights ─── */
 function InsightsSection({ language }) {
-  const insights = {
-    en: [
-      { tag: 'Governance', title: 'Why institutional governance is more than compliance', desc: 'Governance frameworks should be designed to support strategic clarity, not just regulatory obligation.' },
-      { tag: 'Sustainability', title: 'ESG as a structural framework, not a reporting exercise', desc: 'Organizations that treat ESG as architecture rather than disclosure build more resilient systems.' },
-      { tag: 'Quality Systems', title: 'From certification to capability: rethinking ISO implementation', desc: 'Standards like ISO 9001 deliver the most value when integrated into institutional learning systems.' },
-    ],
-    tr: [
-      { tag: 'Yönetişim', title: 'Kurumsal yönetişim neden uyumdan fazlasıdır', desc: 'Yönetişim çerçeveleri yalnızca düzenleyici yükümlülükleri değil, stratejik netliği destekleyecek şekilde tasarlanmalıdır.' },
-      { tag: 'Sürdürülebilirlik', title: 'ESG: bir raporlama egzersizi değil, yapısal bir çerçeve', desc: "ESG'yi bir raporlama aracı değil, kurumsal mimari olarak ele alan organizasyonlar daha dayanıklı sistemler kurar." },
-      { tag: 'Kalite Sistemleri', title: 'Belgelendirmeden kapasiteye: ISO uygulamasını yeniden düşünmek', desc: 'ISO 9001 gibi standartlar, kurumsal öğrenme sistemlerine entegre edildiğinde en yüksek değeri üretir.' },
-    ],
-  };
-  const items = insights[language] || insights.en;
-  const colors = ['border-[#D89A4A]', 'border-[#58C3E8]', 'border-[#142033]'];
+  const articles = [
+    {
+      tag: 'AI Governance',
+      color: 'border-[#8B5CF6]',
+      title: {
+        en: 'ISO/IEC 42001: The First Global Standard for AI Management Systems',
+        tr: 'ISO/IEC 42001: Yapay Zeka Yönetim Sistemleri İçin İlk Küresel Standart',
+      },
+      desc: {
+        en: 'ISO/IEC 42001 establishes a structured governance framework for how AI systems are designed, deployed, monitored, and maintained across organizations.',
+        tr: 'ISO/IEC 42001, yapay zeka sistemlerinin kurumlarda nasıl tasarlanacağı, dağıtılacağı, izleneceği ve sürdürüleceğine dair yapısal bir yönetişim çerçevesi oluşturur.',
+      },
+      source: 'ANSI Blog',
+      href: 'https://blog.ansi.org/anab/iso-iec-42001-ai-management-systems',
+    },
+    {
+      tag: 'EU AI Act',
+      color: 'border-[#D89A4A]',
+      title: {
+        en: 'EU AI Act: What Changes in 2025 and How to Prepare',
+        tr: 'AB AI Yasası: 2025\'te Neler Değişiyor ve Nasıl Hazırlanmalı',
+      },
+      desc: {
+        en: 'With penalties reaching up to €35 million, organizations operating in the EU market can no longer treat AI governance as a secondary concern.',
+        tr: '35 milyon Euro\'ya varan cezalarla, AB pazarında faaliyet gösteren kuruluşlar artık yapay zeka yönetişimini ikincil bir konu olarak ele alamaz.',
+      },
+      source: 'Projective Group',
+      href: 'https://www.projectivegroup.com/ainsight-into-the-ai-light-what-changes-on-2-august-2025/',
+    },
+    {
+      tag: 'ESG & Sustainability',
+      color: 'border-[#58C3E8]',
+      title: {
+        en: 'ESG Reporting in 2025: Meeting the New Global Standards',
+        tr: 'ESG Raporlaması 2025: Yeni Küresel Standartları Karşılamak',
+      },
+      desc: {
+        en: '2025 marks a major shift in the ESG landscape with the adoption of ISSB Standards, focusing on climate-related and sustainability disclosures.',
+        tr: '2025, ISSB Standartlarının benimsenmesiyle ESG alanında büyük bir dönüm noktası oldu; iklim ve sürdürülebilirlik açıklamalarına odaklanılıyor.',
+      },
+      source: 'Governancepedia',
+      href: 'https://governancepedia.com/2025/05/20/esg-reporting-meeting-the-2025-standards/',
+    },
+  ];
 
   return (
     <section id="insights" className="border-t border-[#D9D6CE] bg-[#F8F6F1]">
@@ -495,29 +643,32 @@ function InsightsSection({ language }) {
         <div className="grid grid-cols-1 gap-12 xl:grid-cols-[220px_1fr] xl:gap-16">
           <div>
             <p className="text-[12px] uppercase tracking-[0.28em] text-[#72819A]">
-              {language === 'tr' ? 'İçgörüler' : 'Insights'}
+              {language === 'tr' ? 'Gündem' : 'Industry Insights'}
             </p>
           </div>
           <div>
             <div className="max-w-[860px]">
               <h2 className="text-[30px] font-light leading-[1.1] tracking-[-0.03em] text-[#142033] sm:text-[36px] lg:text-[46px]">
                 {language === 'tr'
-                  ? 'Kurumsal dönüşüme dair yapısal perspektifler.'
-                  : 'Structural perspectives on institutional transformation.'}
+                  ? 'Sektörden öne çıkan gelişmeler.'
+                  : 'Key developments shaping the industry.'}
               </h2>
-              <p className="mt-6 max-w-[760px] text-[17px] leading-[1.9] text-[#5E7088] sm:text-[18px]">
-                {language === 'tr'
-                  ? 'ACADEMIA ekibinin yönetişim, sürdürülebilirlik ve kurumsal kapasite üzerine düşünceleri.'
-                  : 'Reflections from the ACADEMIA team on governance, sustainability, and institutional capacity.'}
-              </p>
             </div>
-            <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-12 sm:gap-8 md:grid-cols-3">
-              {items.map((item, i) => (
-                <div key={i} className={`border-l-2 ${colors[i]} rounded-r-xl bg-[#F5F3EE] p-5 sm:p-6`}>
-                  <span className="text-[11px] uppercase tracking-[0.2em] text-[#72819A] sm:text-[12px]">{item.tag}</span>
-                  <h3 className="mt-3 text-[18px] font-medium leading-[1.3] text-[#142033] sm:text-[20px]">{item.title}</h3>
-                  <p className="mt-3 text-[14px] leading-[1.75] text-[#5E7088] sm:text-[15px] sm:leading-[1.8]">{item.desc}</p>
-                </div>
+            <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-12 md:grid-cols-3">
+              {articles.map((item, i) => (
+                <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" className={`group block border-l-2 ${item.color} rounded-r-xl bg-[#F5F3EE] p-5 transition hover:shadow-md sm:p-6`}>
+                  <span className="text-[11px] uppercase tracking-[0.2em] text-[#72819A]">{item.tag}</span>
+                  <h3 className="mt-3 text-[17px] font-medium leading-[1.35] text-[#142033] transition group-hover:text-[#D89A4A] sm:text-[19px]">
+                    {item.title[language] || item.title.en}
+                  </h3>
+                  <p className="mt-3 text-[14px] leading-[1.75] text-[#5E7088] sm:text-[15px]">
+                    {item.desc[language] || item.desc.en}
+                  </p>
+                  <div className="mt-4 flex items-center gap-2 text-[12px] text-[#A09888]">
+                    <span>{item.source}</span>
+                    <span>→</span>
+                  </div>
+                </a>
               ))}
             </div>
           </div>
@@ -536,8 +687,13 @@ function LogoMarquee({ items, reverse = false }) {
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[#F5F3EE] to-transparent sm:w-24" />
       <div className={`marquee-track flex min-w-max gap-4 py-3 sm:gap-6 ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}>
         {duplicated.map((logo, index) => (
-          <a key={`${logo.name}-${index}`} href={logo.href || '#'} className="group flex h-[86px] w-[150px] shrink-0 items-center justify-center rounded-2xl border border-[#DDD8CF] bg-[#FAF8F3] px-5 transition duration-300 hover:border-[#D89A4A] hover:bg-white sm:h-[96px] sm:w-[180px] sm:px-6">
-            <img src={logo.src} alt={logo.name} className="max-h-[38px] max-w-[110px] object-contain opacity-60 grayscale transition duration-300 group-hover:opacity-100 group-hover:grayscale-0 sm:max-h-[42px] sm:max-w-[130px]" />
+          <a key={`${logo.name}-${index}`} href={logo.href || '#'} target="_blank" rel="noopener noreferrer" className="group flex h-[72px] shrink-0 items-center gap-3 rounded-2xl border border-[#DDD8CF] bg-[#FAF8F3] px-5 transition duration-300 hover:border-[#D89A4A] hover:bg-white sm:h-[82px] sm:px-7">
+            {logo.logo && (
+              <img src={logo.logo} alt={logo.name} className="h-7 w-7 object-contain sm:h-8 sm:w-8" />
+            )}
+            <span className="whitespace-nowrap text-[14px] font-medium text-[#5E7088] transition duration-300 group-hover:text-[#142033] sm:text-[15px]">
+              {logo.name}
+            </span>
           </a>
         ))}
       </div>
@@ -575,8 +731,8 @@ function ReferencesSection({ language }) {
               ))}
             </div>
             <div className="mt-12 space-y-5 sm:mt-14 sm:space-y-6">
-              <LogoMarquee items={referenceLogos.slice(0, 8)} />
-              <LogoMarquee items={referenceLogos.slice(4, 12)} reverse />
+              <LogoMarquee items={referenceLogos.slice(0, 11)} />
+              <LogoMarquee items={referenceLogos.slice(11, 22)} reverse />
             </div>
             <div className="mt-8">
               <p className="text-[14px] leading-[1.8] text-[#72819A]">
