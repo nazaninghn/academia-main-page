@@ -183,10 +183,10 @@ function EcosystemHeroPanel({ language }) {
   /* Pentagon positions: top-center, upper-right, lower-right, lower-left, upper-left */
   const pentagonPositions = [
     { top: '2%',  left: '50%', translate: '-translate-x-1/2' },
-    { top: '22%', left: '85%', translate: '-translate-x-1/2' },
-    { top: '62%', left: '75%', translate: '-translate-x-1/2' },
-    { top: '62%', left: '25%', translate: '-translate-x-1/2' },
-    { top: '22%', left: '15%', translate: '-translate-x-1/2' },
+    { top: '24%', left: '82%', translate: '-translate-x-1/2' },
+    { top: '60%', left: '72%', translate: '-translate-x-1/2' },
+    { top: '60%', left: '28%', translate: '-translate-x-1/2' },
+    { top: '24%', left: '18%', translate: '-translate-x-1/2' },
   ];
 
   return (
@@ -238,7 +238,7 @@ function EcosystemHeroPanel({ language }) {
       </div>
 
       {/* ── Desktop: Pentagon layout ── */}
-      <div className="relative hidden lg:block" style={{ height: '520px' }}>
+      <div className="relative hidden overflow-hidden lg:block" style={{ height: '520px' }}>
         {/* Pentagon SVG background */}
         <svg
           viewBox="0 0 500 500"
@@ -247,7 +247,7 @@ function EcosystemHeroPanel({ language }) {
         >
           {/* Outer pentagon outline */}
           <polygon
-            points="250,45 475,210 390,440 110,440 25,210"
+            points="250,50 460,215 380,430 120,430 40,215"
             stroke="#D9D6CE"
             strokeWidth="1"
             strokeDasharray="6 4"
@@ -256,7 +256,7 @@ function EcosystemHeroPanel({ language }) {
           />
           {/* Inner pentagon glow */}
           <polygon
-            points="250,100 410,230 350,400 150,400 90,230"
+            points="250,105 400,230 345,390 155,390 100,230"
             stroke="#D89A4A"
             strokeWidth="0.8"
             strokeDasharray="4 6"
@@ -264,18 +264,18 @@ function EcosystemHeroPanel({ language }) {
             opacity="0.5"
           />
           {/* Connection lines from center to vertices */}
-          <line x1="250" y1="250" x2="250" y2="45" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
-          <line x1="250" y1="250" x2="475" y2="210" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
-          <line x1="250" y1="250" x2="390" y2="440" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
-          <line x1="250" y1="250" x2="110" y2="440" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
-          <line x1="250" y1="250" x2="25" y2="210" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
+          <line x1="250" y1="250" x2="250" y2="50" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
+          <line x1="250" y1="250" x2="460" y2="215" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
+          <line x1="250" y1="250" x2="380" y2="430" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
+          <line x1="250" y1="250" x2="120" y2="430" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
+          <line x1="250" y1="250" x2="40" y2="215" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
           {/* Center circle removed - logo placed via HTML */}
           {/* Vertex dots */}
-          <circle cx="250" cy="45" r="5" fill="#58C3E8" opacity="0.4" />
-          <circle cx="475" cy="210" r="5" fill="#D89A4A" opacity="0.4" />
-          <circle cx="390" cy="440" r="5" fill="#142033" opacity="0.3" />
-          <circle cx="110" cy="440" r="5" fill="#58C3E8" opacity="0.4" />
-          <circle cx="25" cy="210" r="5" fill="#8B5CF6" opacity="0.4" />
+          <circle cx="250" cy="50" r="5" fill="#58C3E8" opacity="0.4" />
+          <circle cx="460" cy="215" r="5" fill="#D89A4A" opacity="0.4" />
+          <circle cx="380" cy="430" r="5" fill="#142033" opacity="0.3" />
+          <circle cx="120" cy="430" r="5" fill="#58C3E8" opacity="0.4" />
+          <circle cx="40" cy="215" r="5" fill="#8B5CF6" opacity="0.4" />
           <defs>
             <radialGradient id="pentaGlow" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stopColor="#D89A4A" stopOpacity="0.06" />
@@ -293,7 +293,7 @@ function EcosystemHeroPanel({ language }) {
               href={`#${item.anchor}`}
               key={item.title}
               className={`group absolute z-10 ${pos.translate}`}
-              style={{ top: pos.top, left: pos.left, width: '170px' }}
+              style={{ top: pos.top, left: pos.left, width: 'clamp(140px, 30%, 170px)' }}
             >
               <div className="relative h-[150px] overflow-hidden rounded-[18px] border border-[#E2DDD3] bg-white/95 shadow-[0_8px_24px_rgba(20,32,51,0.06)] backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:border-[#CDBFA8] hover:shadow-[0_18px_36px_rgba(20,32,51,0.12)]">
                 <AbstractPattern variant={item.variant} />
