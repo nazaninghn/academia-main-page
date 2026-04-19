@@ -338,9 +338,9 @@ function HeroSection({ language }) {
         }}
       />
       <div className="mx-auto max-w-[1380px] px-4 pb-10 pt-6 sm:px-6 lg:px-8 lg:pb-14 lg:pt-8">
-        <div className="grid grid-cols-1 gap-8 xl:grid-cols-[1.02fr_0.98fr] xl:items-center xl:gap-10">
+        <div className="grid grid-cols-1 gap-8 xl:grid-cols-[0.95fr_1.05fr] xl:items-center xl:gap-8 2xl:gap-10">
           <div className="pt-2">
-            <h1 className="mt-4 max-w-[760px] text-[32px] font-light leading-[0.96] tracking-[-0.05em] text-[#142033] sm:text-[40px] md:text-[56px] xl:text-[72px]">
+            <h1 className="mt-4 max-w-[760px] text-[32px] font-light leading-[0.96] tracking-[-0.05em] text-[#142033] sm:text-[40px] md:text-[56px] xl:text-[52px] 2xl:text-[72px]">
               {language === 'tr' ? (
                 <>Kurumsal dönüşüm için<br /><span className="font-semibold">stratejik bir</span><br />ekosistem</>
               ) : (
@@ -348,13 +348,13 @@ function HeroSection({ language }) {
               )}
             </h1>
 
-            <p className="mt-6 max-w-[700px] text-[17px] leading-[1.75] text-[#60708A] sm:text-[18px] md:text-[19px] xl:text-[21px]">
+            <p className="mt-4 max-w-[700px] text-[17px] leading-[1.75] text-[#60708A] sm:text-[18px] md:text-[19px] xl:text-[17px] 2xl:text-[21px]">
               {language === 'tr'
                 ? 'ACADEMIA, kurumların kurumsal, düzenleyici, kalite ve sürdürülebilirlik çerçevelerini uzun vadeli yapısal netlikle tasarlamasına ve uygulamasına yardımcı olur.'
                 : 'ACADEMIA helps organizations design and implement institutional, regulatory, quality, and sustainability frameworks with long-term structural clarity.'}
             </p>
 
-            <div className="mt-8 grid max-w-[460px] grid-cols-3 gap-2 sm:gap-4">
+            <div className="mt-6 grid max-w-[460px] grid-cols-3 gap-2 sm:gap-4 xl:mt-5">
               {[
                 { val: '150+', label: language === 'tr' ? 'Proje' : 'Projects' },
                 { val: '80+', label: language === 'tr' ? 'Kurum' : 'Clients' },
@@ -367,7 +367,7 @@ function HeroSection({ language }) {
               ))}
             </div>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row md:gap-4">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row md:gap-4 xl:mt-5">
               <a href="#expertise" className="inline-flex items-center justify-center gap-3 rounded-full bg-[#0F1A32] px-6 py-3.5 text-[14px] font-medium text-white transition hover:bg-[#D89A4A] sm:px-8 sm:py-4 sm:text-[16px]">
                 {language === 'tr' ? 'Ekosistemi Keşfet' : 'Explore the Ecosystem'}
                 <ArrowRight className="h-4 w-4" />
