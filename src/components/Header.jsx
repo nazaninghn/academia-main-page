@@ -36,7 +36,7 @@ export function Header() {
               {currentLanguage === 'tr' ? 'ACADEMIA Grup' : 'ACADEMIA Group'}
             </a>
             <a href="/#insights" className="whitespace-nowrap text-[13px] font-medium text-[#142033] transition hover:text-[#D89A4A] lg:text-[15px]">
-              {currentLanguage === 'tr' ? 'Gündem' : 'Insights'}
+              {currentLanguage === 'tr' ? 'Sektörel Gündem' : 'Insights'}
             </a>
             <Link href="/contact" className="whitespace-nowrap text-[13px] font-medium text-[#142033] transition hover:text-[#D89A4A] lg:text-[15px]">
               {currentLanguage === 'tr' ? 'İletişim' : 'Contact'}
@@ -74,7 +74,7 @@ export function Header() {
               {currentLanguage === 'tr' ? 'ACADEMIA Grup' : 'ACADEMIA Group'}
             </a>
             <a href="/#insights" className="block text-[15px]" onClick={() => setMobileMenuOpen(false)}>
-              {currentLanguage === 'tr' ? 'Gündem' : 'Insights'}
+              {currentLanguage === 'tr' ? 'Sektörel Gündem' : 'Insights'}
             </a>
             <Link href="/contact" className="block text-[15px]" onClick={() => setMobileMenuOpen(false)}>
               {currentLanguage === 'tr' ? 'İletişim' : 'Contact'}

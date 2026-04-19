@@ -166,22 +166,31 @@ function AbstractPattern({ variant }) {
 function EcosystemHeroPanel({ language }) {
   const items = language === 'tr'
     ? [
-        { title: 'BT Standartları', eyebrow: 'INFORMATION', icon: Server, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '01', variant: 'it' },
-        { title: 'Sürdürülebilirlik & ESG', eyebrow: 'SUSTAINABILITY', icon: Leaf, accent: 'bg-[#D89A4A]', accentText: 'text-[#D89A4A]', number: '02', variant: 'esg' },
-        { title: 'Kalite & Yönetişim', eyebrow: 'QUALITY', icon: ShieldCheck, accent: 'bg-[#142033]', accentText: 'text-[#142033]', number: '03', variant: 'governance' },
-        { title: 'Eğitim & Gelişim', eyebrow: 'CAPABILITY', icon: GraduationCap, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '04', variant: 'capability' },
-        { title: 'Yapay Zeka Yönetişimi', eyebrow: 'AI GOVERNANCE', icon: BrainCircuit, accent: 'bg-[#8B5CF6]', accentText: 'text-[#8B5CF6]', number: '05', variant: 'ai' },
+        { title: 'BT Standartları', eyebrow: 'INFORMATION', icon: Server, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '01', variant: 'it', anchor: 'expertise-01' },
+        { title: 'Sürdürülebilirlik & ESG', eyebrow: 'SUSTAINABILITY', icon: Leaf, accent: 'bg-[#D89A4A]', accentText: 'text-[#D89A4A]', number: '02', variant: 'esg', anchor: 'expertise-02' },
+        { title: 'Kalite & Yönetişim', eyebrow: 'QUALITY', icon: ShieldCheck, accent: 'bg-[#142033]', accentText: 'text-[#142033]', number: '03', variant: 'governance', anchor: 'expertise-03' },
+        { title: 'Eğitim & Gelişim', eyebrow: 'CAPABILITY', icon: GraduationCap, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '04', variant: 'capability', anchor: 'expertise-04' },
+        { title: 'Yapay Zeka Yönetişimi', eyebrow: 'AI GOVERNANCE', icon: BrainCircuit, accent: 'bg-[#8B5CF6]', accentText: 'text-[#8B5CF6]', number: '05', variant: 'ai', anchor: 'expertise-05' },
       ]
     : [
-        { title: 'IT Standards', eyebrow: 'INFORMATION', icon: Server, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '01', variant: 'it' },
-        { title: 'Sustainability & ESG', eyebrow: 'SUSTAINABILITY', icon: Leaf, accent: 'bg-[#D89A4A]', accentText: 'text-[#D89A4A]', number: '02', variant: 'esg' },
-        { title: 'Quality & Governance', eyebrow: 'QUALITY', icon: ShieldCheck, accent: 'bg-[#142033]', accentText: 'text-[#142033]', number: '03', variant: 'governance' },
-        { title: 'Training & Development', eyebrow: 'CAPABILITY', icon: GraduationCap, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '04', variant: 'capability' },
-        { title: 'AI Governance', eyebrow: 'AI GOVERNANCE', icon: BrainCircuit, accent: 'bg-[#8B5CF6]', accentText: 'text-[#8B5CF6]', number: '05', variant: 'ai' },
+        { title: 'IT Standards', eyebrow: 'INFORMATION', icon: Server, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '01', variant: 'it', anchor: 'expertise-01' },
+        { title: 'Sustainability & ESG', eyebrow: 'SUSTAINABILITY', icon: Leaf, accent: 'bg-[#D89A4A]', accentText: 'text-[#D89A4A]', number: '02', variant: 'esg', anchor: 'expertise-02' },
+        { title: 'Quality & Governance', eyebrow: 'QUALITY', icon: ShieldCheck, accent: 'bg-[#142033]', accentText: 'text-[#142033]', number: '03', variant: 'governance', anchor: 'expertise-03' },
+        { title: 'Training & Development', eyebrow: 'CAPABILITY', icon: GraduationCap, accent: 'bg-[#58C3E8]', accentText: 'text-[#58C3E8]', number: '04', variant: 'capability', anchor: 'expertise-04' },
+        { title: 'AI Governance', eyebrow: 'AI GOVERNANCE', icon: BrainCircuit, accent: 'bg-[#8B5CF6]', accentText: 'text-[#8B5CF6]', number: '05', variant: 'ai', anchor: 'expertise-05' },
       ];
 
+  /* Pentagon positions: top-center, upper-right, lower-right, lower-left, upper-left */
+  const pentagonPositions = [
+    { top: '2%',  left: '50%', translate: '-translate-x-1/2' },
+    { top: '22%', left: '85%', translate: '-translate-x-1/2' },
+    { top: '62%', left: '75%', translate: '-translate-x-1/2' },
+    { top: '62%', left: '25%', translate: '-translate-x-1/2' },
+    { top: '22%', left: '15%', translate: '-translate-x-1/2' },
+  ];
+
   return (
-    <div className="relative rounded-[20px] border border-[#D9D6CE] bg-[#FBF9F4] p-4 shadow-[0_12px_40px_rgba(20,32,51,0.035)] sm:rounded-[28px] sm:p-6 lg:p-7">
+    <div className="relative rounded-[14px] border border-[#D9D6CE] bg-[#FBF9F4] p-2 shadow-[0_12px_40px_rgba(20,32,51,0.035)] sm:rounded-[18px] sm:p-3 lg:p-4">
       <div className="pointer-events-none absolute left-10 top-10 h-24 w-24 rounded-full bg-[#58C3E8]/[0.035] blur-3xl" />
       <div className="pointer-events-none absolute bottom-10 right-12 h-24 w-24 rounded-full bg-[#D89A4A]/[0.035] blur-3xl" />
 
@@ -192,43 +201,131 @@ function EcosystemHeroPanel({ language }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+      {/* ── Mobile / Tablet: simple grid ── */}
+      <div className="block lg:hidden">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+          {items.map((item, index) => {
+            const Icon = item.icon;
+            const isLast = index === items.length - 1 && items.length % 2 !== 0;
+            return (
+              <a
+                href={`#${item.anchor}`}
+                key={item.title}
+                className={`group relative block h-[160px] overflow-hidden rounded-[20px] border border-[#E2DDD3] bg-white transition duration-500 hover:-translate-y-[2px] hover:border-[#CDBFA8] hover:shadow-[0_18px_36px_rgba(20,32,51,0.08)] sm:h-[190px] ${isLast ? 'sm:col-span-2 sm:mx-auto sm:w-1/2' : ''}`}
+              >
+                <AbstractPattern variant={item.variant} />
+                <div className="absolute inset-0 bg-[#F8F6F1]/[0.78] backdrop-blur-[0.5px] transition duration-500 group-hover:bg-[#F8F6F1]/[0.62]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/[0.18] via-transparent to-white/[0.12]" />
+                <div className="absolute right-5 top-5 z-10 flex items-center gap-2">
+                  <span className={`h-2.5 w-2.5 rounded-full ${item.accent}`} />
+                  <span className="text-[11px] uppercase tracking-[0.18em] text-[#C18A4A]">{item.number}</span>
+                </div>
+                <div className="relative z-10 flex h-full flex-col justify-between p-4 sm:p-5">
+                  <p className="text-[10px] uppercase tracking-[0.28em] text-[#8A97AB]">{item.eyebrow}</p>
+                  <div className="flex items-center">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/60 bg-white/60 shadow-[0_6px_18px_rgba(20,32,51,0.05)] backdrop-blur-sm sm:h-12 sm:w-12 sm:rounded-2xl">
+                      <Icon className={`h-4 w-4 sm:h-5 sm:w-5 ${item.accentText}`} strokeWidth={1.8} />
+                    </div>
+                  </div>
+                  <h3 className="max-w-[260px] text-[18px] font-medium leading-[1.15] tracking-[-0.02em] text-[#142033] sm:text-[22px]">
+                    {item.title}
+                  </h3>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* ── Desktop: Pentagon layout ── */}
+      <div className="relative hidden lg:block" style={{ height: '520px' }}>
+        {/* Pentagon SVG background */}
+        <svg
+          viewBox="0 0 500 500"
+          className="pointer-events-none absolute inset-0 z-0 h-full w-full"
+          fill="none"
+        >
+          {/* Outer pentagon outline */}
+          <polygon
+            points="250,45 475,210 390,440 110,440 25,210"
+            stroke="#D9D6CE"
+            strokeWidth="1"
+            strokeDasharray="6 4"
+            fill="none"
+            opacity="0.6"
+          />
+          {/* Inner pentagon glow */}
+          <polygon
+            points="250,100 410,230 350,400 150,400 90,230"
+            stroke="#D89A4A"
+            strokeWidth="0.8"
+            strokeDasharray="4 6"
+            fill="url(#pentaGlow)"
+            opacity="0.5"
+          />
+          {/* Connection lines from center to vertices */}
+          <line x1="250" y1="250" x2="250" y2="45" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
+          <line x1="250" y1="250" x2="475" y2="210" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
+          <line x1="250" y1="250" x2="390" y2="440" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
+          <line x1="250" y1="250" x2="110" y2="440" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
+          <line x1="250" y1="250" x2="25" y2="210" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
+          {/* Center circle removed - logo placed via HTML */}
+          {/* Vertex dots */}
+          <circle cx="250" cy="45" r="5" fill="#58C3E8" opacity="0.4" />
+          <circle cx="475" cy="210" r="5" fill="#D89A4A" opacity="0.4" />
+          <circle cx="390" cy="440" r="5" fill="#142033" opacity="0.3" />
+          <circle cx="110" cy="440" r="5" fill="#58C3E8" opacity="0.4" />
+          <circle cx="25" cy="210" r="5" fill="#8B5CF6" opacity="0.4" />
+          <defs>
+            <radialGradient id="pentaGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="#D89A4A" stopOpacity="0.06" />
+              <stop offset="100%" stopColor="#D89A4A" stopOpacity="0" />
+            </radialGradient>
+          </defs>
+        </svg>
+
+        {/* Cards positioned at pentagon vertices */}
         {items.map((item, index) => {
           const Icon = item.icon;
-          const isLast = index === items.length - 1 && items.length % 2 !== 0;
+          const pos = pentagonPositions[index];
           return (
-            <div
+            <a
+              href={`#${item.anchor}`}
               key={item.title}
-              className={`group relative h-[160px] overflow-hidden rounded-[20px] border border-[#E2DDD3] bg-white transition duration-500 hover:-translate-y-[2px] hover:border-[#CDBFA8] hover:shadow-[0_18px_36px_rgba(20,32,51,0.08)] sm:h-[190px] lg:h-[210px] ${isLast ? 'sm:col-span-2 sm:mx-auto sm:w-1/2' : ''}`}
+              className={`group absolute z-10 ${pos.translate}`}
+              style={{ top: pos.top, left: pos.left, width: '170px' }}
             >
-              <AbstractPattern variant={item.variant} />
+              <div className="relative h-[150px] overflow-hidden rounded-[18px] border border-[#E2DDD3] bg-white/95 shadow-[0_8px_24px_rgba(20,32,51,0.06)] backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:border-[#CDBFA8] hover:shadow-[0_18px_36px_rgba(20,32,51,0.12)]">
+                <AbstractPattern variant={item.variant} />
+                <div className="absolute inset-0 bg-[#F8F6F1]/[0.75] backdrop-blur-[0.5px] transition duration-500 group-hover:bg-[#F8F6F1]/[0.55]" />
 
-              <div className="absolute inset-0 bg-[#F8F6F1]/[0.78] backdrop-blur-[0.5px] transition duration-500 group-hover:bg-[#F8F6F1]/[0.62]" />
-              <div className="absolute inset-0 bg-gradient-to-b from-white/[0.18] via-transparent to-white/[0.12]" />
-
-              <div className="absolute right-5 top-5 z-10 flex items-center gap-2">
-                <span className={`h-2.5 w-2.5 rounded-full ${item.accent}`} />
-                <span className="text-[11px] uppercase tracking-[0.18em] text-[#C18A4A]">{item.number}</span>
-              </div>
-
-              <div className="relative z-10 flex h-full flex-col justify-between p-4 sm:p-5 lg:p-6">
-                <p className="text-[10px] uppercase tracking-[0.28em] text-[#8A97AB]">{item.eyebrow}</p>
-
-                <div className="flex items-center">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/60 bg-white/60 shadow-[0_6px_18px_rgba(20,32,51,0.05)] backdrop-blur-sm transition duration-500 group-hover:scale-[1.04] sm:h-12 sm:w-12 sm:rounded-2xl">
-                    <Icon className={`h-4 w-4 sm:h-5 sm:w-5 ${item.accentText}`} strokeWidth={1.8} />
-                  </div>
+                <div className="absolute right-3 top-3 z-10 flex items-center gap-1.5">
+                  <span className={`h-2 w-2 rounded-full ${item.accent}`} />
+                  <span className="text-[10px] uppercase tracking-[0.14em] text-[#C18A4A]">{item.number}</span>
                 </div>
 
-                <h3 className="max-w-[260px] text-[18px] font-medium leading-[1.15] tracking-[-0.02em] text-[#142033] sm:text-[22px] lg:text-[24px]">
-                  {item.title}
-                </h3>
-              </div>
+                <div className="relative z-10 flex h-full flex-col justify-between p-3.5">
+                  <p className="text-[9px] uppercase tracking-[0.24em] text-[#8A97AB]">{item.eyebrow}</p>
+                  <div className="flex items-center">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/60 bg-white/70 shadow-[0_4px_12px_rgba(20,32,51,0.05)] backdrop-blur-sm transition duration-500 group-hover:scale-105">
+                      <Icon className={`h-4 w-4 ${item.accentText}`} strokeWidth={1.8} />
+                    </div>
+                  </div>
+                  <h3 className="text-[14px] font-medium leading-[1.2] tracking-[-0.01em] text-[#142033]">
+                    {item.title}
+                  </h3>
+                </div>
 
-              <div className="card-shine pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100" />
-            </div>
+                <div className="card-shine pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100" />
+              </div>
+            </a>
           );
         })}
+
+        {/* Center logo */}
+        <div className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2">
+          <img src="/logo.png" alt="ACADEMIA" className="h-20 w-auto object-contain drop-shadow-sm" />
+        </div>
       </div>
     </div>
   );
@@ -248,7 +345,7 @@ function HeroSection({ language }) {
       <div className="mx-auto max-w-[1380px] px-4 pb-10 pt-6 sm:px-6 lg:px-8 lg:pb-14 lg:pt-8">
         <div className="grid grid-cols-1 gap-8 xl:grid-cols-[1.02fr_0.98fr] xl:items-center xl:gap-10">
           <div className="pt-2">
-            <h1 className="mt-4 max-w-[760px] text-[40px] font-light leading-[0.96] tracking-[-0.05em] text-[#142033] sm:text-[48px] md:text-[56px] xl:text-[72px]">
+            <h1 className="mt-4 max-w-[760px] text-[32px] font-light leading-[0.96] tracking-[-0.05em] text-[#142033] sm:text-[40px] md:text-[56px] xl:text-[72px]">
               {language === 'tr' ? (
                 <>Kurumsal dönüşüm için<br /><span className="font-semibold">stratejik bir</span><br />ekosistem</>
               ) : (
@@ -266,21 +363,21 @@ function HeroSection({ language }) {
               {[
                 { val: '150+', label: language === 'tr' ? 'Proje' : 'Projects' },
                 { val: '80+', label: language === 'tr' ? 'Kurum' : 'Clients' },
-                { val: '7', label: language === 'tr' ? 'Uzmanlık Alanı' : 'Expertise Areas' },
+                { val: '5', label: language === 'tr' ? 'Uzmanlık Alanı' : 'Expertise Areas' },
               ].map((s) => (
-                <div key={s.label} className="rounded-2xl border border-[#D9D6CE] bg-[#FAF8F3] px-3 py-4 sm:px-4">
-                  <p className="text-[24px] font-semibold text-[#142033]">{s.val}</p>
-                  <p className="mt-1 text-[10px] uppercase tracking-[0.1em] text-[#72819A] sm:text-[12px] sm:tracking-[0.14em]">{s.label}</p>
+                <div key={s.label} className="rounded-2xl border border-[#D9D6CE] bg-[#FAF8F3] px-2 py-3 sm:px-4 sm:py-4">
+                  <p className="text-[20px] font-semibold text-[#142033] sm:text-[24px]">{s.val}</p>
+                  <p className="mt-1 text-[9px] uppercase tracking-[0.1em] text-[#72819A] sm:text-[12px] sm:tracking-[0.14em]">{s.label}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3 md:gap-4">
-              <a href="#expertise" className="inline-flex items-center gap-3 rounded-full bg-[#0F1A32] px-6 py-3.5 text-[15px] font-medium text-white transition hover:bg-[#D89A4A] sm:px-8 sm:py-4 sm:text-[16px]">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row md:gap-4">
+              <a href="#expertise" className="inline-flex items-center justify-center gap-3 rounded-full bg-[#0F1A32] px-6 py-3.5 text-[14px] font-medium text-white transition hover:bg-[#D89A4A] sm:px-8 sm:py-4 sm:text-[16px]">
                 {language === 'tr' ? 'Ekosistemi Keşfet' : 'Explore the Ecosystem'}
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="#how-it-works" className="inline-flex items-center gap-3 rounded-full border border-[#142033] px-6 py-3.5 text-[15px] font-medium text-[#142033] transition hover:bg-[#142033] hover:text-white sm:px-8 sm:py-4 sm:text-[16px]">
+              <a href="#how-it-works" className="inline-flex items-center justify-center gap-3 rounded-full border border-[#142033] px-6 py-3.5 text-[14px] font-medium text-[#142033] transition hover:bg-[#142033] hover:text-white sm:px-8 sm:py-4 sm:text-[16px]">
                 {language === 'tr' ? 'Nasıl Çalışır' : 'How It Works'}
               </a>
             </div>
@@ -322,7 +419,7 @@ function WhatAcademiaIsSection({ language }) {
             </p>
           </div>
           <div className="relative h-[240px] overflow-hidden rounded-[22px] border border-[#D9D6CE] sm:h-[300px] xl:mt-0 xl:h-auto">
-            <img src="/images/strategic-planning.jpg" alt="Strategic planning and systems" className="h-full w-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&auto=format&fit=crop" alt="Team consulting meeting" className="h-full w-full object-cover" />
           </div>
         </div>
       </div>
@@ -405,7 +502,7 @@ function ExpertiseArchitectureSection({ language }) {
             </div>
             <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 2xl:grid-cols-3">
               {items.map((item) => (
-                <div key={item.number} className="border-t border-[#D9D6CE] pt-6">
+                <div key={item.number} id={`expertise-${item.number}`} className="border-t border-[#D9D6CE] pt-6 scroll-mt-24">
                   <div className="mb-4 flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-md border border-[#D9D6CE] text-[16px] text-[#142033]">{item.icon}</div>
                     <span className="text-[12px] uppercase tracking-[0.24em] text-[#C18A4A]">{item.number}</span>
@@ -643,7 +740,7 @@ function InsightsSection({ language }) {
         <div className="grid grid-cols-1 gap-12 xl:grid-cols-[220px_1fr] xl:gap-16">
           <div>
             <p className="text-[12px] uppercase tracking-[0.28em] text-[#72819A]">
-              {language === 'tr' ? 'Gündem' : 'Industry Insights'}
+              {language === 'tr' ? 'Sektörel Gündem' : 'Industry Insights'}
             </p>
           </div>
           <div>
