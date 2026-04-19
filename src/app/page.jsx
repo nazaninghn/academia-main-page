@@ -183,18 +183,18 @@ function EcosystemHeroPanel({ language }) {
   /* Pentagon positions: top-center, upper-right, lower-right, lower-left, upper-left */
   const pentagonPositions = [
     { top: '0%',  left: '50%', translate: '-translate-x-1/2' },
-    { top: '22%', left: '80%', translate: '-translate-x-1/2' },
-    { top: '62%', left: '70%', translate: '-translate-x-1/2' },
-    { top: '62%', left: '30%', translate: '-translate-x-1/2' },
-    { top: '22%', left: '20%', translate: '-translate-x-1/2' },
+    { top: '18%', left: '82%', translate: '-translate-x-1/2' },
+    { top: '56%', left: '72%', translate: '-translate-x-1/2' },
+    { top: '56%', left: '28%', translate: '-translate-x-1/2' },
+    { top: '18%', left: '18%', translate: '-translate-x-1/2' },
   ];
 
   return (
-    <div className="relative rounded-[14px] border border-[#D9D6CE] bg-[#FBF9F4] p-2 shadow-[0_12px_40px_rgba(20,32,51,0.035)] sm:rounded-[18px] sm:p-3 lg:p-4">
+    <div className="relative rounded-[14px] border border-[#D9D6CE] bg-[#FBF9F4] p-2 shadow-[0_12px_40px_rgba(20,32,51,0.035)] sm:rounded-[18px] sm:p-3 lg:p-3">
       <div className="pointer-events-none absolute left-10 top-10 h-24 w-24 rounded-full bg-[#58C3E8]/[0.035] blur-3xl" />
       <div className="pointer-events-none absolute bottom-10 right-12 h-24 w-24 rounded-full bg-[#D89A4A]/[0.035] blur-3xl" />
 
-      <div className="mb-6 flex justify-center">
+      <div className="mb-3 flex justify-center xl:mb-2">
         <div className="inline-flex items-center gap-3 rounded-full border border-[#D9D6CE] bg-white px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-[#72819A] shadow-[0_8px_24px_rgba(20,32,51,0.05)]">
           <span className="h-2.5 w-2.5 rounded-full bg-[#D89A4A]" />
           {language === 'tr' ? 'Ekosistem' : 'Ecosystem'}
@@ -238,15 +238,15 @@ function EcosystemHeroPanel({ language }) {
       </div>
 
       {/* ── Large Desktop: Pentagon layout ── */}
-      <div className="relative hidden overflow-hidden xl:block" style={{ height: '420px' }}>
+      <div className="relative hidden overflow-hidden xl:block" style={{ height: '380px' }}>
         {/* Pentagon SVG background */}
         <svg
-          viewBox="0 0 500 420"
+          viewBox="0 0 500 380"
           className="pointer-events-none absolute inset-0 z-0 h-full w-full"
           fill="none"
         >
           <polygon
-            points="250,30 440,175 365,370 135,370 60,175"
+            points="250,20 430,155 355,340 145,340 70,155"
             stroke="#D9D6CE"
             strokeWidth="1"
             strokeDasharray="6 4"
@@ -254,23 +254,23 @@ function EcosystemHeroPanel({ language }) {
             opacity="0.6"
           />
           <polygon
-            points="250,80 390,195 340,340 160,340 110,195"
+            points="250,65 380,175 330,310 170,310 120,175"
             stroke="#D89A4A"
             strokeWidth="0.8"
             strokeDasharray="4 6"
             fill="url(#pentaGlow)"
             opacity="0.5"
           />
-          <line x1="250" y1="210" x2="250" y2="30" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
-          <line x1="250" y1="210" x2="440" y2="175" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
-          <line x1="250" y1="210" x2="365" y2="370" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
-          <line x1="250" y1="210" x2="135" y2="370" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
-          <line x1="250" y1="210" x2="60" y2="175" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
-          <circle cx="250" cy="30" r="4" fill="#58C3E8" opacity="0.4" />
-          <circle cx="440" cy="175" r="4" fill="#D89A4A" opacity="0.4" />
-          <circle cx="365" cy="370" r="4" fill="#142033" opacity="0.3" />
-          <circle cx="135" cy="370" r="4" fill="#58C3E8" opacity="0.4" />
-          <circle cx="60" cy="175" r="4" fill="#8B5CF6" opacity="0.4" />
+          <line x1="250" y1="190" x2="250" y2="20" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
+          <line x1="250" y1="190" x2="430" y2="155" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
+          <line x1="250" y1="190" x2="355" y2="340" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
+          <line x1="250" y1="190" x2="145" y2="340" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
+          <line x1="250" y1="190" x2="70" y2="155" stroke="#D9D6CE" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.4" />
+          <circle cx="250" cy="20" r="4" fill="#58C3E8" opacity="0.4" />
+          <circle cx="430" cy="155" r="4" fill="#D89A4A" opacity="0.4" />
+          <circle cx="355" cy="340" r="4" fill="#142033" opacity="0.3" />
+          <circle cx="145" cy="340" r="4" fill="#58C3E8" opacity="0.4" />
+          <circle cx="70" cy="155" r="4" fill="#8B5CF6" opacity="0.4" />
           <defs>
             <radialGradient id="pentaGlow" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stopColor="#D89A4A" stopOpacity="0.06" />
@@ -288,9 +288,9 @@ function EcosystemHeroPanel({ language }) {
               href={`#${item.anchor}`}
               key={item.title}
               className={`group absolute z-10 ${pos.translate}`}
-              style={{ top: pos.top, left: pos.left, width: 'clamp(120px, 28%, 150px)' }}
+              style={{ top: pos.top, left: pos.left, width: 'clamp(130px, 30%, 160px)' }}
             >
-              <div className="relative h-[120px] overflow-hidden rounded-[14px] border border-[#E2DDD3] bg-white/95 shadow-[0_8px_24px_rgba(20,32,51,0.06)] backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:border-[#CDBFA8] hover:shadow-[0_18px_36px_rgba(20,32,51,0.12)]">
+              <div className="relative h-[130px] overflow-hidden rounded-[14px] border border-[#E2DDD3] bg-white/95 shadow-[0_8px_24px_rgba(20,32,51,0.06)] backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:border-[#CDBFA8] hover:shadow-[0_18px_36px_rgba(20,32,51,0.12)]">
                 <AbstractPattern variant={item.variant} />
                 <div className="absolute inset-0 bg-[#F8F6F1]/[0.75] backdrop-blur-[0.5px] transition duration-500 group-hover:bg-[#F8F6F1]/[0.55]" />
 
@@ -299,14 +299,14 @@ function EcosystemHeroPanel({ language }) {
                   <span className="text-[9px] uppercase tracking-[0.12em] text-[#C18A4A]">{item.number}</span>
                 </div>
 
-                <div className="relative z-10 flex h-full flex-col justify-between p-2.5">
+                <div className="relative z-10 flex h-full flex-col justify-between p-3">
                   <p className="text-[8px] uppercase tracking-[0.2em] text-[#8A97AB]">{item.eyebrow}</p>
                   <div className="flex items-center">
-                    <div className="flex h-7 w-7 items-center justify-center rounded-md border border-white/60 bg-white/70 shadow-[0_4px_12px_rgba(20,32,51,0.05)] backdrop-blur-sm transition duration-500 group-hover:scale-105">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/60 bg-white/70 shadow-[0_4px_12px_rgba(20,32,51,0.05)] backdrop-blur-sm transition duration-500 group-hover:scale-105">
                       <Icon className={`h-3.5 w-3.5 ${item.accentText}`} strokeWidth={1.8} />
                     </div>
                   </div>
-                  <h3 className="text-[11px] font-medium leading-[1.2] tracking-[-0.01em] text-[#142033]">
+                  <h3 className="text-[12px] font-medium leading-[1.2] tracking-[-0.01em] text-[#142033]">
                     {item.title}
                   </h3>
                 </div>
