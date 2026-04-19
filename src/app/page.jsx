@@ -201,9 +201,9 @@ function EcosystemHeroPanel({ language }) {
         </div>
       </div>
 
-      {/* ── Mobile / Tablet: simple grid ── */}
-      <div className="block lg:hidden">
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+      {/* ── Mobile / Tablet / Small Desktop: simple grid ── */}
+      <div className="block xl:hidden">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
           {items.map((item, index) => {
             const Icon = item.icon;
             const isLast = index === items.length - 1 && items.length % 2 !== 0;
@@ -211,7 +211,7 @@ function EcosystemHeroPanel({ language }) {
               <a
                 href={`#${item.anchor}`}
                 key={item.title}
-                className={`group relative block h-[160px] overflow-hidden rounded-[20px] border border-[#E2DDD3] bg-white transition duration-500 hover:-translate-y-[2px] hover:border-[#CDBFA8] hover:shadow-[0_18px_36px_rgba(20,32,51,0.08)] sm:h-[190px] ${isLast ? 'sm:col-span-2 sm:mx-auto sm:w-1/2' : ''}`}
+                className={`group relative block h-[160px] overflow-hidden rounded-[20px] border border-[#E2DDD3] bg-white transition duration-500 hover:-translate-y-[2px] hover:border-[#CDBFA8] hover:shadow-[0_18px_36px_rgba(20,32,51,0.08)] sm:h-[190px] ${isLast ? 'sm:col-span-2 sm:mx-auto sm:w-1/2 lg:col-span-1 lg:w-full' : ''}`}
               >
                 <AbstractPattern variant={item.variant} />
                 <div className="absolute inset-0 bg-[#F8F6F1]/[0.78] backdrop-blur-[0.5px] transition duration-500 group-hover:bg-[#F8F6F1]/[0.62]" />
@@ -237,8 +237,8 @@ function EcosystemHeroPanel({ language }) {
         </div>
       </div>
 
-      {/* ── Desktop: Pentagon layout ── */}
-      <div className="relative hidden overflow-hidden lg:block" style={{ height: '520px' }}>
+      {/* ── Large Desktop: Pentagon layout ── */}
+      <div className="relative hidden overflow-hidden xl:block" style={{ height: '520px' }}>
         {/* Pentagon SVG background */}
         <svg
           viewBox="0 0 500 500"
