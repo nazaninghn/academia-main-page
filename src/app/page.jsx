@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import {
   ArrowRight, ArrowUpRight, ShieldCheck, Database,
   GraduationCap, Leaf, BrainCircuit, TrendingUp,
@@ -110,6 +111,7 @@ function Eyebrow({ children, center = false }) {
 ══════════════════════════════════════════════════════════════ */
 function HeroSection({ language }) {
   const tr = language === 'tr';
+  const [activeCard, setActiveCard] = useState(null);
 
   const eyebrow = tr ? 'Stratejik Kurumsal Ortak' : 'Strategic Institutional Partner';
   const cta1    = tr ? 'Uzmanlığı Keşfet' : 'Explore Our Expertise';
@@ -302,7 +304,8 @@ function HeroSection({ language }) {
                 return (
                   <div
                     key={i}
-                    className="hero-card group/card absolute z-[7] flex w-[140px] cursor-pointer flex-col rounded-xl border border-white/70 px-3 py-3 backdrop-blur-[8px] transition-all duration-500 bg-white/75 shadow-[0_10px_30px_rgba(15,23,42,0.04),0_2px_8px_rgba(15,23,42,0.03)] hover:w-[190px] hover:scale-105 hover:bg-white/95 hover:shadow-[0_14px_50px_rgba(15,23,42,0.1)]"
+                    onClick={() => setActiveCard(activeCard === i ? null : i)}
+                    className={`hero-card group/card absolute z-[7] flex w-[140px] cursor-pointer flex-col rounded-xl border border-white/70 px-3 py-3 backdrop-blur-[8px] transition-all duration-500 ${activeCard === i ? 'w-[190px] scale-105 bg-white/95 shadow-[0_14px_50px_rgba(15,23,42,0.1)]' : 'bg-white/75 shadow-[0_10px_30px_rgba(15,23,42,0.04),0_2px_8px_rgba(15,23,42,0.03)] hover:w-[190px] hover:scale-105 hover:bg-white/95 hover:shadow-[0_14px_50px_rgba(15,23,42,0.1)]'}`}
                     style={{ ...cardPositions[i], ...asymmetry[i] }}
                   >
                     <div className="mb-2 flex h-7 w-7 items-center justify-center rounded-lg border border-[#F97342]/25 bg-[#F97342]/5">
@@ -311,7 +314,7 @@ function HeroSection({ language }) {
                     <h4 className="text-[10px] font-bold leading-snug text-[#1E293B]">
                       {card.label}
                     </h4>
-                    <div className="mt-2 hidden animate-[fadeIn_0.3s_ease] group-hover/card:block">
+                    <div className={`mt-2 animate-[fadeIn_0.3s_ease] ${activeCard === i ? 'block' : 'hidden group-hover/card:block'}`}>
                       <p className="text-[9px] leading-[1.55] text-[#475569]">{card.desc}</p>
                       <a href={card.link} className="mt-2 inline-flex items-center gap-1 text-[9px] font-bold text-[#F97342] hover:underline">
                         {tr ? 'بیشتر بخوانید' : 'Learn more'} <ArrowRight className="h-3 w-3" />
