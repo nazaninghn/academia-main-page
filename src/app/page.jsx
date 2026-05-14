@@ -784,9 +784,12 @@ function Footer({ language }) {
       ];
 
   return (
-    <footer className="relative border-t border-[#F0EDE8] bg-white/70 pt-16 pb-8 backdrop-blur-md">
+    <footer className="relative bg-white/40 pt-16 pb-8 backdrop-blur-xl">
+      {/* Orange separator line */}
+      <div className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-transparent via-[#F97342] to-transparent" />
       {/* Subtle glow */}
-      <div className="pointer-events-none absolute left-0 top-0 h-full w-1/3" style={{ background: 'radial-gradient(circle at 10% 30%, rgba(249,115,66,0.05), transparent 50%)' }} />
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-1/3" style={{ background: 'radial-gradient(circle at 10% 30%, rgba(249,115,66,0.06), transparent 50%)' }} />
+      <div className="pointer-events-none absolute right-0 bottom-0 h-1/2 w-1/3" style={{ background: 'radial-gradient(circle at 80% 70%, rgba(30,41,59,0.03), transparent 50%)' }} />
 
       <div className="relative mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-10">
 
