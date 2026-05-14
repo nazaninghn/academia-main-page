@@ -214,20 +214,7 @@ function HeroSection({ language }) {
           {/* ── ORBIT: all screens ── */}
           <div className="mt-0 flex flex-1 items-center justify-center -my-[160px] sm:-my-[110px] md:-my-[70px] lg:my-0 lg:mt-0 lg:-ml-10 lg:justify-start xl:-ml-6 xl:justify-center">
 
-            {/* SVG filter: removes black bg from hand.jpg  (alpha = 3R+3G+3B-0.8) */}
-            <svg className="pointer-events-none absolute h-0 w-0 overflow-hidden" aria-hidden="true">
-              <defs>
-                <filter id="hand-bg-remove" colorInterpolationFilters="sRGB" x="0%" y="0%" width="100%" height="100%">
-                  <feColorMatrix type="matrix"
-                    values="1 0 0 0 0
-                            0 1 0 0 0
-                            0 0 1 0 0
-                            3 3 3 0 -0.8" />
-                </filter>
-              </defs>
-            </svg>
-
-            {/* Fixed 500×540 orbital panel — predictable geometry */}
+            {/* Fixed orbital panel */}
             <div className="relative overflow-hidden rounded-3xl bg-white scale-[0.55] sm:scale-[0.7] md:scale-[0.8] lg:scale-[0.85] xl:scale-100" style={{ width: '560px', height: '600px' }} onClick={(e) => { if (e.target === e.currentTarget) setActiveCard(null); }}>
 
               {/* ② Top fade */}
@@ -263,16 +250,30 @@ function HeroSection({ language }) {
                 <div key={i} className="pointer-events-none absolute z-[4] select-none text-[18px] font-thin leading-none text-[#F97342]/35" style={s}>+</div>
               ))}
 
-              {/* ⑥ ACADEMIA center logo — with glow */}
+              {/* ⑥ ACADEMIA center — premium crystal ball */}
               <div
-                className="absolute z-[5] h-[180px] w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-full"
-                style={{ left: '280px', top: '260px', background: 'radial-gradient(circle, rgba(249,115,66,0.10) 0%, rgba(249,115,66,0.03) 40%, transparent 70%)' }}
+                className="absolute z-[5] h-[240px] w-[240px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-60 blur-[20px]"
+                style={{ left: '280px', top: '260px', background: 'radial-gradient(circle, rgba(249,115,66,0.12) 0%, transparent 60%)' }}
               />
               <div
-                className="absolute z-[6] flex h-[130px] w-[130px] -translate-x-1/2 -translate-y-1/2 animate-[handFloat_5s_ease-in-out_infinite] items-center justify-center rounded-full bg-white shadow-[0_14px_50px_rgba(15,23,42,0.08),0_0_0_1px_rgba(249,115,66,0.06)]"
-                style={{ left: '280px', top: '260px' }}
+                className="absolute z-[6] flex h-[180px] w-[180px] -translate-x-1/2 -translate-y-1/2 animate-[orbFloat_5s_ease-in-out_infinite] items-center justify-center rounded-full"
+                style={{
+                  left: '280px',
+                  top: '260px',
+                  background: 'radial-gradient(circle at 30% 20%, rgba(255,255,255,0.98) 0%, rgba(240,245,255,0.7) 15%, rgba(200,215,240,0.4) 35%, rgba(160,185,220,0.2) 55%, rgba(120,150,190,0.1) 75%, rgba(80,110,160,0.05) 100%)',
+                  boxShadow: '0 25px 70px rgba(15,23,42,0.15), 0 8px 25px rgba(15,23,42,0.08), inset 0 -25px 50px rgba(80,120,180,0.06), inset 0 15px 35px rgba(255,255,255,0.7), 0 0 0 1.5px rgba(255,255,255,0.5)',
+                }}
               >
-                <Image src="/logo.png" alt="ACADEMIA" width={100} height={62} className="h-auto w-[88px] object-contain" />
+                {/* Main highlight — top left */}
+                <div className="pointer-events-none absolute left-[18%] top-[12%] h-[38%] w-[32%] rounded-full bg-white/50 blur-[6px]" />
+                {/* Secondary highlight — smaller */}
+                <div className="pointer-events-none absolute left-[22%] top-[16%] h-[18%] w-[15%] rounded-full bg-white/70 blur-[3px]" />
+                {/* Bottom rim light */}
+                <div className="pointer-events-none absolute bottom-[12%] left-1/2 h-[8%] w-[40%] -translate-x-1/2 rounded-full bg-white/15 blur-[4px]" />
+                {/* Edge ring */}
+                <div className="pointer-events-none absolute inset-[3px] rounded-full border border-white/30" />
+                {/* Logo */}
+                <Image src="/logo.png" alt="ACADEMIA" width={120} height={74} className="relative z-10 h-auto w-[105px] object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.1)]" />
               </div>
 
               {/* ⑦ Connector lines from cards to center */}

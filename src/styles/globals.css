@@ -98,7 +98,7 @@ img, svg, video, canvas { display: block; max-width: 100%; }
 }
 
 /* ─── Hand float animation ─── */
-@keyframes handFloat {
+@keyframes orbFloat {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
 }

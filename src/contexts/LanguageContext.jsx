@@ -5,23 +5,23 @@ import { createContext, useContext, useState, useEffect } from 'react';
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState('tr'); // پیش‌فرض ترکی
+  const [language, setLanguage] = useState('tr');
+  const [mounted, setMounted]   = useState(false);
 
   useEffect(() => {
-    // بررسی localStorage برای زبان ذخیره شده
-    const savedLanguage = localStorage.getItem('language');
-    if (savedLanguage) {
-      setLanguage(savedLanguage);
-    }
+    const saved = localStorage.getItem('academia_lang');
+    if (saved === 'en' || saved === 'tr') setLanguage(saved);
+    setMounted(true);
   }, []);
 
   const changeLanguage = (lang) => {
     setLanguage(lang);
-    localStorage.setItem('language', lang);
+    localStorage.setItem('academia_lang', lang);
   };
 
+  // Before client mount, always return 'tr' to match server render → no hydration mismatch
   return (
-    <LanguageContext.Provider value={{ language, changeLanguage }}>
+    <LanguageContext.Provider value={{ language: mounted ? language : 'tr', changeLanguage }}>
       {children}
     </LanguageContext.Provider>
   );
