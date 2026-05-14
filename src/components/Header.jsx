@@ -73,7 +73,7 @@ export function Header() {
                       window.location.href = l.href;
                     }
                   }}
-                  className="nav-link-lux text-[13.5px] font-medium text-[#666] transition-colors hover:text-black"
+                  className="nav-link-lux text-[13.5px] font-medium text-[#666] transition-all hover:text-black hover:scale-[1.05] hover:-translate-y-0.5 active:scale-[0.95]"
                 >
                   {l.label}
                 </button>
@@ -81,7 +81,7 @@ export function Header() {
                 <a
                   key={l.href}
                   href={l.href}
-                  className="nav-link-lux text-[13.5px] font-medium text-[#666] transition-colors hover:text-black"
+                  className="nav-link-lux text-[13.5px] font-medium text-[#666] transition-all hover:text-black hover:scale-[1.05] hover:-translate-y-0.5 active:scale-[0.95]"
                 >
                   {l.label}
                 </a>
@@ -94,7 +94,7 @@ export function Header() {
             <LanguageSwitcher />
             <Link
               href="/contact"
-              className="inline-flex items-center gap-1.5 rounded-full bg-[#F97342] px-4 py-2 text-[12px] font-semibold text-white shadow-[0_4px_14px_rgba(249,115,66,0.3)] transition hover:bg-[#E55A25]"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#F97342] px-4 py-2 text-[12px] font-semibold text-white shadow-[0_4px_14px_rgba(249,115,66,0.3)] transition hover:bg-[#E55A25] hover:scale-[1.05] hover:-translate-y-0.5 active:scale-[0.95]"
             >
               {lang === 'tr' ? 'İletişim' : 'Contact'}
               <ArrowRight className="h-3 w-3" />

@@ -212,7 +212,7 @@ function HeroSection({ language }) {
           </div>
 
           {/* ── ORBIT: all screens ── */}
-          <div className="mt-0 flex flex-1 items-center justify-center -my-[160px] sm:-my-[110px] md:-my-[70px] lg:my-0 lg:mt-0 lg:-ml-10 lg:justify-start xl:-ml-6 xl:justify-center">
+          <div className="mt-0 flex flex-1 items-center justify-center -my-[200px] sm:-my-[140px] md:-my-[90px] lg:my-0 lg:mt-0 lg:-ml-10 lg:justify-start xl:-ml-6 xl:justify-center">
 
             {/* Fixed orbital panel */}
             <div className="relative overflow-hidden rounded-3xl bg-white scale-[0.55] sm:scale-[0.7] md:scale-[0.8] lg:scale-[0.85] xl:scale-100" style={{ width: '560px', height: '600px' }} onClick={(e) => { if (e.target === e.currentTarget) setActiveCard(null); }}>
@@ -739,7 +739,7 @@ function CTASection({ language }) {
             <div className="flex shrink-0">
               <a
                 href="/contact"
-                className="inline-flex items-center gap-2.5 rounded-full bg-[#1E293B] px-7 py-3.5 text-[13px] font-bold text-white shadow-[0_4px_16px_rgba(30,41,59,0.2)] transition hover:bg-[#334155] active:scale-[0.98]"
+                className="inline-flex items-center gap-2.5 rounded-full bg-[#1E293B] px-7 py-3.5 text-[13px] font-bold text-white shadow-[0_4px_16px_rgba(30,41,59,0.2)] transition hover:bg-[#334155] hover:scale-[1.03] hover:-translate-y-0.5 active:scale-[0.97]"
               >
                 {tr ? 'İletişime Geçin' : 'Contact Us'} <ArrowRight className="h-3.5 w-3.5" />
               </a>
