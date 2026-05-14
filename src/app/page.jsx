@@ -181,13 +181,13 @@ function HeroSection({ language }) {
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <a
                 href="#expertise"
-                className="inline-flex items-center gap-2.5 rounded-full bg-[#F97342] px-7 py-3.5 text-[14px] font-bold text-white shadow-[0_4px_20px_rgba(255,107,53,0.38)] transition hover:bg-[#E55A25] active:scale-[0.98]"
+                className="inline-flex items-center gap-2.5 rounded-full bg-[#F97342] px-7 py-3.5 text-[14px] font-bold text-white shadow-[0_4px_20px_rgba(255,107,53,0.38)] transition hover:bg-[#E55A25] hover:scale-[1.03] hover:-translate-y-0.5 active:scale-[0.97]"
               >
                 {cta1} <ArrowRight className="h-4 w-4" />
               </a>
               <a
                 href="#process"
-                className="inline-flex items-center gap-3 rounded-full border border-[#1E293B]/15 bg-white py-3 pl-5 pr-3 text-[14px] font-semibold text-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.06)] transition hover:border-[#1E293B]/30 active:scale-[0.98]"
+                className="inline-flex items-center gap-3 rounded-full border border-[#1E293B]/15 bg-white py-3 pl-5 pr-3 text-[14px] font-semibold text-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.06)] transition hover:border-[#1E293B]/30 hover:scale-[1.03] hover:-translate-y-0.5 active:scale-[0.97]"
               >
                 {cta2}
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1E293B]">
