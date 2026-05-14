@@ -212,7 +212,7 @@ function HeroSection({ language }) {
           </div>
 
           {/* ── ORBIT: all screens ── */}
-          <div className="mt-4 flex flex-1 items-center justify-center -my-[120px] sm:-my-[80px] md:-my-[50px] lg:my-0 lg:mt-0 lg:-ml-10 lg:justify-start xl:-ml-6 xl:justify-center">
+          <div className="mt-0 flex flex-1 items-center justify-center -my-[160px] sm:-my-[110px] md:-my-[70px] lg:my-0 lg:mt-0 lg:-ml-10 lg:justify-start xl:-ml-6 xl:justify-center">
 
             {/* SVG filter: removes black bg from hand.jpg  (alpha = 3R+3G+3B-0.8) */}
             <svg className="pointer-events-none absolute h-0 w-0 overflow-hidden" aria-hidden="true">
@@ -317,7 +317,7 @@ function HeroSection({ language }) {
                     <div className={`mt-2 animate-[fadeIn_0.3s_ease] ${activeCard === i ? 'block' : 'hidden group-hover/card:block'}`}>
                       <p className="text-[9px] leading-[1.55] text-[#475569]">{card.desc}</p>
                       <a href={card.link} className="mt-2 inline-flex items-center gap-1 text-[9px] font-bold text-[#F97342] hover:underline">
-                        {tr ? 'بیشتر بخوانید' : 'Learn more'} <ArrowRight className="h-3 w-3" />
+                        {tr ? 'Daha fazla' : 'Learn more'} <ArrowRight className="h-3 w-3" />
                       </a>
                     </div>
                   </div>
