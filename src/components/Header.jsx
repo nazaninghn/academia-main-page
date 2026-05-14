@@ -44,7 +44,7 @@ export function Header() {
             : 'bg-white/80 backdrop-blur-sm'
         }`}
       >
-        <nav className="mx-auto flex h-[60px] max-w-[1280px] items-center justify-between px-5 sm:px-8 lg:h-[68px] lg:px-10">
+        <nav className="mx-auto flex h-[68px] max-w-[1280px] items-center justify-between px-5 sm:px-8 lg:h-[78px] lg:px-10">
 
           {/* Logo */}
           <div className="flex items-center gap-4">

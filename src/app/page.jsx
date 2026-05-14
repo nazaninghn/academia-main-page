@@ -146,15 +146,15 @@ function HeroSection({ language }) {
   ];
 
   return (
-    <section className="min-h-[100svh] bg-white pt-[68px]">
-      <div className="mx-auto w-full max-w-[1280px] px-5 pt-0 sm:px-8 lg:px-10">
+    <section className="min-h-[100svh] bg-white pt-[78px]">
+      <div className="mx-auto w-full max-w-[1280px] px-5 pt-8 sm:px-8 sm:pt-10 lg:px-10 lg:pt-12">
         <div className="flex w-full flex-col items-center gap-6 lg:flex-row lg:items-start lg:gap-6 xl:gap-10">
 
           {/* ── LEFT: text ── */}
           <div className="w-full shrink-0 lg:w-[48%] xl:w-[52%]">
 
             {/* Heading */}
-            <h1 className="text-[36px] font-black leading-[0.95] tracking-[-0.03em] text-[#1E293B] sm:text-[46px] lg:text-[50px] xl:text-[60px] 2xl:text-[68px]">
+            <h1 className="text-[32px] font-black leading-[0.95] tracking-[-0.03em] text-[#1E293B] sm:text-[40px] lg:text-[44px] xl:text-[52px] 2xl:text-[58px]">
               {tr ? 'Kurumsal' : 'Institutional'}
               <br />
               {tr ? 'Dönüşüm' : 'Transformation'}
@@ -244,11 +244,11 @@ function HeroSection({ language }) {
               {/* ④ Concentric circles — animated */}
               <div className="pointer-events-none absolute inset-0 z-[4]">
                 {/* Outer ring - slow rotate, dashed */}
-                <div className="absolute left-1/2 top-[260px] h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 animate-[spin_80s_linear_infinite] rounded-full border border-dashed border-[#F97342]/20" />
+                <div className="absolute left-1/2 top-[260px] h-[440px] w-[440px] -translate-x-1/2 -translate-y-1/2 animate-[spin_80s_linear_infinite] rounded-full border-[1.5px] border-dashed border-[#F97342]/35" />
                 {/* Middle ring - counter rotate, thicker */}
-                <div className="absolute left-1/2 top-[260px] h-[270px] w-[270px] -translate-x-1/2 -translate-y-1/2 animate-[spin_55s_linear_infinite_reverse] rounded-full border-[1.5px] border-dashed border-[#F97342]/25" />
+                <div className="absolute left-1/2 top-[260px] h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 animate-[spin_55s_linear_infinite_reverse] rounded-full border-[2px] border-dashed border-[#F97342]/40" />
                 {/* Inner ring - breathing pulse */}
-                <div className="absolute left-1/2 top-[260px] h-[170px] w-[170px] -translate-x-1/2 -translate-y-1/2 animate-[pulse_5s_ease-in-out_infinite] rounded-full border border-[#F97342]/12" />
+                <div className="absolute left-1/2 top-[260px] h-[200px] w-[200px] -translate-x-1/2 -translate-y-1/2 animate-[pulse_5s_ease-in-out_infinite] rounded-full border-[1.5px] border-[#F97342]/25" />
               </div>
 
               {/* ⑤ Decorative plus accents */}
@@ -346,7 +346,7 @@ function ExpertiseSection({ language }) {
   ];
 
   return (
-    <section id="expertise" className="scroll-mt-24 bg-white py-24 lg:py-32">
+    <section id="expertise" className="scroll-mt-24 bg-white py-16 lg:py-20">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-10">
 
         {/* Title — above cards */}
@@ -443,7 +443,7 @@ function WhatSection({ language }) {
   const tr = language === 'tr';
 
   return (
-    <section id="what-academia-is" className="scroll-mt-24 border-t border-[#F0EDE8] bg-white py-20 lg:py-28">
+    <section id="what-academia-is" className="scroll-mt-24 border-t border-[#F0EDE8] bg-white py-14 lg:py-18">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-10">
         <div className="flex flex-col gap-12 lg:flex-row lg:gap-14">
 
@@ -495,7 +495,7 @@ function ProcessSection({ language }) {
   const steps = process[language] ?? process.en;
 
   return (
-    <section id="process" className="scroll-mt-24 border-t border-[#F0EDE8] bg-white py-20 lg:py-28">
+    <section id="process" className="scroll-mt-24 border-t border-[#F0EDE8] bg-white py-14 lg:py-18">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-10">
 
         <div className="flex flex-col gap-12 lg:flex-row lg:gap-14">
@@ -559,7 +559,7 @@ function EcosystemSection({ language }) {
   const tr = language === 'tr';
 
   return (
-    <section id="ecosystem" className="scroll-mt-24 bg-white py-24 lg:py-32">
+    <section id="ecosystem" className="scroll-mt-24 bg-white py-16 lg:py-20">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-10">
 
         <div className="mb-14 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
@@ -661,7 +661,7 @@ function InsightsSection({ language }) {
   ];
 
   return (
-    <section id="insights" className="scroll-mt-24 border-t border-[#F0EDE8] bg-white py-20 lg:py-28">
+    <section id="insights" className="scroll-mt-24 border-t border-[#F0EDE8] bg-white py-14 lg:py-18">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-10">
 
         <div className="flex flex-col gap-12 lg:flex-row lg:gap-14">
@@ -717,7 +717,7 @@ function CTASection({ language }) {
   const tr = language === 'tr';
 
   return (
-    <section className="py-24 lg:py-32">
+    <section className="py-16 lg:py-20">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-10">
         <div className="relative overflow-hidden rounded-3xl border border-[#F0EDE8] bg-white px-8 py-16 sm:px-14 lg:px-20 lg:py-20">
           {/* Subtle orange glow */}

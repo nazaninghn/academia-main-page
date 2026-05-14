@@ -26,7 +26,7 @@ export default function ContactPage() {
     <div className="min-h-screen bg-white text-[#1E293B]">
       <Header />
 
-      <main className="pt-[68px]">
+      <main className="pt-[78px]">
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-[#F0EDE8] bg-white py-16 lg:py-20">
           {/* Subtle glow */}
