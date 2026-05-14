@@ -212,7 +212,7 @@ function HeroSection({ language }) {
           </div>
 
           {/* ── ORBIT: all screens ── */}
-          <div className="mt-8 flex flex-1 items-center justify-center lg:mt-0 lg:-ml-10 lg:justify-start xl:-ml-6 xl:justify-center">
+          <div className="mt-4 flex flex-1 items-center justify-center -my-[120px] sm:-my-[80px] md:-my-[50px] lg:my-0 lg:mt-0 lg:-ml-10 lg:justify-start xl:-ml-6 xl:justify-center">
 
             {/* SVG filter: removes black bg from hand.jpg  (alpha = 3R+3G+3B-0.8) */}
             <svg className="pointer-events-none absolute h-0 w-0 overflow-hidden" aria-hidden="true">
@@ -228,7 +228,7 @@ function HeroSection({ language }) {
             </svg>
 
             {/* Fixed 500×540 orbital panel — predictable geometry */}
-            <div className="relative overflow-hidden rounded-3xl bg-white scale-[0.55] sm:scale-[0.7] md:scale-[0.8] lg:scale-[0.85] xl:scale-100" style={{ width: '560px', height: '600px' }}>
+            <div className="relative overflow-hidden rounded-3xl bg-white scale-[0.55] sm:scale-[0.7] md:scale-[0.8] lg:scale-[0.85] xl:scale-100" style={{ width: '560px', height: '600px' }} onClick={(e) => { if (e.target === e.currentTarget) setActiveCard(null); }}>
 
               {/* ② Top fade */}
               <div className="pointer-events-none absolute inset-x-0 top-0 h-[9%] bg-gradient-to-b from-white to-transparent z-[2]" />
