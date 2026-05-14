@@ -81,7 +81,7 @@ const ecosystem = [
     tr: { title: 'Karbon Yönetimi',         desc: 'Karbon ayak izi ölçümü, sera gazı azaltım planlaması ve ofset programları.' },
   },
   {
-    logo: '/logos/klexai.png',    name: 'KlexAI',     accent: '#8B5CF6', href: 'https://www.klexai.com/',
+    logo: '/logos/klexai.png',    name: 'KlexAI',     accent: '#58C3E8', href: 'https://www.klexai.com/',
     en: { title: 'AI Governance Consulting', desc: 'AI risk frameworks, ISO/IEC 42001, and EU AI Act compliance.' },
     tr: { title: 'Yapay Zeka Yönetişimi',   desc: 'AI risk çerçeveleri, ISO/IEC 42001 ve AB AI Yasası uyum danışmanlığı.' },
   },
@@ -211,8 +211,8 @@ function HeroSection({ language }) {
             </div>
           </div>
 
-          {/* ── RIGHT: hand + cards ── */}
-          <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-center">
+          {/* ── ORBIT: all screens ── */}
+          <div className="mt-8 flex flex-1 items-center justify-center lg:mt-0 lg:-ml-10 lg:justify-start xl:-ml-6 xl:justify-center">
 
             {/* SVG filter: removes black bg from hand.jpg  (alpha = 3R+3G+3B-0.8) */}
             <svg className="pointer-events-none absolute h-0 w-0 overflow-hidden" aria-hidden="true">
@@ -228,7 +228,7 @@ function HeroSection({ language }) {
             </svg>
 
             {/* Fixed 500×540 orbital panel — predictable geometry */}
-            <div className="relative overflow-hidden rounded-3xl bg-white" style={{ width: '560px', height: '600px' }}>
+            <div className="relative overflow-hidden rounded-3xl bg-white scale-[0.55] sm:scale-[0.7] md:scale-[0.8] lg:scale-[0.85] xl:scale-100" style={{ width: '560px', height: '600px' }}>
 
               {/* ② Top fade */}
               <div className="pointer-events-none absolute inset-x-0 top-0 h-[9%] bg-gradient-to-b from-white to-transparent z-[2]" />
@@ -306,7 +306,7 @@ function HeroSection({ language }) {
                     key={i}
                     onClick={() => setActiveCard(activeCard === i ? null : i)}
                     className={`hero-card group/card absolute z-[7] flex w-[140px] cursor-pointer flex-col rounded-xl border border-white/70 px-3 py-3 backdrop-blur-[8px] transition-all duration-500 ${activeCard === i ? 'w-[190px] scale-105 bg-white/95 shadow-[0_14px_50px_rgba(15,23,42,0.1)]' : 'bg-white/75 shadow-[0_10px_30px_rgba(15,23,42,0.04),0_2px_8px_rgba(15,23,42,0.03)] hover:w-[190px] hover:scale-105 hover:bg-white/95 hover:shadow-[0_14px_50px_rgba(15,23,42,0.1)]'}`}
-                    style={{ ...cardPositions[i], ...asymmetry[i] }}
+                    style={{ ...cardPositions[i], ...asymmetry[i], ...(activeCard === i ? { animationPlayState: 'paused' } : {}) }}
                   >
                     <div className="mb-2 flex h-7 w-7 items-center justify-center rounded-lg border border-[#F97342]/25 bg-[#F97342]/5">
                       <Icon className="h-[12px] w-[12px] text-[#F97342]" strokeWidth={1.5} />

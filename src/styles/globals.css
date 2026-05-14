@@ -84,6 +84,8 @@ img, svg, video, canvas { display: block; max-width: 100%; }
 .hero-card:nth-child(3) { animation: hero-float-3 7s ease-in-out 1s infinite; }
 .hero-card:nth-child(4) { animation: hero-float-4 5.5s ease-in-out 1.5s infinite; }
 .hero-card:nth-child(5) { animation: hero-float-5 6.5s ease-in-out 0.8s infinite; }
+.hero-card:nth-child(6) { animation: hero-float-1 6s ease-in-out 0.3s infinite; }
+.hero-card:nth-child(7) { animation: hero-float-2 5.5s ease-in-out 1.2s infinite; }
 
 .hero-card:hover {
   animation-play-state: paused;
