@@ -1,133 +1,102 @@
 @config "../../tailwind.config.js";
 @import "tailwindcss";
 
-html,
-body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
+html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
 
 body {
-  background: #f5f3ee;
-  color: #142033;
+  background: #ffffff;
+  color: #1E293B;
+  font-family: var(--font-body), 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), 'Manrope', sans-serif;
 }
 
-img,
-svg,
-video,
-canvas {
-  display: block;
-  max-width: 100%;
-}
+*, *::before, *::after { box-sizing: border-box; }
+img, svg, video, canvas { display: block; max-width: 100%; }
 
 @layer base {
-  [x-cloak] {
-    display: none !important;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
+  [x-cloak] { display: none !important; }
+  html { scroll-behavior: smooth; }
 }
 
-.marquee-track:hover {
+/* ─── Marquee ─── */
+.marquee-track:hover { animation-play-state: paused; }
+
+@keyframes marquee         { 0% { transform: translate3d(0,0,0); } 100% { transform: translate3d(-50%,0,0); } }
+@keyframes marquee-reverse { 0% { transform: translate3d(-50%,0,0); } 100% { transform: translate3d(0,0,0); } }
+
+.animate-marquee         { animation: marquee 40s linear infinite; will-change: transform; }
+.animate-marquee-reverse { animation: marquee-reverse 40s linear infinite; will-change: transform; }
+
+/* ─── Float ─── */
+@keyframes lux-float      { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+@keyframes lux-float-slow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+
+.animate-lux-float      { animation: lux-float 7s ease-in-out infinite; }
+.animate-lux-float-slow { animation: lux-float-slow 9s ease-in-out 1.5s infinite; }
+
+/* ─── Spin ─── */
+@keyframes lux-spin-cw  { to { transform: rotate(360deg); } }
+@keyframes lux-spin-ccw { to { transform: rotate(-360deg); } }
+
+.animate-lux-spin-cw  { animation: lux-spin-cw  50s linear infinite; }
+.animate-lux-spin-ccw { animation: lux-spin-ccw 70s linear infinite; }
+
+/* ─── Nav underline (orange) ─── */
+.nav-link-lux { position: relative; padding-bottom: 2px; }
+.nav-link-lux::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 1.5px;
+  background: #FF6B35;
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-link-lux:hover::after { transform: scaleX(1); }
+
+/* ─── Expertise hover ─── */
+.expertise-desc {
+  max-height: 0; overflow: hidden; opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+}
+.expertise-row:hover .expertise-desc { max-height: 80px; opacity: 1; margin-top: 8px; }
+.expertise-arrow { opacity: 0; transition: opacity 0.25s ease, transform 0.25s ease; }
+.expertise-row:hover .expertise-arrow { opacity: 1; transform: translate(3px,-3px); }
+.expertise-row { transition: padding-left 0.25s ease; }
+.expertise-row:hover { padding-left: 6px; }
+
+/* ─── Hero Card Float Animation ─── */
+@keyframes hero-float-1 { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-8px) rotate(0.5deg)} }
+@keyframes hero-float-2 { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-6px) rotate(-0.5deg)} }
+@keyframes hero-float-3 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+@keyframes hero-float-4 { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-7px) rotate(0.3deg)} }
+@keyframes hero-float-5 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+
+.hero-card:nth-child(1) { animation: hero-float-1 5s ease-in-out infinite; }
+.hero-card:nth-child(2) { animation: hero-float-2 6s ease-in-out 0.5s infinite; }
+.hero-card:nth-child(3) { animation: hero-float-3 7s ease-in-out 1s infinite; }
+.hero-card:nth-child(4) { animation: hero-float-4 5.5s ease-in-out 1.5s infinite; }
+.hero-card:nth-child(5) { animation: hero-float-5 6.5s ease-in-out 0.8s infinite; }
+
+.hero-card:hover {
   animation-play-state: paused;
 }
 
-@keyframes marquee {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-50%, 0, 0);
-  }
+/* ─── Fade In for card expand ─── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes marquee-reverse {
-  0% {
-    transform: translate3d(-50%, 0, 0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 32s linear infinite;
-  will-change: transform;
-}
-
-.animate-marquee-reverse {
-  animation: marquee-reverse 32s linear infinite;
-  will-change: transform;
-}
-
-/* ─── Framework Card Animations ─── */
-@keyframes networkFlow {
-  0% { transform: translateX(-3px); }
-  100% { transform: translateX(3px); }
-}
-
-@keyframes floatLeaf {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-5px); }
-}
-
-@keyframes buildingGlow {
-  0% { opacity: 0.4; }
-  100% { opacity: 1; }
-}
-
-@keyframes pulseSoft {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.08); }
-}
-
-.animate-network {
-  animation: networkFlow 4s ease-in-out infinite alternate;
-}
-
-.animate-float {
-  animation: floatLeaf 5s ease-in-out infinite alternate;
-}
-
-.animate-glow {
-  animation: buildingGlow 3s ease-in-out infinite alternate;
-}
-
-.animate-pulse-soft {
-  animation: pulseSoft 4s ease-in-out infinite alternate;
-}
-
-/* ─── Card Shine Effect ─── */
-.card-shine {
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.14) 35%,
-    transparent 70%
-  );
-  transform: translateX(-120%);
-  animation: shineMove 4s ease-in-out infinite;
-}
-
-@keyframes shineMove {
-  0% {
-    transform: translateX(-120%);
-  }
-  55% {
-    transform: translateX(120%);
-  }
-  100% {
-    transform: translateX(120%);
-  }
+/* ─── Hand float animation ─── */
+@keyframes handFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
