@@ -214,10 +214,10 @@ function HeroSection({ language }) {
           </div>
 
           {/* ── ORBIT: all screens ── */}
-          <div className="mt-0 flex flex-1 items-center justify-center -my-[200px] sm:-my-[140px] md:-my-[90px] lg:my-0 lg:mt-0 lg:-ml-10 lg:justify-start xl:-ml-6 xl:justify-center">
+          <div className="mt-[-20px] flex flex-1 items-start justify-center -mb-[300px] sm:-mb-[200px] md:-mb-[140px] lg:mt-0 lg:mb-0 lg:-ml-10 lg:items-center lg:justify-start xl:-ml-6 xl:justify-center">
 
             {/* Fixed orbital panel */}
-            <div className="relative overflow-hidden rounded-3xl bg-white scale-[0.55] sm:scale-[0.7] md:scale-[0.8] lg:scale-[0.85] lg:translate-x-[-8px] lg:translate-y-[5px] xl:scale-100 xl:translate-x-[-4px]" style={{ width: '560px', height: '600px' }} onClick={(e) => { if (e.target === e.currentTarget) setActiveCard(null); }}>
+            <div className="relative overflow-hidden rounded-3xl bg-white scale-[0.55] sm:scale-[0.7] md:scale-[0.8] lg:scale-[0.85] lg:translate-x-[-8px] lg:translate-y-[5px] xl:scale-100 xl:translate-x-[-4px] origin-top" style={{ width: '560px', height: '600px' }} onClick={(e) => { if (e.target === e.currentTarget) setActiveCard(null); }}>
 
               {/* ② Top fade */}
               <div className="pointer-events-none absolute inset-x-0 top-0 h-[9%] bg-gradient-to-b from-white to-transparent z-[2]" />

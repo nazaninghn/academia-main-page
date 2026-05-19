@@ -56,11 +56,11 @@ export function Header() {
             >
               <Menu className="h-5 w-5" />
             </button>
-            <Link href="/" className="shrink-0"><Logo /></Link>
+            <Link href="/" className="shrink-0 mr-6 lg:mr-10"><Logo /></Link>
           </div>
 
-          {/* Center nav */}
-          <div className="hidden items-center gap-8 lg:flex">
+          {/* Center nav — slightly right-biased */}
+          <div className="hidden items-center gap-7 lg:flex lg:ml-8 xl:ml-12">
             {links.map((l) => {
               const hash = l.href.startsWith('/#') ? l.href.slice(2) : null;
               return hash ? (
