@@ -153,7 +153,7 @@ function HeroSection({ language }) {
       <div className="pointer-events-none absolute left-[-10%] top-[-5%] h-[500px] w-[500px] rounded-full bg-[#60B1FF] opacity-[0.1] blur-[120px]" />
       <div className="pointer-events-none absolute left-[5%] top-[10%] h-[350px] w-[350px] rounded-full bg-[#319AFF] opacity-[0.06] blur-[100px]" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-5 pt-4 sm:px-8 sm:pt-6 lg:px-10 lg:pt-6">
+      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-5 pt-10 sm:px-8 sm:pt-14 lg:px-10 lg:pt-16">
         <div className="flex w-full flex-col items-center gap-6 lg:flex-row lg:items-start lg:gap-6 xl:gap-10">
 
           {/* ── LEFT: text ── */}
