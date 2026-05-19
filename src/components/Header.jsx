@@ -38,13 +38,14 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        className={`fixed inset-x-0 top-[18px] z-50 mx-auto max-w-[1060px] rounded-[20px] transition-all duration-500 ${
           scrolled
-            ? 'border-b border-[#E5E5E5] bg-white/96 shadow-[0_1px_12px_rgba(0,0,0,0.06)] backdrop-blur-md'
-            : 'bg-white/80 backdrop-blur-sm'
+            ? 'border border-black/8 bg-white/40 shadow-[inset_0px_4px_6px_0px_rgba(255,255,255,0.35),0_14px_44px_rgba(0,0,0,0.09)] backdrop-blur-[60px]'
+            : 'border border-white/50 bg-white/25 shadow-[inset_0px_3px_4px_0px_rgba(255,255,255,0.25)] backdrop-blur-[45px]'
         }`}
+        style={{ left: '50%', transform: 'translateX(-50%)' }}
       >
-        <nav className="mx-auto flex h-[68px] max-w-[1280px] items-center justify-between px-5 sm:px-8 lg:h-[78px] lg:px-10">
+        <nav className="flex h-[58px] items-center justify-between px-6 sm:px-7 lg:h-[62px] lg:px-9">
 
           {/* Logo */}
           <div className="flex items-center gap-4">

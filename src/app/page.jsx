@@ -148,26 +148,28 @@ function HeroSection({ language }) {
   ];
 
   return (
-    <section className="min-h-[100svh] bg-white pt-[78px]">
-      <div className="mx-auto w-full max-w-[1280px] px-5 pt-8 sm:px-8 sm:pt-10 lg:px-10 lg:pt-12">
+    <section className="relative min-h-[100svh] overflow-hidden bg-white pt-[80px]">
+      {/* Background gradient glow */}
+      <div className="pointer-events-none absolute left-[-10%] top-[-5%] h-[500px] w-[500px] rounded-full bg-[#60B1FF] opacity-[0.1] blur-[120px]" />
+      <div className="pointer-events-none absolute left-[5%] top-[10%] h-[350px] w-[350px] rounded-full bg-[#319AFF] opacity-[0.06] blur-[100px]" />
+
+      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-5 pt-4 sm:px-8 sm:pt-6 lg:px-10 lg:pt-6">
         <div className="flex w-full flex-col items-center gap-6 lg:flex-row lg:items-start lg:gap-6 xl:gap-10">
 
           {/* ── LEFT: text ── */}
           <div className="w-full shrink-0 lg:w-[48%] xl:w-[52%]">
 
             {/* Heading */}
-            <h1 className="text-[32px] font-black leading-[0.95] tracking-[-0.03em] text-[#1E293B] sm:text-[40px] lg:text-[44px] xl:text-[52px] 2xl:text-[58px]">
-              {tr ? 'Kurumsal' : 'Institutional'}
-              <br />
-              {tr ? 'Dönüşüm' : 'Transformation'}
-              <br />
-              <span className="text-[#F97342]">{tr ? 'Kalıcı Etki' : 'That Creates'}</span>
-              <br />
-              <span className="text-[#F97342]">{tr ? 'Yaratan Güç.' : 'Lasting Impact.'}</span>
+            <h1 className="max-w-[520px] text-[30px] font-semibold leading-[1.15] tracking-[-0.01em] text-[#1E293B] sm:text-[38px] lg:text-[42px] xl:text-[48px] 2xl:text-[54px]">
+              {tr ? (
+                <>Kurumsal Dönüşüm<br /><span className="text-[#F97342]">Kalıcı Etki Yaratan Güç.</span></>
+              ) : (
+                <>Institutional Transformation<br /><span className="text-[#F97342]">That Creates Lasting Impact.</span></>
+              )}
             </h1>
 
             {/* Orange rule */}
-            <div className="mt-5 h-[3px] w-14 rounded-full bg-[#F97342]" />
+            <div className="mt-6 h-[2.5px] w-12 rounded-full bg-[#F97342]" />
 
             {/* Subtitle */}
             <p className="mt-5 max-w-[490px] text-[15px] leading-[1.9] text-[#475569]">
@@ -181,13 +183,13 @@ function HeroSection({ language }) {
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <a
                 href="#expertise"
-                className="inline-flex items-center gap-2.5 rounded-full bg-[#F97342] px-7 py-3.5 text-[14px] font-bold text-white shadow-[0_4px_20px_rgba(255,107,53,0.38)] transition hover:bg-[#E55A25] hover:scale-[1.03] hover:-translate-y-0.5 active:scale-[0.97]"
+                className="inline-flex items-center gap-2.5 rounded-[14px] bg-[rgba(0,132,255,0.8)] px-7 py-3.5 text-[14px] font-bold text-white shadow-[inset_0px_3px_4px_0px_rgba(255,255,255,0.3),0_4px_20px_rgba(0,132,255,0.25)] backdrop-blur-[2px] transition hover:scale-[1.02] hover:-translate-y-0.5 active:scale-[0.97]"
               >
                 {cta1} <ArrowRight className="h-4 w-4" />
               </a>
               <a
                 href="#process"
-                className="inline-flex items-center gap-3 rounded-full border border-[#1E293B]/15 bg-white py-3 pl-5 pr-3 text-[14px] font-semibold text-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.06)] transition hover:border-[#1E293B]/30 hover:scale-[1.03] hover:-translate-y-0.5 active:scale-[0.97]"
+                className="inline-flex items-center gap-3 rounded-[14px] border border-black/10 bg-white/40 py-3 pl-5 pr-3 text-[14px] font-semibold text-[#1E293B] shadow-[inset_0px_2px_4px_0px_rgba(255,255,255,0.2),0_2px_8px_rgba(0,0,0,0.04)] backdrop-blur-[20px] transition hover:bg-white/60 hover:scale-[1.02] hover:-translate-y-0.5 active:scale-[0.97]"
               >
                 {cta2}
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1E293B]">
@@ -202,8 +204,8 @@ function HeroSection({ language }) {
               <div className="overflow-hidden [mask-image:linear-gradient(to_right,black_80%,transparent)]">
                 <div className="marquee-track flex w-max animate-marquee gap-7">
                   {[...referenceLogos, ...referenceLogos].map((r, i) => (
-                    <a key={i} href={r.href} target="_blank" rel="noopener noreferrer" className="flex h-7 shrink-0 items-center transition-opacity hover:opacity-70">
-                      <Image src={r.logo} alt={r.name} width={80} height={28} className="h-7 w-auto object-contain" />
+                    <a key={i} href={r.href} target="_blank" rel="noopener noreferrer" className="flex h-6 shrink-0 items-center transition-opacity hover:opacity-80">
+                      <Image src={r.logo} alt={r.name} width={72} height={24} className="h-6 w-auto object-contain opacity-50 grayscale transition hover:opacity-80 hover:grayscale-0" />
                     </a>
                   ))}
                 </div>
@@ -215,7 +217,7 @@ function HeroSection({ language }) {
           <div className="mt-0 flex flex-1 items-center justify-center -my-[200px] sm:-my-[140px] md:-my-[90px] lg:my-0 lg:mt-0 lg:-ml-10 lg:justify-start xl:-ml-6 xl:justify-center">
 
             {/* Fixed orbital panel */}
-            <div className="relative overflow-hidden rounded-3xl bg-white scale-[0.55] sm:scale-[0.7] md:scale-[0.8] lg:scale-[0.85] xl:scale-100" style={{ width: '560px', height: '600px' }} onClick={(e) => { if (e.target === e.currentTarget) setActiveCard(null); }}>
+            <div className="relative overflow-hidden rounded-3xl bg-white scale-[0.55] sm:scale-[0.7] md:scale-[0.8] lg:scale-[0.85] lg:translate-x-[-8px] lg:translate-y-[5px] xl:scale-100 xl:translate-x-[-4px]" style={{ width: '560px', height: '600px' }} onClick={(e) => { if (e.target === e.currentTarget) setActiveCard(null); }}>
 
               {/* ② Top fade */}
               <div className="pointer-events-none absolute inset-x-0 top-0 h-[9%] bg-gradient-to-b from-white to-transparent z-[2]" />
@@ -250,19 +252,17 @@ function HeroSection({ language }) {
                 <div key={i} className="pointer-events-none absolute z-[4] select-none text-[18px] font-thin leading-none text-[#F97342]/35" style={s}>+</div>
               ))}
 
-              {/* ⑥ ACADEMIA center — ball with logo */}
+              {/* ⑥ ACADEMIA center — glass orb */}
               <div
-                className="absolute z-[5] h-[220px] w-[220px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-50 blur-[20px]"
-                style={{ left: '280px', top: '260px', background: 'radial-gradient(circle, rgba(249,115,66,0.1) 0%, transparent 60%)' }}
+                className="absolute z-[5] h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-60 blur-[20px]"
+                style={{ left: '280px', top: '260px', background: 'radial-gradient(circle, rgba(49,154,255,0.15) 0%, rgba(249,115,66,0.05) 40%, transparent 60%)' }}
               />
               <div
-                className="absolute z-[6] flex h-[190px] w-[190px] -translate-x-1/2 -translate-y-1/2 animate-[orbFloat_5s_ease-in-out_infinite] cursor-pointer items-center justify-center transition-transform duration-500 hover:scale-[1.15] active:scale-[1.2]"
+                className="absolute z-[6] flex h-[210px] w-[210px] -translate-x-1/2 -translate-y-1/2 animate-[orbFloat_5s_ease-in-out_infinite] cursor-pointer items-center justify-center transition-transform duration-500 hover:scale-[1.12] active:scale-[1.15]"
                 style={{ left: '280px', top: '260px' }}
               >
-                {/* Ball image */}
-                <Image src="/images/ball.png" alt="" width={190} height={190} className="absolute inset-0 h-full w-full object-contain" />
-                {/* Logo on top of ball */}
-                <Image src="/logo.png" alt="ACADEMIA" width={100} height={62} className="relative z-10 h-auto w-[90px] object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.15)]" />
+                <Image src="/images/ball.png" alt="" width={210} height={210} className="absolute inset-0 h-full w-full object-contain drop-shadow-[0_8px_30px_rgba(0,0,0,0.12)]" />
+                <Image src="/logo.png" alt="ACADEMIA" width={110} height={68} className="relative z-10 h-auto w-[95px] object-contain drop-shadow-[0_3px_12px_rgba(0,0,0,0.18)]" />
               </div>
 
               {/* ⑦ Connector lines from cards to center */}
