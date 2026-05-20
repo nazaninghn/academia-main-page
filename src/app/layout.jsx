@@ -19,6 +19,11 @@ const inter = Inter({
 export const metadata = {
   title: 'Academia Danışmanlık – Kurumsal Danışmanlık',
   description: 'Belgelendirme, yasal uyum, sürdürülebilirlik ve kurumsal eğitim hizmetleri',
+  openGraph: {
+    title: 'Academia Danışmanlık',
+    description: 'Kurumsal dönüşüm için yapısal çözümler',
+    type: 'website',
+  },
 };
 
 export const viewport = {

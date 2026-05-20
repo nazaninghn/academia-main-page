@@ -205,7 +205,7 @@ function HeroSection({ language }) {
                 <div className="marquee-track flex w-max animate-marquee gap-7">
                   {[...referenceLogos, ...referenceLogos].map((r, i) => (
                     <a key={i} href={r.href} target="_blank" rel="noopener noreferrer" className="flex h-6 shrink-0 items-center transition-opacity hover:opacity-80">
-                      <Image src={r.logo} alt={r.name} width={72} height={24} className="h-6 w-auto object-contain transition hover:opacity-70" />
+                      <Image src={r.logo} alt={r.name} width={72} height={24} sizes="72px" className="h-6 w-auto object-contain transition hover:opacity-70" />
                     </a>
                   ))}
                 </div>
@@ -295,7 +295,7 @@ function HeroSection({ language }) {
                   <div
                     key={i}
                     onClick={() => setActiveCard(activeCard === i ? null : i)}
-                    className={`hero-card group/card absolute z-[7] flex w-[140px] cursor-pointer flex-col rounded-xl border border-white/70 px-3 py-3 backdrop-blur-[8px] transition-all duration-500 ${activeCard === i ? 'w-[190px] scale-105 bg-white/95 shadow-[0_14px_50px_rgba(15,23,42,0.1)]' : 'bg-white/75 shadow-[0_10px_30px_rgba(15,23,42,0.04),0_2px_8px_rgba(15,23,42,0.03)] hover:w-[190px] hover:scale-105 hover:bg-white/95 hover:shadow-[0_14px_50px_rgba(15,23,42,0.1)]'}`}
+                    className={`hero-card group/card absolute z-[7] flex w-[140px] cursor-pointer flex-col rounded-xl border border-white/70 px-3 py-3 backdrop-blur-[6px] transition-all duration-500 ${activeCard === i ? 'w-[190px] scale-105 bg-white/95 shadow-[0_14px_50px_rgba(15,23,42,0.1)]' : 'bg-white/75 shadow-[0_10px_30px_rgba(15,23,42,0.04),0_2px_8px_rgba(15,23,42,0.03)] hover:w-[190px] hover:scale-105 hover:bg-white/95 hover:shadow-[0_14px_50px_rgba(15,23,42,0.1)]'}`}
                     style={{ ...cardPositions[i], ...asymmetry[i], ...(activeCard === i ? { animationPlayState: 'paused' } : {}) }}
                   >
                     <div className="mb-2 flex h-7 w-7 items-center justify-center rounded-lg border border-[#F97342]/25 bg-[#F97342]/5">
