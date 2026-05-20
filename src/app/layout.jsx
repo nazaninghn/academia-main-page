@@ -31,6 +31,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="tr" className={`${manrope.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <script dangerouslySetInnerHTML={{ __html: `if('scrollRestoration' in history) history.scrollRestoration = 'manual'; if(location.hash) history.replaceState(null,'',location.pathname+location.search); window.scrollTo(0,0);` }} />
       </head>
       <body>

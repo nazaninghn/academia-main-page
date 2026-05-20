@@ -205,7 +205,7 @@ function HeroSection({ language }) {
                 <div className="marquee-track flex w-max animate-marquee gap-7">
                   {[...referenceLogos, ...referenceLogos].map((r, i) => (
                     <a key={i} href={r.href} target="_blank" rel="noopener noreferrer" className="flex h-6 shrink-0 items-center transition-opacity hover:opacity-80">
-                      <Image src={r.logo} alt={r.name} width={72} height={24} className="h-6 w-auto object-contain opacity-50 grayscale transition hover:opacity-80 hover:grayscale-0" />
+                      <Image src={r.logo} alt={r.name} width={72} height={24} className="h-6 w-auto object-contain transition hover:opacity-70" />
                     </a>
                   ))}
                 </div>

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
     dangerouslyAllowSVG: true,
     remotePatterns: [
       {
@@ -10,6 +10,8 @@ const nextConfig = {
       },
     ],
   },
+  compress: true,
+  poweredByHeader: false,
 };
 
 module.exports = nextConfig;
