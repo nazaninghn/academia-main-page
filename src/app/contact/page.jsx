@@ -11,11 +11,35 @@ export default function ContactPage() {
 
   const [formData, setFormData] = useState({ name: '', email: '', company: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    setLoading(true);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: '1f42bf3d-3ea9-4b77-9796-11e56c68ebc7',
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message,
+          subject: `ACADEMIA Contact: ${formData.name}`,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', company: '', message: '' });
+        setTimeout(() => setSubmitted(false), 5000);
+      }
+    } catch {
+      // error
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -121,10 +145,11 @@ export default function ContactPage() {
                     </div>
                     <button
                       type="submit"
-                      className="inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-[#1E293B] px-8 py-4 text-[14px] font-bold text-white shadow-[0_4px_16px_rgba(30,41,59,0.2)] transition hover:bg-[#334155] active:scale-[0.98] sm:w-auto"
+                      disabled={loading}
+                      className="inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-[#1E293B] px-8 py-4 text-[14px] font-bold text-white shadow-[0_4px_16px_rgba(30,41,59,0.2)] transition hover:bg-[#334155] active:scale-[0.98] disabled:opacity-60 sm:w-auto"
                     >
                       <Send className="h-4 w-4" />
-                      {tr ? 'Mesajı Gönder' : 'Send Message'}
+                      {loading ? (tr ? 'Gönderiliyor...' : 'Sending...') : (tr ? 'Mesajı Gönder' : 'Send Message')}
                     </button>
                   </form>
                 )}
