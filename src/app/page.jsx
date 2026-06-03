@@ -148,7 +148,7 @@ function HeroSection({ language }) {
   ];
 
   return (
-    <section className="relative min-h-[100svh] overflow-hidden bg-white pt-[80px]">
+    <section className="relative overflow-hidden bg-white pt-[80px] pb-12 lg:pb-0">
       {/* Background gradient glow */}
       <div className="pointer-events-none absolute left-[-10%] top-[-5%] h-[500px] w-[500px] rounded-full bg-[#60B1FF] opacity-[0.1] blur-[120px]" />
       <div className="pointer-events-none absolute left-[5%] top-[10%] h-[350px] w-[350px] rounded-full bg-[#319AFF] opacity-[0.06] blur-[100px]" />
@@ -213,11 +213,11 @@ function HeroSection({ language }) {
             </div>
           </div>
 
-          {/* ── ORBIT: all screens ── */}
-          <div className="mt-[-20px] flex flex-1 items-start justify-center -mb-[300px] sm:-mb-[200px] md:-mb-[140px] lg:mt-0 lg:mb-0 lg:-ml-10 lg:items-center lg:justify-start xl:-ml-6 xl:justify-center">
+          {/* ── ORBIT: desktop only ── */}
+          <div className="hidden lg:mt-0 lg:-ml-10 lg:flex lg:flex-1 lg:items-center lg:justify-start xl:-ml-6 xl:justify-center">
 
             {/* Fixed orbital panel */}
-            <div className="relative overflow-hidden rounded-3xl bg-white scale-[0.55] sm:scale-[0.7] md:scale-[0.8] lg:scale-[0.85] lg:translate-x-[-8px] lg:translate-y-[5px] xl:scale-100 xl:translate-x-[-4px] origin-top" style={{ width: '560px', height: '600px' }} onClick={(e) => { if (e.target === e.currentTarget) setActiveCard(null); }}>
+            <div className="relative overflow-hidden rounded-3xl bg-white lg:scale-[0.85] lg:translate-x-[-8px] lg:translate-y-[5px] xl:scale-100 xl:translate-x-[-4px] origin-top" style={{ width: '560px', height: '600px' }} onClick={(e) => { if (e.target === e.currentTarget) setActiveCard(null); }}>
 
               {/* ② Top fade */}
               <div className="pointer-events-none absolute inset-x-0 top-0 h-[9%] bg-gradient-to-b from-white to-transparent z-[2]" />
@@ -704,6 +704,113 @@ function InsightsSection({ language }) {
 }
 
 /* ══════════════════════════════════════════════════════════════
+   FEATURED TOPICS — rotating spotlight topics (updated periodically)
+══════════════════════════════════════════════════════════════ */
+const featuredTopics = [
+  {
+    tag: { en: 'Carbon Accounting', tr: 'Karbon Muhasebesi' },
+    color: '#22C55E',
+    title: {
+      en: 'ISO 14064-1: Quantifying Greenhouse Gas Emissions at the Organizational Level',
+      tr: 'ISO 14064-1: Kuruluş Düzeyinde Sera Gazı Emisyonlarının Ölçülmesi',
+    },
+    desc: {
+      en: 'ISO 14064-1 provides organizations with a rigorous framework for measuring, reporting, and verifying greenhouse gas inventories. As climate disclosure requirements tighten globally, mastering this standard is becoming a competitive necessity.',
+      tr: 'ISO 14064-1, kuruluşlara sera gazı envanterlerini ölçmek, raporlamak ve doğrulamak için sağlam bir çerçeve sunar. İklim açıklama gereklilikleri küresel ölçekte sıkılaştıkça, bu standarda hâkim olmak rekabetçi bir zorunluluk haline gelmektedir.',
+    },
+    badge: { en: 'This Week\'s Focus', tr: 'Bu Haftanın Odağı' },
+  },
+  {
+    tag: { en: 'Sustainable Logistics', tr: 'Sürdürülebilir Lojistik' },
+    color: '#3B82F6',
+    title: {
+      en: 'Green Logistics: Reducing the Environmental Footprint of Supply Chains',
+      tr: 'Yeşil Lojistik: Tedarik Zincirlerinin Çevresel Ayak İzini Azaltmak',
+    },
+    desc: {
+      en: 'Green logistics integrates environmental sustainability into every stage of the supply chain — from transportation and warehousing to packaging and last-mile delivery. Organizations that act now gain both regulatory advantage and operational efficiency.',
+      tr: 'Yeşil lojistik, çevre sürdürülebilirliğini tedarik zincirinin her aşamasına — taşımacılık, depolama, ambalaj ve son kilometre teslimatına kadar — entegre eder. Şimdi harekete geçen kuruluşlar hem düzenleyici avantaj hem de operasyonel verimlilik kazanır.',
+    },
+    badge: { en: 'This Week\'s Focus', tr: 'Bu Haftanın Odağı' },
+  },
+];
+
+function FeaturedTopicsSection({ language }) {
+  const tr = language === 'tr';
+
+  return (
+    <section id="featured-topics" className="relative bg-[#FAFAF8] py-10 lg:py-12">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#E8E5DF] to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#E8E5DF] to-transparent" />
+
+      <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-10">
+
+        {/* header row */}
+        <div className="mb-7 flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#F97342] opacity-60" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#F97342]" />
+            </span>
+            <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#F97342]">
+              {tr ? 'Bu Dönemin Öne Çıkan Konuları' : 'Featured Topics This Period'}
+            </span>
+          </div>
+          <span className="hidden text-[11px] text-[#94A3B8] sm:block">
+            {tr ? 'Periyodik olarak güncellenir' : 'Updated periodically'}
+          </span>
+        </div>
+
+        {/* two cards */}
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+          {featuredTopics.map((item, i) => (
+            <div
+              key={i}
+              className="group relative overflow-hidden rounded-2xl border border-[#E8E5DF] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(15,23,42,0.07)]"
+            >
+              <div
+                className="pointer-events-none absolute -right-10 -top-10 h-[160px] w-[160px] rounded-full opacity-[0.08] transition-opacity duration-300 group-hover:opacity-[0.14]"
+                style={{ backgroundColor: item.color }}
+              />
+              <div className="relative flex h-full flex-col">
+                <div className="mb-3 flex flex-wrap items-center gap-2">
+                  <span
+                    className="rounded-full px-2.5 py-0.5 text-[9.5px] font-bold uppercase tracking-[0.18em]"
+                    style={{ backgroundColor: `${item.color}18`, color: item.color }}
+                  >
+                    {item.tag[language] || item.tag.en}
+                  </span>
+                  <span className="rounded-full border border-[#E8E5DF] px-2.5 py-0.5 text-[9.5px] font-medium uppercase tracking-[0.14em] text-[#94A3B8]">
+                    {item.badge[language] || item.badge.en}
+                  </span>
+                </div>
+                <div className="flex gap-3">
+                  <div className="mt-1 w-[3px] shrink-0 self-stretch rounded-full" style={{ backgroundColor: item.color }} />
+                  <h3 className="text-[15px] font-bold leading-[1.4] text-[#1E293B]">
+                    {item.title[language] || item.title.en}
+                  </h3>
+                </div>
+                <p className="mt-3 flex-1 text-[13px] leading-[1.8] text-[#64748B]">
+                  {item.desc[language] || item.desc.en}
+                </p>
+                <a
+                  href="/contact"
+                  className="mt-5 inline-flex w-fit items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.18em] transition-all hover:gap-2.5"
+                  style={{ color: item.color }}
+                >
+                  {tr ? 'Danışmanlık Alın' : 'Get Consulting'} <ArrowRight className="h-3 w-3" />
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════
    CTA — premium institutional style
 ══════════════════════════════════════════════════════════════ */
 function CTASection({ language }) {
@@ -858,13 +965,14 @@ export default function HomePage() {
     <div className="min-h-screen bg-white text-[#1E293B]">
       <Header />
       <main>
-        <HeroSection       language={lang} />
-        <WhatSection       language={lang} />
-        <ExpertiseSection  language={lang} />
-        <ProcessSection    language={lang} />
-        <EcosystemSection  language={lang} />
-        <InsightsSection   language={lang} />
-        <CTASection        language={lang} />
+        <HeroSection           language={lang} />
+        <FeaturedTopicsSection language={lang} />
+        <WhatSection           language={lang} />
+        <ExpertiseSection      language={lang} />
+        <ProcessSection        language={lang} />
+        <EcosystemSection      language={lang} />
+        <InsightsSection       language={lang} />
+        <CTASection            language={lang} />
       </main>
       <Footer language={lang} />
     </div>
