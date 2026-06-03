@@ -148,7 +148,7 @@ function HeroSection({ language }) {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white pt-[80px]">
+    <section className="relative overflow-hidden bg-white pt-[74px] sm:pt-[78px] lg:pt-[80px]">
       {/* Background gradient glow */}
       <div className="pointer-events-none absolute left-[-10%] top-[-5%] h-[500px] w-[500px] rounded-full bg-[#60B1FF] opacity-[0.1] blur-[120px]" />
       <div className="pointer-events-none absolute left-[5%] top-[10%] h-[350px] w-[350px] rounded-full bg-[#319AFF] opacity-[0.06] blur-[100px]" />
@@ -157,7 +157,7 @@ function HeroSection({ language }) {
         <div className="flex w-full flex-col gap-6 lg:flex-row lg:items-start lg:gap-6 xl:gap-10">
 
           {/* ── LEFT: text ── */}
-          <div className="w-full shrink-0 pb-10 lg:w-[48%] lg:pb-16 xl:w-[52%]">
+          <div className="w-full shrink-0 pb-10 lg:w-[42%] lg:pb-16 xl:w-[47%]">
 
             {/* Heading */}
             <h1 className="max-w-[520px] text-[30px] font-semibold leading-[1.15] tracking-[-0.01em] text-[#1E293B] sm:text-[38px] lg:text-[42px] xl:text-[48px] 2xl:text-[54px]">
@@ -214,10 +214,10 @@ function HeroSection({ language }) {
           </div>
 
           {/* ── ORBIT: desktop only ── */}
-          <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-center xl:justify-center">
+          <div className="hidden lg:flex lg:flex-1 lg:min-w-0 lg:items-center lg:justify-center xl:justify-center overflow-hidden">
 
             {/* Fixed orbital panel */}
-            <div className="relative overflow-hidden rounded-3xl bg-white lg:scale-[0.82] xl:scale-[0.95] 2xl:scale-100 origin-top lg:-translate-y-4 xl:-translate-y-2 2xl:translate-y-0" style={{ width: '560px', height: '600px' }} onClick={(e) => { if (e.target === e.currentTarget) setActiveCard(null); }}>
+            <div className="relative overflow-hidden rounded-3xl bg-white lg:scale-[0.82] xl:scale-[0.95] 2xl:scale-100 origin-top lg:-translate-y-4 xl:-translate-y-2 2xl:translate-y-0" style={{ width: '560px', height: '480px' }} onClick={(e) => { if (e.target === e.currentTarget) setActiveCard(null); }}>
 
               {/* ② Top fade */}
               <div className="pointer-events-none absolute inset-x-0 top-0 h-[9%] bg-gradient-to-b from-white to-transparent z-[2]" />
@@ -229,7 +229,7 @@ function HeroSection({ language }) {
               />
               <div
                 className="pointer-events-none absolute z-[2] h-[180px] w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#FF8C5A] opacity-[0.11] blur-[50px]"
-                style={{ left: '250px', top: '390px' }}
+                style={{ left: '250px', top: '340px' }}
               />
 
               {/* ④ Concentric circles — animated */}
@@ -261,12 +261,12 @@ function HeroSection({ language }) {
                 className="absolute z-[6] flex h-[210px] w-[210px] -translate-x-1/2 -translate-y-1/2 animate-[orbFloat_5s_ease-in-out_infinite] cursor-pointer items-center justify-center transition-transform duration-500 hover:scale-[1.12] active:scale-[1.15]"
                 style={{ left: '280px', top: '260px' }}
               >
-                <Image src="/images/ball.png" alt="" width={210} height={210} className="absolute inset-0 h-full w-full object-contain drop-shadow-[0_8px_30px_rgba(0,0,0,0.12)]" />
-                <Image src="/logo.png" alt="ACADEMIA" width={110} height={68} className="relative z-10 h-auto w-[95px] object-contain drop-shadow-[0_3px_12px_rgba(0,0,0,0.18)]" />
+                <Image src="/images/ball.png" alt="" width={210} height={210} priority className="absolute inset-0 h-full w-full object-contain drop-shadow-[0_8px_30px_rgba(0,0,0,0.12)]" />
+                <Image src="/logo.png" alt="ACADEMIA" width={110} height={68} priority className="relative z-10 h-auto w-[95px] object-contain drop-shadow-[0_3px_12px_rgba(0,0,0,0.18)]" />
               </div>
 
               {/* ⑦ Connector lines from cards to center */}
-              <svg className="pointer-events-none absolute inset-0 z-[5]" width="560" height="600" viewBox="0 0 560 600">
+              <svg className="pointer-events-none absolute inset-0 z-[5]" width="560" height="480" viewBox="0 0 560 480">
                 {[
                   [275, 80],
                   [445, 170],
@@ -569,7 +569,7 @@ function EcosystemSection({ language }) {
           </p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {ecosystem.map((item) => {
             const c = tr ? item.tr : item.en;
             return (
