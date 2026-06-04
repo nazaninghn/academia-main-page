@@ -153,7 +153,7 @@ function HeroSection({ language }) {
       <div className="pointer-events-none absolute left-[-10%] top-[-5%] h-[500px] w-[500px] rounded-full bg-[#60B1FF] opacity-[0.05] blur-[140px]" />
       <div className="pointer-events-none absolute left-[5%] top-[10%] h-[350px] w-[350px] rounded-full bg-[#319AFF] opacity-[0.03] blur-[120px]" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-5 pt-10 sm:px-8 sm:pt-14 lg:px-10 lg:pt-10">
+      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-5 pt-10 pb-0 sm:px-8 sm:pt-14 lg:px-10 lg:pt-8 lg:pb-0">
         <div className="flex w-full flex-col gap-6 lg:flex-row lg:items-start lg:gap-6 xl:gap-10">
 
           {/* ── LEFT: text ── */}
@@ -214,10 +214,10 @@ function HeroSection({ language }) {
           </div>
 
           {/* ── ORBIT: desktop only ── */}
-          <div className="hidden lg:flex lg:flex-1 lg:min-w-0 lg:items-center lg:justify-center xl:justify-center overflow-hidden">
+          <div className="hidden lg:flex lg:flex-1 lg:min-w-0 lg:items-start lg:justify-center xl:justify-center overflow-hidden lg:max-h-[315px] xl:max-h-[360px] 2xl:max-h-none">
 
             {/* Fixed orbital panel */}
-            <div className="relative overflow-hidden rounded-3xl bg-white lg:scale-[0.78] xl:scale-[0.90] 2xl:scale-100 origin-top 2xl:translate-y-0" style={{ width: '560px', height: '460px' }} onClick={(e) => { if (e.target === e.currentTarget) setActiveCard(null); }}>
+            <div className="relative overflow-hidden rounded-3xl bg-white lg:scale-[0.78] xl:scale-[0.90] 2xl:scale-100 origin-top 2xl:translate-y-0" style={{ width: '560px', height: '400px' }} onClick={(e) => { if (e.target === e.currentTarget) setActiveCard(null); }}>
 
               {/* ② Top fade */}
               <div className="pointer-events-none absolute inset-x-0 top-0 h-[9%] bg-gradient-to-b from-white to-transparent z-[2]" />
@@ -266,7 +266,7 @@ function HeroSection({ language }) {
               </div>
 
               {/* ⑦ Connector lines from cards to center */}
-              <svg className="pointer-events-none absolute inset-0 z-[5]" width="560" height="460" viewBox="0 0 560 460">
+              <svg className="pointer-events-none absolute inset-0 z-[5]" width="560" height="400" viewBox="0 0 560 400">
                 {[
                   [275, 80],
                   [445, 170],
