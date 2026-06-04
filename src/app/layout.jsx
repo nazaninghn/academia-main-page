@@ -30,6 +30,9 @@ export const metadata = {
     'ESG danışmanlık', 'AI yönetişimi', 'proje danışmanlığı', 'TÜBİTAK hibe',
     'kurumsal eğitim', 'yönetim sistemi',
   ],
+  verification: {
+    google: '683573c7faec815e',
+  },
   authors: [{ name: 'Academia Danışmanlık', url: 'https://www.academiadanismanlik.com' }],
   creator: 'Academia Danışmanlık',
   publisher: 'Academia Danışmanlık',
