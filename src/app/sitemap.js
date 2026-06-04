@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const base = 'https://www.academiadanismanlik.com';
+  const base = 'https://www.academia.net.tr';
   const now = new Date();
 
   return [

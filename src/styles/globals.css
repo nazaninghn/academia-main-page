@@ -103,3 +103,15 @@ img, svg, video, canvas { display: block; max-width: 100%; }
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
 }
+
+/* ─── Accessibility: respect reduced motion preference ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─── Performance: contain layout for sections ─── */
+section { contain: layout style; }

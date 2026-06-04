@@ -205,7 +205,7 @@ function HeroSection({ language }) {
                 <div className="marquee-track flex w-max animate-marquee gap-7">
                   {[...referenceLogos, ...referenceLogos].map((r, i) => (
                     <a key={i} href={r.href} target="_blank" rel="noopener noreferrer" className="flex h-6 shrink-0 items-center transition-opacity hover:opacity-80">
-                      <Image src={r.logo} alt={r.name} width={72} height={24} sizes="72px" className="h-6 w-auto object-contain transition hover:opacity-70" />
+                      <Image src={r.logo} alt={r.name} width={72} height={24} sizes="72px" loading="lazy" className="h-6 w-auto object-contain transition hover:opacity-70" />
                     </a>
                   ))}
                 </div>
@@ -261,8 +261,8 @@ function HeroSection({ language }) {
                 className="absolute z-[6] flex h-[210px] w-[210px] -translate-x-1/2 -translate-y-1/2 animate-[orbFloat_5s_ease-in-out_infinite] cursor-pointer items-center justify-center transition-transform duration-500 hover:scale-[1.12] active:scale-[1.15]"
                 style={{ left: '280px', top: '260px' }}
               >
-                <Image src="/images/ball.png" alt="" width={210} height={210} priority className="absolute inset-0 h-full w-full object-contain drop-shadow-[0_8px_30px_rgba(0,0,0,0.12)]" />
-                <Image src="/logo.png" alt="ACADEMIA" width={110} height={68} priority className="relative z-10 h-auto w-[95px] object-contain drop-shadow-[0_3px_12px_rgba(0,0,0,0.18)]" />
+                <Image src="/images/ball.png" alt="" width={210} height={210} priority sizes="210px" className="absolute inset-0 h-full w-full object-contain drop-shadow-[0_8px_30px_rgba(0,0,0,0.12)]" />
+                <Image src="/logo.png" alt="ACADEMIA" width={110} height={68} priority sizes="110px" className="relative z-10 h-auto w-[95px] object-contain drop-shadow-[0_3px_12px_rgba(0,0,0,0.18)]" />
               </div>
 
               {/* ⑦ Connector lines from cards to center */}
@@ -468,8 +468,9 @@ function WhatSection({ language }) {
           <div className="relative h-[280px] w-full overflow-hidden rounded-[18px] sm:h-[320px] lg:w-[300px] lg:shrink-0 xl:h-auto xl:min-h-[300px]">
             <Image
               src="/images/strategic-planning.png"
-              alt="Strategic consulting"
+              alt="Academia Danışmanlık – Stratejik Planlama"
               fill
+              sizes="(max-width: 1024px) 100vw, 300px"
               className="object-cover"
             />
           </div>
@@ -583,7 +584,7 @@ function EcosystemSection({ language }) {
                 <div className="absolute -right-8 -top-8 h-[140px] w-[140px] rounded-full opacity-[0.06]" style={{ backgroundColor: item.accent }} />
                 <div className="relative">
                   <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl" style={{ backgroundColor: `${item.accent}18` }}>
-                    <Image src={item.logo} alt={item.name} width={28} height={28} className="h-7 w-7 object-contain" />
+                    <Image src={item.logo} alt={item.name} width={28} height={28} sizes="28px" loading="lazy" className="h-7 w-7 object-contain" />
                   </div>
                   <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.22em]" style={{ color: item.accent }}>{item.name}</p>
                   <h3 className="text-[18px] font-bold leading-snug text-[#1E293B]">{c.title}</h3>
@@ -898,7 +899,7 @@ function Footer({ language }) {
         <div className="mb-12 flex flex-col gap-10 lg:flex-row lg:justify-between">
           {/* Brand */}
           <div className="max-w-[320px]">
-            <Image src="/logo.png" alt="ACADEMIA" width={160} height={48} className="mb-5 h-12 w-auto object-contain" />
+            <Image src="/logo.png" alt="ACADEMIA" width={160} height={48} sizes="160px" loading="lazy" className="mb-5 h-12 w-auto object-contain" />
             <p className="text-[13px] font-medium leading-[1.85] text-[#64748B]">
               {tr
                 ? 'Kurumsal dönüşüm için yapısal çözümler sunan Türkiye\'nin önde gelen danışmanlık firması.'
