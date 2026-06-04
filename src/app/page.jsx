@@ -148,16 +148,16 @@ function HeroSection({ language }) {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white pt-[74px] sm:pt-[78px] lg:pt-[80px]">
+    <section className="relative overflow-hidden bg-white pt-[74px] sm:pt-[78px] lg:pt-[66px]">
       {/* Background gradient glow */}
       <div className="pointer-events-none absolute left-[-10%] top-[-5%] h-[500px] w-[500px] rounded-full bg-[#60B1FF] opacity-[0.1] blur-[120px]" />
       <div className="pointer-events-none absolute left-[5%] top-[10%] h-[350px] w-[350px] rounded-full bg-[#319AFF] opacity-[0.06] blur-[100px]" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-5 pt-10 sm:px-8 sm:pt-14 lg:px-10 lg:pt-16">
+      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-5 pt-10 sm:px-8 sm:pt-14 lg:px-10 lg:pt-10">
         <div className="flex w-full flex-col gap-6 lg:flex-row lg:items-start lg:gap-6 xl:gap-10">
 
           {/* ── LEFT: text ── */}
-          <div className="w-full shrink-0 pb-10 lg:w-[42%] lg:pb-16 xl:w-[47%]">
+          <div className="w-full shrink-0 pb-10 lg:w-[42%] lg:pb-8 xl:w-[47%]">
 
             {/* Heading */}
             <h1 className="max-w-[520px] text-[30px] font-semibold leading-[1.15] tracking-[-0.01em] text-[#1E293B] sm:text-[38px] lg:text-[42px] xl:text-[48px] 2xl:text-[54px]">
@@ -217,7 +217,7 @@ function HeroSection({ language }) {
           <div className="hidden lg:flex lg:flex-1 lg:min-w-0 lg:items-center lg:justify-center xl:justify-center overflow-hidden">
 
             {/* Fixed orbital panel */}
-            <div className="relative overflow-hidden rounded-3xl bg-white lg:scale-[0.82] xl:scale-[0.95] 2xl:scale-100 origin-top lg:-translate-y-4 xl:-translate-y-2 2xl:translate-y-0" style={{ width: '560px', height: '480px' }} onClick={(e) => { if (e.target === e.currentTarget) setActiveCard(null); }}>
+            <div className="relative overflow-hidden rounded-3xl bg-white lg:scale-[0.80] xl:scale-[0.92] 2xl:scale-100 origin-top lg:-translate-y-2 xl:-translate-y-1 2xl:translate-y-0" style={{ width: '560px', height: '460px' }} onClick={(e) => { if (e.target === e.currentTarget) setActiveCard(null); }}>
 
               {/* ② Top fade */}
               <div className="pointer-events-none absolute inset-x-0 top-0 h-[9%] bg-gradient-to-b from-white to-transparent z-[2]" />
@@ -266,7 +266,7 @@ function HeroSection({ language }) {
               </div>
 
               {/* ⑦ Connector lines from cards to center */}
-              <svg className="pointer-events-none absolute inset-0 z-[5]" width="560" height="480" viewBox="0 0 560 480">
+              <svg className="pointer-events-none absolute inset-0 z-[5]" width="560" height="460" viewBox="0 0 560 460">
                 {[
                   [275, 80],
                   [445, 170],

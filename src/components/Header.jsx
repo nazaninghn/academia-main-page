@@ -38,7 +38,7 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed inset-x-4 top-[14px] z-50 sm:inset-x-5 sm:top-[16px] md:inset-x-6 lg:inset-x-0 lg:top-[18px] lg:mx-auto lg:max-w-[1060px] rounded-[20px] transition-all duration-500 ${
+        className={`fixed inset-x-4 top-[12px] z-50 sm:inset-x-5 sm:top-[14px] md:inset-x-6 lg:inset-x-0 lg:top-[14px] lg:mx-auto lg:max-w-[1060px] rounded-[20px] transition-all duration-500 ${
           scrolled
             ? 'border border-black/8 bg-white/40 shadow-[inset_0px_4px_6px_0px_rgba(255,255,255,0.35),0_14px_44px_rgba(0,0,0,0.09)] backdrop-blur-[60px]'
             : 'border border-white/50 bg-white/25 shadow-[inset_0px_3px_4px_0px_rgba(255,255,255,0.25)] backdrop-blur-[45px]'
