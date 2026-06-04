@@ -150,8 +150,8 @@ function HeroSection({ language }) {
   return (
     <section className="relative overflow-hidden bg-white pt-[74px] sm:pt-[78px] lg:pt-[66px]">
       {/* Background gradient glow */}
-      <div className="pointer-events-none absolute left-[-10%] top-[-5%] h-[500px] w-[500px] rounded-full bg-[#60B1FF] opacity-[0.1] blur-[120px]" />
-      <div className="pointer-events-none absolute left-[5%] top-[10%] h-[350px] w-[350px] rounded-full bg-[#319AFF] opacity-[0.06] blur-[100px]" />
+      <div className="pointer-events-none absolute left-[-10%] top-[-5%] h-[500px] w-[500px] rounded-full bg-[#60B1FF] opacity-[0.05] blur-[140px]" />
+      <div className="pointer-events-none absolute left-[5%] top-[10%] h-[350px] w-[350px] rounded-full bg-[#319AFF] opacity-[0.03] blur-[120px]" />
 
       <div className="relative z-10 mx-auto w-full max-w-[1280px] px-5 pt-10 sm:px-8 sm:pt-14 lg:px-10 lg:pt-10">
         <div className="flex w-full flex-col gap-6 lg:flex-row lg:items-start lg:gap-6 xl:gap-10">
@@ -160,7 +160,7 @@ function HeroSection({ language }) {
           <div className="w-full shrink-0 pb-10 lg:w-[42%] lg:pb-8 xl:w-[47%]">
 
             {/* Heading */}
-            <h1 className="max-w-[520px] text-[30px] font-semibold leading-[1.15] tracking-[-0.01em] text-[#1E293B] sm:text-[38px] lg:text-[42px] xl:text-[48px] 2xl:text-[54px]">
+            <h1 className="max-w-[520px] text-[30px] font-semibold leading-[1.15] tracking-[-0.01em] text-[#1E293B] sm:text-[38px] lg:text-[38px] xl:text-[44px] 2xl:text-[52px]">
               {tr ? (
                 <>Kurumsal Dönüşüm<br /><span className="text-[#F97342]">Kalıcı Etki Yaratan Güç.</span></>
               ) : (
@@ -172,7 +172,7 @@ function HeroSection({ language }) {
             <div className="mt-6 h-[2.5px] w-12 rounded-full bg-[#F97342]" />
 
             {/* Subtitle */}
-            <p className="mt-5 max-w-[490px] text-[15px] leading-[1.9] text-[#475569]">
+            <p className="mt-4 max-w-[490px] text-[14px] leading-[1.8] text-[#475569] lg:text-[13.5px]">
               <strong className="font-bold text-[#1E293B]">ACADEMIA</strong>{' '}
               {tr
                 ? 'kurumların yönetişim, düzenleyici uyum, kalite ve sürdürülebilirlik çerçevelerini tasarlayarak kurumsal güç ve ölçülebilir uzun vadeli etki yaratmalarına ortak olur.'
@@ -180,7 +180,7 @@ function HeroSection({ language }) {
             </p>
 
             {/* CTAs */}
-            <div className="mt-6 flex flex-wrap items-center gap-4">
+            <div className="mt-4 flex flex-wrap items-center gap-4 lg:mt-5">
               <a
                 href="#expertise"
                 className="inline-flex items-center gap-2.5 rounded-[14px] bg-[rgba(0,132,255,0.8)] px-7 py-3.5 text-[14px] font-bold text-white shadow-[inset_0px_3px_4px_0px_rgba(255,255,255,0.3),0_4px_20px_rgba(0,132,255,0.25)] backdrop-blur-[2px] transition hover:scale-[1.02] hover:-translate-y-0.5 active:scale-[0.97]"
@@ -199,7 +199,7 @@ function HeroSection({ language }) {
             </div>
 
             {/* Trusted by */}
-            <div className="mt-7">
+            <div className="mt-5 lg:mt-4">
               <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.24em] text-[#94A3B8]">{trusted}</p>
               <div className="overflow-hidden [mask-image:linear-gradient(to_right,black_80%,transparent)]">
                 <div className="marquee-track flex w-max animate-marquee gap-7">
@@ -217,7 +217,7 @@ function HeroSection({ language }) {
           <div className="hidden lg:flex lg:flex-1 lg:min-w-0 lg:items-center lg:justify-center xl:justify-center overflow-hidden">
 
             {/* Fixed orbital panel */}
-            <div className="relative overflow-hidden rounded-3xl bg-white lg:scale-[0.80] xl:scale-[0.92] 2xl:scale-100 origin-top lg:-translate-y-2 xl:-translate-y-1 2xl:translate-y-0" style={{ width: '560px', height: '460px' }} onClick={(e) => { if (e.target === e.currentTarget) setActiveCard(null); }}>
+            <div className="relative overflow-hidden rounded-3xl bg-white lg:scale-[0.78] xl:scale-[0.90] 2xl:scale-100 origin-top 2xl:translate-y-0" style={{ width: '560px', height: '460px' }} onClick={(e) => { if (e.target === e.currentTarget) setActiveCard(null); }}>
 
               {/* ② Top fade */}
               <div className="pointer-events-none absolute inset-x-0 top-0 h-[9%] bg-gradient-to-b from-white to-transparent z-[2]" />
