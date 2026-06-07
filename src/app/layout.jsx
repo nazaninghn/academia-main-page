@@ -46,8 +46,7 @@ export const metadata = {
     googleBot: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' },
   },
   alternates: {
-    canonical: '/',
-    languages: { 'tr-TR': '/', 'en-US': '/' },
+    canonical: SITE_URL,
   },
   openGraph: {
     title: 'Academia Danışmanlık – Kurumsal Dönüşüm İçin Yapısal Çözümler',
@@ -56,13 +55,13 @@ export const metadata = {
     siteName: 'Academia Danışmanlık',
     locale: 'tr_TR',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Academia Danışmanlık' }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Academia Danışmanlık' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Academia Danışmanlık – Kurumsal Dönüşüm',
     description: 'Yönetişim, uyum, sürdürülebilirlik ve AI yönetişimi alanlarında danışmanlık.',
-    images: ['/og-image.png'],
+    images: ['/opengraph-image'],
   },
 };
 

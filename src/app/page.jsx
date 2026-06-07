@@ -148,7 +148,7 @@ function HeroSection({ language }) {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white pt-[74px] sm:pt-[78px] lg:pt-[58px]">
+    <section className="relative overflow-hidden bg-white pt-[74px] sm:pt-[78px] lg:pt-[68px]">
       {/* Background gradient glow */}
       <div className="pointer-events-none absolute left-[-10%] top-[-5%] h-[500px] w-[500px] rounded-full bg-[#60B1FF] opacity-[0.05] blur-[140px]" />
       <div className="pointer-events-none absolute left-[5%] top-[10%] h-[350px] w-[350px] rounded-full bg-[#319AFF] opacity-[0.03] blur-[120px]" />
