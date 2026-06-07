@@ -148,16 +148,16 @@ function HeroSection({ language }) {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white pt-[74px] sm:pt-[78px] lg:pt-[66px]">
+    <section className="relative overflow-hidden bg-white pt-[74px] sm:pt-[78px] lg:pt-[58px]">
       {/* Background gradient glow */}
       <div className="pointer-events-none absolute left-[-10%] top-[-5%] h-[500px] w-[500px] rounded-full bg-[#60B1FF] opacity-[0.05] blur-[140px]" />
       <div className="pointer-events-none absolute left-[5%] top-[10%] h-[350px] w-[350px] rounded-full bg-[#319AFF] opacity-[0.03] blur-[120px]" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-5 pt-10 pb-0 sm:px-8 sm:pt-14 lg:px-10 lg:pt-8 lg:pb-0">
+      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-5 pt-10 pb-0 sm:px-8 sm:pt-14 lg:px-10 lg:pt-5 lg:pb-0">
         <div className="flex w-full flex-col gap-6 lg:flex-row lg:items-start lg:gap-6 xl:gap-10">
 
           {/* ── LEFT: text ── */}
-          <div className="w-full shrink-0 pb-10 lg:w-[42%] lg:pb-8 xl:w-[47%]">
+          <div className="w-full shrink-0 pb-10 lg:w-[42%] lg:pb-3 xl:w-[47%]">
 
             {/* Heading */}
             <h1 className="max-w-[520px] text-[30px] font-semibold leading-[1.15] tracking-[-0.01em] text-[#1E293B] sm:text-[38px] lg:text-[38px] xl:text-[44px] 2xl:text-[52px]">
@@ -169,7 +169,7 @@ function HeroSection({ language }) {
             </h1>
 
             {/* Orange rule */}
-            <div className="mt-6 h-[2.5px] w-12 rounded-full bg-[#F97342]" />
+            <div className="mt-4 h-[2.5px] w-12 rounded-full bg-[#F97342]" />
 
             {/* Subtitle */}
             <p className="mt-4 max-w-[490px] text-[14px] leading-[1.8] text-[#475569] lg:text-[13.5px]">
@@ -214,7 +214,7 @@ function HeroSection({ language }) {
           </div>
 
           {/* ── ORBIT: desktop only ── */}
-          <div className="hidden lg:flex lg:flex-1 lg:min-w-0 lg:items-start lg:justify-center xl:justify-center overflow-hidden lg:max-h-[315px] xl:max-h-[360px] 2xl:max-h-none">
+          <div className="hidden lg:flex lg:flex-1 lg:min-w-0 lg:items-start lg:justify-center xl:justify-center overflow-hidden lg:max-h-[360px] xl:max-h-[380px] 2xl:max-h-none">
 
             {/* Fixed orbital panel */}
             <div className="relative overflow-hidden rounded-3xl bg-white lg:scale-[0.78] xl:scale-[0.90] 2xl:scale-100 origin-top 2xl:translate-y-0" style={{ width: '560px', height: '400px' }} onClick={(e) => { if (e.target === e.currentTarget) setActiveCard(null); }}>
@@ -747,7 +747,7 @@ function FeaturedTopicsSection({ language }) {
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-10">
 
         {/* header bar */}
-        <div className="flex items-center justify-between border-b border-[#F0EDE8] py-4">
+        <div className="flex items-center justify-between border-b border-[#F0EDE8] py-3">
           <div className="flex items-center gap-2.5">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#F97342] opacity-60" />
@@ -763,7 +763,7 @@ function FeaturedTopicsSection({ language }) {
         </div>
 
         {/* two cards */}
-        <div className="grid grid-cols-1 gap-4 py-6 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 py-4 sm:grid-cols-2">
           {featuredTopics.map((item, i) => (
             <div
               key={i}
