@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Target, Users, Award, TrendingUp, GraduationCap, Globe, Shield, Heart } from 'lucide-react';
 import { Text } from '@/components/Text';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -15,10 +16,12 @@ export default function AboutPage() {
         {/* Header with Background Image */}
         <div className="text-center mb-8 sm:mb-10 lg:mb-12 relative">
           <div className="absolute inset-0 -z-10 opacity-10">
-            <img 
-              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&h=400&fit=crop&q=80" 
+            <Image
+              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&h=400&fit=crop&q=80"
               alt="Team collaboration"
-              className="w-full h-full object-cover rounded-xl sm:rounded-2xl"
+              fill
+              sizes="100vw"
+              className="object-cover rounded-xl sm:rounded-2xl"
             />
           </div>
           <Text className="inline-block text-[#B8860B] text-[10px] sm:text-xs uppercase tracking-[0.2em] mb-2 sm:mb-3">{t.about.subtitle}</Text>
@@ -34,10 +37,12 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-12 sm:mb-16 lg:mb-20">
           <div className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
             <div className="relative h-48 overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop&q=80" 
+              <Image
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop&q=80"
                 alt="Mission"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/60 to-blue-600/60"></div>
             </div>
@@ -56,10 +61,12 @@ export default function AboutPage() {
 
           <div className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
             <div className="relative h-48 overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=400&fit=crop&q=80" 
+              <Image
+                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=400&fit=crop&q=80"
                 alt="Vision"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/60 to-purple-600/60"></div>
             </div>
@@ -197,10 +204,12 @@ export default function AboutPage() {
           
           {/* Office Image */}
           <div className="relative rounded-2xl overflow-hidden shadow-2xl h-96">
-            <img 
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=600&fit=crop&q=80" 
+            <Image
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=600&fit=crop&q=80"
               alt="Modern office building"
-              className="w-full h-full object-cover"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
               <div className="p-8 text-white">
